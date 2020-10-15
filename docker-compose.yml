@@ -2,5 +2,7 @@ version: '3.7'
 
 services:
   app:
-    image: hiha-store-ts/react
+    image: hiha-store-ts:v1
+    ports:
+      - '5000:80'
     restart: unless-stopped
