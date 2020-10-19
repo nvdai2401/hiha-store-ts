@@ -12,17 +12,22 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { createLogger } from 'redux-logger';
 
 import createReducer from './rootReducer';
 import rootSaga from './rootSaga';
 
 export default function configureAppStore(initialState = {}): Store {
+  const persistConfig = {
+    key: 'root',
+    storage,
+  };
+  const rootReducer = persistReducer(persistConfig, createReducer());
+
+  const logger = createLogger();
   const reduxSagaMonitorOptions = {};
   const sagaMiddleware = createSagaMiddleWare(reduxSagaMonitorOptions);
   const { run: runSaga } = sagaMiddleware;
-
-  const middlewares = [sagaMiddleware];
-
   const enhancers = [
     createInjectorsEnhancer({
       createReducer,
@@ -30,12 +35,12 @@ export default function configureAppStore(initialState = {}): Store {
     }),
   ];
 
-  const persistConfig = {
-    key: 'root',
-    storage,
-  };
-
-  const rootReducer = persistReducer(persistConfig, createReducer());
+  let middlewares;
+  if (process.env.NODE_ENV === 'development') {
+    middlewares = [logger, sagaMiddleware];
+  } else {
+    middlewares = [sagaMiddleware];
+  }
 
   const store = configureStore({
     reducer: rootReducer,
@@ -53,5 +58,6 @@ export default function configureAppStore(initialState = {}): Store {
   });
 
   sagaMiddleware.run(rootSaga);
+
   return store;
 }
