@@ -1,13 +1,13 @@
-import {combineReducers} from '@reduxjs/toolkit'
+import { combineReducers } from '@reduxjs/toolkit';
 
-export let rootReducer = combineReducers({})
+export let rootReducer = combineReducers({});
 
 export default function createReducer(injectedReducers = {}) {
   rootReducer = combineReducers({
-    ...injectedReducers
-  })
+    ...injectedReducers,
+  });
 
-  return rootReducer
+  return rootReducer;
 }
 
-export type RootState = ReturnType<typeof rootReducer>
+export type RootState = ReturnType<typeof rootReducer>;
