@@ -21,6 +21,7 @@ export default function configureAppStore(initialState = {}): Store {
   const persistConfig = {
     key: 'root',
     storage,
+    whitelist: ['cart'],
   };
   const rootReducer = persistReducer(persistConfig, createReducer());
 
@@ -58,6 +59,13 @@ export default function configureAppStore(initialState = {}): Store {
   });
 
   sagaMiddleware.run(rootSaga);
+
+  // if (process.env.NODE_ENV === 'development' && module.hot) {
+  //   module.hot.accept('./rootReducer', () => {
+  //     const newRootReducer = require('./rootReducer').default;
+  //     store.replaceReducer(newRootReducer);
+  //   });
+  // }
 
   return store;
 }

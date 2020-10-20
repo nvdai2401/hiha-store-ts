@@ -10,3 +10,4 @@ const store = configureAppStore(initialState);
 const persistor = persistStore(store);
 
 export { store, persistor, rootSaga, rootReducer };
+export type RootState = ReturnType<typeof store.getState>;
