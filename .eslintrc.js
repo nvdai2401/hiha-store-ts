@@ -47,7 +47,7 @@ module.exports = {
       { vars: 'all', args: 'after-used', ignoreRestSiblings: false },
     ],
     // warn: Prefer default export
-    'import/prefer-default-export': WARN,
+    'import/prefer-default-export': OFF,
     // warn: Something is already declared in the upper scope
     'no-shadow': [
       WARN,
@@ -65,6 +65,7 @@ module.exports = {
         },
       },
     ],
+    'no-param-reassign': OFF
   },
   env: {
     browser: true,
