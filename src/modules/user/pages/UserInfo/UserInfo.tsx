@@ -14,7 +14,12 @@ function UserInfo(): React.ReactElement {
         Count:
         {count}
       </p>
-      <button type="button" onClick={() => dispatch(increment(2))}>
+      <button
+        type="button"
+        onClick={() => {
+          dispatch(increment(2));
+        }}
+      >
         Increase
       </button>
     </div>
