@@ -15,7 +15,7 @@ function Routes(props) {
             render={(props) => {
               // const Layout = page.layout;
               const Component = page.component;
-              console.log(props);
+
               return (
                 <Component {...props} title={page.title} />
                 // <Layout pages={pages} {...props}>
