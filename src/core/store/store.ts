@@ -1,5 +1,6 @@
 import { Store } from 'redux';
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { routerMiddleware } from 'connected-react-router';
 import createSagaMiddleWare from 'redux-saga';
 import { createInjectorsEnhancer } from 'redux-injectors';
 import {
@@ -13,6 +14,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { createLogger } from 'redux-logger';
+import { history } from 'core/config';
 
 import createReducer from './rootReducer';
 import rootSaga from './rootSaga';
@@ -38,9 +40,9 @@ export default function configureAppStore(initialState = {}): Store {
 
   let middlewares;
   if (process.env.NODE_ENV === 'development') {
-    middlewares = [logger, sagaMiddleware];
+    middlewares = [logger, sagaMiddleware, routerMiddleware(history)];
   } else {
-    middlewares = [sagaMiddleware];
+    middlewares = [sagaMiddleware, routerMiddleware(history)];
   }
 
   const store = configureStore({
@@ -59,13 +61,6 @@ export default function configureAppStore(initialState = {}): Store {
   });
 
   sagaMiddleware.run(rootSaga);
-
-  // if (process.env.NODE_ENV === 'development' && module.hot) {
-  //   module.hot.accept('./rootReducer', () => {
-  //     const newRootReducer = require('./rootReducer').default;
-  //     store.replaceReducer(newRootReducer);
-  //   });
-  // }
-
+  
   return store;
 }
