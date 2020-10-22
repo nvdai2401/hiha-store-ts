@@ -1,0 +1,21 @@
+/*        BEMIT Architecture - BEM + ITCSS
+Read more: https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture
+
+                      Reach     
+                  <----------->
+              ^    ____________ _________Settings
+              |    \__________/__________Tools
+              |     \________/___________Generic
+   Specificity|      \______/____________Elements
+              |       \____/_____________Objects
+              |        \__/______________Components
+              v         \/_______________Utilities
+*/
+
+@import 'settings';
+@import 'tools';
+@import 'generic';
+@import 'elements';
+@import 'objects';
+@import 'components';
+@import 'utilities';
