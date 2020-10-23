@@ -1,9 +1,10 @@
+import { IRoutePages } from 'definitions/routes';
 import { UserInfo } from '../pages';
 
-const pages = [
+const pages: IRoutePages[] = [
   {
     path: '/user-info',
-    title: 'User Info',
+    title: 'UserInfo',
     exact: true,
     component: UserInfo,
   },

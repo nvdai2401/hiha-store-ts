@@ -1,7 +1,13 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, RouteComponentProps } from 'react-router-dom';
 
-function Routes(props) {
+import { IRoutePages } from 'definitions/routes';
+
+interface IRoutesProps {
+  pages: IRoutePages[];
+}
+
+function Routes(props: IRoutesProps): React.ReactElement {
   const { pages } = props;
 
   return (
@@ -12,12 +18,11 @@ function Routes(props) {
             key={page.title}
             path={page.path}
             exact={page.exact}
-            render={(props) => {
+            render={(routeProperties: RouteComponentProps) => {
               // const Layout = page.layout;
               const Component = page.component;
-
               return (
-                <Component {...props} title={page.title} />
+                <Component {...routeProperties} />
                 // <Layout pages={pages} {...props}>
                 //   <Component {...props} {...route.props} />
                 // </Layout>

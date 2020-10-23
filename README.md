@@ -10,3 +10,8 @@
 - [ ] Develop module: user, shop, cart, directory
 - [ ] Implement test
 - [ ] Update README
+
+### Technical Debts
+
+- [ ] Config font face
+- [ ] Add type check for routing
