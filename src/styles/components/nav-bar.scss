@@ -1,0 +1,33 @@
+.nav-bar {
+  position: relative;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+
+  a {
+    text-decoration: none;
+  }
+
+  &__logo {
+  }
+
+  &__nav-list {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    list-style-type: none;
+
+    &__item {
+      padding: 10px 15px;
+      text-transform: uppercase;
+    }
+  }
+
+  .sign-out {
+    cursor: pointer;
+  }
+}
