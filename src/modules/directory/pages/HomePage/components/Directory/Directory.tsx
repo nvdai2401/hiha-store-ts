@@ -1,52 +1,27 @@
-import React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { RootState } from 'core/store';
+import { fetchDirectorySectionsStart } from 'modules/directory/state/directory.slice';
+import { selectDirectorySections } from 'modules/directory/state/directory.selectors';
+
+import { Spinner } from 'components';
 import MenuItem from '../MenuItem';
 
-type IProps = {};
+function Directory(): React.ReactElement {
+  const dispatch = useDispatch();
+  const sections = useSelector(selectDirectorySections);
+  const loading = useSelector((state: RootState) => state.directory.loading);
 
-const mockSections = [
-  {
-    id: 1,
-    imageUrl: 'https://ik.imagekit.io/fireman35/images/cvpntL1/hats.png',
-    linkUrl: 'shop/hats',
-    title: 'hats',
-  },
-  {
-    id: 2,
-    imageUrl: 'https://ik.imagekit.io/fireman35/images/px2tCc3/jackets.png',
-    linkUrl: 'shop/jackets',
-    title: 'jackets',
-  },
-  {
-    id: 3,
-    imageUrl: 'https://ik.imagekit.io/fireman35/images/0jqHpnp/sneakers.png',
-    linkUrl: 'shop/sneakers',
-    title: 'sneakers',
-  },
-  {
-    id: 4,
-    imageUrl: 'https://ik.imagekit.io/fireman35/images/GCCdy8t/womens.png',
-    linkUrl: 'shop/womens',
-    size: 'large',
-    title: 'womens',
-  },
-  {
-    id: 5,
-    imageUrl: 'https://ik.imagekit.io/fireman35/images/R70vBrQ/men.png',
-    linkUrl: 'shop/mens',
-    size: 'large',
-    title: 'mens',
-  },
-];
+  useEffect(() => {
+    dispatch(fetchDirectorySectionsStart());
+  }, []);
 
-function Directory(props: IProps): React.ReactElement {
-  // const { sections } = props;
+  if (loading) return <Spinner />;
 
   return (
     <div className="directory">
-      {mockSections.map(({ id, ...otherSectionsItems }) => (
+      {sections.map(({ id, ...otherSectionsItems }) => (
         <MenuItem key={id} {...otherSectionsItems} />
       ))}
     </div>

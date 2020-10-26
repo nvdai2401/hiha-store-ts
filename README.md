@@ -14,4 +14,5 @@
 ### Technical Debts
 
 - [ ] Config font face
-- [ ] Add type check for routing
+- [ ] Add type check for routing, layout
+- [ ] Refactor firebase
