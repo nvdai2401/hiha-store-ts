@@ -18,14 +18,14 @@ function Routes(props: IRoutesProps): React.ReactElement {
             key={page.title}
             path={page.path}
             exact={page.exact}
-            render={(routeProperties: RouteComponentProps) => {
-              // const Layout = page.layout;
+            render={() => {
+              const Layout = page.layout;
               const Component = page.component;
+
               return (
-                <Component {...routeProperties} />
-                // <Layout pages={pages} {...props}>
-                //   <Component {...props} {...route.props} />
-                // </Layout>
+                <Layout>
+                  <Component />
+                </Layout>
               );
             }}
           />

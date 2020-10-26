@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import MenuItem from '../MenuItem';
 
-type IProps = RouteComponentProps;
+type IProps = {};
 
 const mockSections = [
   {
@@ -45,9 +45,9 @@ function Directory(props: IProps): React.ReactElement {
   // const { sections } = props;
 
   return (
-    <div className="directory-menu">
+    <div className="directory">
       {mockSections.map(({ id, ...otherSectionsItems }) => (
-        <MenuItem key={id} {...otherSectionsItems} {...props} />
+        <MenuItem key={id} {...otherSectionsItems} />
       ))}
     </div>
   );

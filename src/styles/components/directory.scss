@@ -1,11 +1,10 @@
-.directory-menu {
-  width: 100%;
+.directory {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  @media screen and (max-width: 767px) {
-    .menu-item {
-      width: 100%;
-    }
+  flex-direction: column;
+
+  @include bp(medium) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 }
