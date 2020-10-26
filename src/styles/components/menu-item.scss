@@ -12,11 +12,12 @@
   &:hover {
     cursor: pointer;
 
-    .background-image {
+    .menu-item__image {
       transform: scale(1.1);
       transition: transform 1s cubic-bezier(0.25, 0.45, 0.45, 0.95);
     }
-    .content {
+
+    .menu-item__content {
       opacity: 0.9;
     }
   }

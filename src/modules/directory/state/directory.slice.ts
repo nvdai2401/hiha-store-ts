@@ -1,20 +1,44 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface IUserState {
-  count: number;
+interface ISection {
+  id: string;
+  imageUrl: string;
+  linkUrl: string;
+  title: string;
+  size?: string;
+}
+interface IDirectoryState {
+  sections: ISection[];
+  errorMessage: string;
+  loading: boolean;
 }
 
-const initialState: IUserState = { count: 0 };
+const initialState: IDirectoryState = {
+  sections: [],
+  errorMessage: '',
+  loading: false,
+};
 
-const userSlice = createSlice({
-  name: 'user',
+const directorySlice = createSlice({
+  name: 'directory',
   initialState,
   reducers: {
-    increment(state, action: PayloadAction<number>) {
-      state.count += action.payload;
+    fetchDirectorySectionsStart(state) {
+      state.loading = false;
+    },
+    fetchDirectorySectionsSuccess(state, action: PayloadAction<ISection[]>) {
+      state.loading = true;
+      state.sections = action.payload;
+    },
+    fetchDirectorySectionsFailure(state, action: PayloadAction<string>) {
+      state.errorMessage = action.payload;
     },
   },
 });
 
-export const { increment } = userSlice.actions;
-export default userSlice.reducer;
+export const {
+  fetchDirectorySectionsStart,
+  fetchDirectorySectionsSuccess,
+  fetchDirectorySectionsFailure,
+} = directorySlice.actions;
+export default directorySlice.reducer;

@@ -1,8 +1,7 @@
 import React from 'react';
-import { RouteComponentProps, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 interface IProps {
-  key: number;
   title: string;
   imageUrl: string;
   size?: string;
@@ -16,9 +15,7 @@ function MenuItem(props: IProps): React.ReactElement {
   return (
     <div
       className={`menu-item ${size || ''}`}
-      onClick={() => {
-        // history.push(`${match.url}${linkUrl}`)
-      }}
+      onClick={() => history.push(`/${linkUrl}`)}
     >
       <div
         className="menu-item__image"

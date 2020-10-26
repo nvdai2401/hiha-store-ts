@@ -1,9 +1,9 @@
 import { createSelector } from 'reselect';
 import { RootState } from 'core/store';
 
-const selectedUser = (state: RootState) => state.user;
+const selectedDirectory = (state: RootState) => state.directory;
 
-export const selectedCurrentUser = createSelector(
-  [selectedUser],
-  (user) => user.count,
+export const selectDirectorySections = createSelector(
+  [selectedDirectory],
+  (directory) => (directory.sections ? directory.sections : []),
 );
