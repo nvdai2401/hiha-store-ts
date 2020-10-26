@@ -6,7 +6,7 @@ import { selectedCurrentUser } from 'modules/user/state/user.selectors';
 
 type Props = RouteComponentProps;
 
-function UserInfo(props: Props): React.ReactElement {
+function UserInfo(): React.ReactElement {
   const count = useSelector(selectedCurrentUser);
   const dispatch = useDispatch();
 

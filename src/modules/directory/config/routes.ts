@@ -1,4 +1,5 @@
 import { IRoutePages } from 'definitions/routes';
+import { Main } from 'layouts';
 import { HomePage } from '../pages';
 
 const pages: IRoutePages[] = [
@@ -7,6 +8,7 @@ const pages: IRoutePages[] = [
     title: 'HomePage',
     exact: true,
     component: HomePage,
+    layout: Main,
   },
 ];
 

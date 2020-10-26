@@ -1,8 +1,7 @@
 import React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { RouteComponentProps, useHistory } from 'react-router-dom';
 
-interface IProps extends RouteComponentProps {
+interface IProps {
   key: number;
   title: string;
   imageUrl: string;
@@ -11,22 +10,25 @@ interface IProps extends RouteComponentProps {
 }
 
 function MenuItem(props: IProps): React.ReactElement {
-  const { title, imageUrl, size, linkUrl, match, history } = props;
+  const { title, imageUrl, size, linkUrl } = props;
+  const history = useHistory();
 
   return (
     <div
       className={`menu-item ${size || ''}`}
-      onClick={() => history.push(`${match.url}${linkUrl}`)}
+      onClick={() => {
+        // history.push(`${match.url}${linkUrl}`)
+      }}
     >
       <div
-        className="background-image"
+        className="menu-item__image"
         style={{
           backgroundImage: `url(${imageUrl})`,
         }}
       />
-      <div className="content">
-        <h1 className="title">{title.toUpperCase()}</h1>
-        <p className="sub-title">SHOP NOW</p>
+      <div className="menu-item__content">
+        <h1 className="menu-item__content__title">{title.toUpperCase()}</h1>
+        <p className="menu-item__content__sub-title">SHOP NOW</p>
       </div>
     </div>
   );
