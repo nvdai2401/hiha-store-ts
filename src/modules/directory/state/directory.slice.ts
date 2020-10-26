@@ -24,10 +24,10 @@ const directorySlice = createSlice({
   initialState,
   reducers: {
     fetchDirectorySectionsStart(state) {
-      state.loading = false;
+      state.loading = true;
     },
     fetchDirectorySectionsSuccess(state, action: PayloadAction<ISection[]>) {
-      state.loading = true;
+      state.loading = false;
       state.sections = action.payload;
     },
     fetchDirectorySectionsFailure(state, action: PayloadAction<string>) {
