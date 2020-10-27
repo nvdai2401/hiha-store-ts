@@ -1,12 +1,8 @@
 /* ==========================================================================
-   #LINKS
+   #BUTTONS
    ========================================================================== */
 
-a {
-  color: $color-link;
-  text-decoration: none;
-
-  &:hover {
-    color: $color-hover;
-  }
+button {
+  outline: none;
+  cursor: pointer;
 }

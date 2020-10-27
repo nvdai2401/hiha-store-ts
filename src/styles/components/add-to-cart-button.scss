@@ -1,0 +1,38 @@
+.add-to-cart-button {
+  letter-spacing: 0.5px;
+  line-height: 50px;
+  font-size: 15px;
+  background-color: $color-black;
+  color: $color-white;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: none;
+
+  &:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }
+
+  // &.google-sign-in {
+  //   background-color: #4285f4;
+  //   color: white;
+
+  //   &:hover {
+  //     background-color: #357ae8;
+  //     border: none;
+  //   }
+  // }
+
+  // &.inverted {
+  //   background-color: white;
+  //   color: black;
+  //   border: 1px solid black;
+
+  //   &:hover {
+  //     background-color: black;
+  //     color: white;
+  //     border: none;
+  //   }
+  // }
+}

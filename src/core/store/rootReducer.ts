@@ -5,11 +5,13 @@ import { history } from 'core/config';
 
 import userReducer from 'modules/user/state/user.slice';
 import directoryReducer from 'modules/directory/state/directory.slice';
+import shopReducer from 'modules/shop/state/shop.slice';
 
 export default function createReducer(injectedReducers = {}) {
   const rootReducer = combineReducers({
     user: userReducer,
     directory: directoryReducer,
+    shop: shopReducer,
     router: connectRouter(history),
     ...injectedReducers,
   });
