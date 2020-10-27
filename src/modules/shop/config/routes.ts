@@ -1,15 +1,21 @@
 import { IRoutePages } from 'definitions/routes';
 import { Main } from 'layouts';
-import { CollectionPreview } from '../pages';
+import { CollectionPreview, ShopPage } from '../pages';
 
 const pages: IRoutePages[] = [
   {
     path: '/shop',
-    title: 'HomePage',
+    title: 'ShopPage',
     exact: true,
-    component: CollectionPreview,
+    component: ShopPage,
     layout: Main,
   },
+  // {
+  //   path: '/shop/:collectionRouteName',
+  //   title: 'CollectionPage',
+  //   component: CollectionPage,
+  //   layout: Main,
+  // },
 ];
 
 export default pages;

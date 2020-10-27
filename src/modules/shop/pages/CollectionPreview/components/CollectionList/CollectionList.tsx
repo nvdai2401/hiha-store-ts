@@ -1,6 +1,8 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import { RootState } from 'core/store';
 import { CollectionItem } from 'modules/shop/components';
 
 interface ICollection {
@@ -17,10 +19,16 @@ type Props = {
 
 function CollectionList(props: Props): React.ReactElement {
   const { title, items } = props;
+  const pathname = useSelector(
+    (state: RootState) => state.router.location.pathname,
+  );
 
   return (
     <div className="collection-list">
-      <Link to={`/${title.toLowerCase()}`} className="collection-list__title">
+      <Link
+        to={`${pathname}/${title.toLowerCase()}`}
+        className="collection-list__title"
+      >
         {title.toUpperCase()}
       </Link>
       <div className="collection-list__products">
