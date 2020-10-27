@@ -24,6 +24,6 @@ export function* onFetchDirectorySectionsStart() {
   );
 }
 
-export function* directorySaga() {
+export function* directorySagas() {
   yield all([call(onFetchDirectorySectionsStart)]);
 }

@@ -1,9 +1,14 @@
 import { createSelector } from 'reselect';
 import { RootState } from 'core/store';
 
-const selectedDirectory = (state: RootState) => state.directory;
+const selectDirectory = (state: RootState) => state.directory;
 
 export const selectDirectorySections = createSelector(
-  [selectedDirectory],
+  [selectDirectory],
   (directory) => (directory.sections ? directory.sections : []),
+);
+
+export const selectDirectorySectionsFetching = createSelector(
+  [selectDirectory],
+  (directory) => directory.loading,
 );

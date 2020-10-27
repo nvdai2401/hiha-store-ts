@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   border: 1px solid black;
-  margin: 0 9px 18px;
+  margin-bottom: 18px;
   overflow: hidden;
 
   &:hover {
@@ -24,14 +24,6 @@
 
   &.large {
     height: 380px;
-  }
-
-  &:first-child {
-    margin-right: 9px;
-  }
-
-  &:last-child {
-    margin-left: 9px;
   }
 
   &__image {
@@ -63,6 +55,18 @@
     &__subtitle {
       font-weight: lighter;
       font-size: 1.25rem;
+    }
+  }
+
+  @include bp(medium) {
+    margin: 0 9px 18px;
+
+    &:first-child {
+      margin-right: 9px;
+    }
+
+    &:last-child {
+      margin-left: 9px;
     }
   }
 }
