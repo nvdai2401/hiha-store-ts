@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { CollectionItem } from 'modules/shop/components';
+
 interface ICollection {
-  id?: string;
+  id?: number;
   imageUrl: string;
   name: string;
   price: number;
@@ -17,11 +19,11 @@ function CollectionList(props: Props): React.ReactElement {
   const { title, items } = props;
 
   return (
-    <div className="collection-preview">
-      <Link to={`/${title.toLowerCase()}`} className="title">
+    <div className="collection-list">
+      <Link to={`/${title.toLowerCase()}`} className="collection-list__title">
         {title.toUpperCase()}
       </Link>
-      <div className="preview">
+      <div className="collection-list__products">
         {items
           .filter((item, index) => index < 4)
           .map((item) => (

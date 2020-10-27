@@ -16,3 +16,4 @@
 - [ ] Config font face
 - [ ] Add type check for routing, layout
 - [ ] Refactor firebase
+- [ ] Refactor button

@@ -286,9 +286,9 @@ const collections = [
 
 function CollectionPreview(): React.ReactElement {
   return (
-    <div className="collection-overview">
+    <div className="collection-preview u-flex-column">
       {collections.map(({ id, ...otherCollectionProps }) => (
-        <CollectionList key={id} {...otherCollectionProps} />
+        <CollectionList key={id.toString()} {...otherCollectionProps} />
       ))}
     </div>
   );
