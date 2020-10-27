@@ -58,6 +58,14 @@
       display: none;
     }
 
+    &__info {
+      span {
+        &:first-child {
+          max-width: 200px;
+        }
+      }
+    }
+
     &:hover {
       .image {
         opacity: 0.8;

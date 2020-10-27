@@ -44,8 +44,9 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 };
 
 export const convertCollectionsSnapshotToMap = (snapshot) => {
-  const transformCollection = snapshot.docs.map((doc) => {
+  const transformedCollections = snapshot.docs.map((doc) => {
     const { title, items } = doc.data();
+    console.log(doc.data());
     return {
       id: doc.id,
       routeName: encodeURI(title.toLowerCase()),
@@ -53,15 +54,15 @@ export const convertCollectionsSnapshotToMap = (snapshot) => {
       title,
     };
   });
-  return transformCollection.reduce((accumulator, collection) => {
+  return transformedCollections.reduce((accumulator, collection) => {
     accumulator[collection.title.toLowerCase()] = collection;
     return accumulator;
   }, {});
 };
 
 export const convertSectionsSnapshotToMap = (snapshot) => {
-  const transformCollection = snapshot.docs.map((doc) => doc.data());
-  return transformCollection.reduce((accumulator, collection) => {
+  const transformedCollections = snapshot.docs.map((doc) => doc.data());
+  return transformedCollections.reduce((accumulator, collection) => {
     accumulator[collection.title.toLowerCase()] = collection;
     return accumulator;
   }, {});

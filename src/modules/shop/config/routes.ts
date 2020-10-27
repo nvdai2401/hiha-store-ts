@@ -1,6 +1,6 @@
 import { IRoutePages } from 'definitions/routes';
 import { Main } from 'layouts';
-import { CollectionPreview } from '../pages';
+import { CollectionPreview, CollectionPage } from '../pages';
 
 const pages: IRoutePages[] = [
   {
@@ -8,6 +8,13 @@ const pages: IRoutePages[] = [
     title: 'HomePage',
     exact: true,
     component: CollectionPreview,
+    layout: Main,
+  },
+  {
+    path: '/shop/:collectionName',
+    title: 'CollectionPage',
+    // exact: true,
+    component: CollectionPage,
     layout: Main,
   },
 ];
