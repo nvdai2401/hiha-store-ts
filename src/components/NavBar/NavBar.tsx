@@ -9,7 +9,8 @@ import {
 } from 'modules/cart/state/cart.selectors';
 
 import { ReactComponent as Logo } from 'assets/svg/crown.svg';
-import { Cart, CartIcon } from 'components';
+import { CartIcon } from 'components';
+import { Cart } from 'modules/cart/components';
 
 function NavBar(): React.ReactElement {
   const hidden = useSelector(selectCartHidden);

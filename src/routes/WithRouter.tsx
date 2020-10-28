@@ -3,7 +3,7 @@ import { ConnectedRouter } from 'connected-react-router';
 import { history } from 'core/config';
 
 import { IRoutePages } from 'definitions/routes';
-import { ScrollToTop } from 'components';
+import { ScrollToTop, HideCart } from 'components';
 import Routes from './Routes';
 
 type Props = {
@@ -14,6 +14,7 @@ function WithRouter(props: Props): React.ReactElement {
   return (
     <ConnectedRouter history={history}>
       <ScrollToTop />
+      <HideCart />
       <Routes {...props} />
     </ConnectedRouter>
   );
