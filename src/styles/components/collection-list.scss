@@ -10,12 +10,17 @@
   }
 
   &__products {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 12px;
   }
 
   @include bp(medium) {
     margin-bottom: 24px;
+
+    &__products {
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 18px;
+    }
   }
 }

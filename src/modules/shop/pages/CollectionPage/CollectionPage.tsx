@@ -3,17 +3,18 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { fetchCollectionStart } from 'modules/shop/state/shop.slice';
-import {
-  selectCollections,
-  selectCollectionsFetching,
-} from 'modules/shop/state/shop.selectors';
+import { selectCollections } from 'modules/shop/state/shop.selectors';
 
 import { Spinner } from 'components';
 import { CollectionItem } from 'modules/shop/components';
 
+type ParamsTypes = {
+  collectionName: string;
+};
+
 function CollectionPage(): React.ReactElement {
   const dispatch = useDispatch();
-  const { collectionName } = useParams();
+  const { collectionName } = useParams<ParamsTypes>();
   const collection = useSelector(selectCollections(collectionName));
 
   useEffect(() => {

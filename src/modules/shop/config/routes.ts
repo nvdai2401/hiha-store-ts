@@ -13,7 +13,6 @@ const pages: IRoutePages[] = [
   {
     path: '/shop/:collectionName',
     title: 'CollectionPage',
-    // exact: true,
     component: CollectionPage,
     layout: Main,
   },

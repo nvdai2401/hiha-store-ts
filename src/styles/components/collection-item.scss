@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  flex-basis: 48%;
   height: 320px;
   margin-bottom: 24px;
 
@@ -33,7 +32,7 @@
       -webkit-box-orient: vertical;
 
       &:first-child {
-        max-width: 110px;
+        max-width: 120px;
       }
     }
   }
