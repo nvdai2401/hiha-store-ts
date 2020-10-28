@@ -17,3 +17,4 @@
 - [ ] Add type check for routing, layout
 - [ ] Refactor firebase
 - [ ] Refactor button
+- [ ] Add prefix for component class

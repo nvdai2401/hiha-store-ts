@@ -10,6 +10,7 @@ interface IProduct {
 interface ICollection {
   id: string;
   routeName: string;
+  title: string;
   items: IProduct[];
 }
 
@@ -41,10 +42,20 @@ const shopSlice = createSlice({
       state.loading = true;
     },
     fetchCollectionsSuccess(state, action: PayloadAction<ICollections>) {
-      state.loading = false;
       state.collections = action.payload;
+      state.loading = false;
     },
     fetchCollectionsFailure(state, action: PayloadAction<string>) {
+      state.errorMessage = action.payload;
+    },
+    fetchCollectionStart(state, action: PayloadAction<string>) {
+      state.loading = true;
+    },
+    fetchCollectionSuccess(state, action: PayloadAction<ICollection>) {
+      state.collections[action.payload.title.toLowerCase()] = action.payload;
+      state.loading = false;
+    },
+    fetchCollectionFailure(state, action: PayloadAction<string>) {
       state.errorMessage = action.payload;
     },
   },
@@ -54,5 +65,8 @@ export const {
   fetchCollectionsStart,
   fetchCollectionsSuccess,
   fetchCollectionsFailure,
+  fetchCollectionStart,
+  fetchCollectionSuccess,
+  fetchCollectionFailure,
 } = shopSlice.actions;
 export default shopSlice.reducer;

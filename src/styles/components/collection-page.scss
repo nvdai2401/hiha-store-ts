@@ -1,0 +1,19 @@
+.collection-page {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-size: 3rem;
+    margin: 0 auto 30px;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 12px;
+
+    @include bp(medium) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
