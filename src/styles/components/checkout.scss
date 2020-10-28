@@ -1,0 +1,44 @@
+.checkout {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 24px auto 0;
+
+  &__title {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+
+  &__header {
+    width: 100%;
+    padding: 12px 0;
+    display: grid;
+    grid-template-columns: 20% 30% 20% 15% 15%;
+    border-bottom: 1px solid $color-light-grey;
+    list-style: none;
+
+    li {
+      text-transform: capitalize;
+      font-size: 1.25rem;
+      text-align: center;
+      font-weight: 500;
+    }
+  }
+
+  .total {
+    margin-top: 30px;
+    margin-left: auto;
+    font-size: 1.5rem;
+  }
+
+  .test-warning {
+    font-size: 1.5rem;
+    color: red;
+    text-align: center;
+  }
+
+  @include bp(medium) {
+  }
+}
