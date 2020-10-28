@@ -6,7 +6,7 @@ import 'firebase/auth';
 import 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyCqQ6yp4bge9MIamshGofBggZ5zz2oR5FE',
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: 'hiha-store.firebaseapp.com',
   databaseURL: 'https://hiha-store.firebaseio.com',
   projectId: 'hiha-store',
