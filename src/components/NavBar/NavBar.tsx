@@ -1,20 +1,29 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { increment } from 'modules/user/state/user.slice';
-import { selectedCurrentUser } from 'modules/user/state/user.selectors';
+
+import { showCart, hideCart } from 'modules/cart/state/cart.slice';
+import {
+  selectCartHidden,
+  selectCartItemCount,
+} from 'modules/cart/state/cart.selectors';
+
 import { ReactComponent as Logo } from 'assets/svg/crown.svg';
+import { CartIcon } from 'components';
+import { Cart } from 'modules/cart/components';
 
-type Props = {
-  currentUser: any;
-  hidden: boolean;
-  signOutStart: () => void;
-};
-
-function NavBar(props: Props): React.ReactElement {
-  const { currentUser, hidden, signOutStart } = props;
-  const count = useSelector(selectedCurrentUser);
+function NavBar(): React.ReactElement {
+  const hidden = useSelector(selectCartHidden);
+  const itemCount = useSelector(selectCartItemCount);
   const dispatch = useDispatch();
+
+  const handleToggleCart = () => {
+    if (hidden) {
+      dispatch(hideCart());
+      return;
+    }
+    dispatch(showCart());
+  };
 
   return (
     <header className="nav-bar">
@@ -32,6 +41,10 @@ function NavBar(props: Props): React.ReactElement {
           <Link to="/sing-in">Sign in</Link>
         </li>
       </ul>
+      <div className="nav-bar__cart">
+        <CartIcon itemCount={itemCount} toggleCart={handleToggleCart} />
+        {hidden ? <Cart /> : null}
+      </div>
     </header>
   );
 }

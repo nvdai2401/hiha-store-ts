@@ -61,6 +61,6 @@ export default function configureAppStore(initialState = {}): Store {
   });
 
   sagaMiddleware.run(rootSaga);
-  
+
   return store;
 }

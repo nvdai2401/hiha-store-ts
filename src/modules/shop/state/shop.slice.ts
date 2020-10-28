@@ -1,18 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-interface IProduct {
-  id: string;
-  imageUrl: string;
-  name: string;
-  price: number;
-}
-
-interface ICollection {
-  id: string;
-  routeName: string;
-  title: string;
-  items: IProduct[];
-}
+import { ICollection } from 'definitions/product';
 
 interface ICollections {
   sneakers?: ICollection;
