@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { showCart, hideCart } from 'modules/cart/state/cart.slice';
@@ -11,6 +12,7 @@ import { AddToCartButton } from 'components';
 import { CartItem } from 'modules/cart/components';
 
 function Cart(): React.ReactElement {
+  const history = useHistory();
   const items = useSelector(selectCartItems);
 
   return (
@@ -22,7 +24,9 @@ function Cart(): React.ReactElement {
           <span className="is-empty">Your cart is empty!</span>
         )}
       </div>
-      <AddToCartButton onClick={() => {}}>GO TO CHECKOUT</AddToCartButton>
+      <AddToCartButton onClick={() => history.push('/checkout')}>
+        GO TO CHECKOUT
+      </AddToCartButton>
     </div>
   );
 }

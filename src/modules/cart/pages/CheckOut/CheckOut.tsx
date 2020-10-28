@@ -1,14 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { IProduct } from 'definitions/product';
-
-import {
-  showCart,
-  hideCart,
-  addItem,
-  removeItem,
-} from 'modules/cart/state/cart.slice';
+import { addItem, removeItem, clearItem } from 'modules/cart/state/cart.slice';
 import {
   selectCartItems,
   selectCartItemTotalPrice,
@@ -36,9 +29,15 @@ function CheckOut(): React.ReactElement {
         <CheckoutItem
           key={cartItem.id}
           item={cartItem}
-          addItem={() => {}}
-          removeItem={() => {}}
-          clearItemFromCart={() => {}}
+          addItem={(item) => {
+            dispatch(addItem(item));
+          }}
+          removeItem={(item) => {
+            dispatch(removeItem(item));
+          }}
+          clearItemFromCart={(item) => {
+            dispatch(clearItem(item));
+          }}
         />
       ))}
       <div className="total">Total: ${total}</div>
