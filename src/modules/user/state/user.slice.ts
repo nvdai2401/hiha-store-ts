@@ -1,20 +1,60 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface IUserState {
-  count: number;
+interface IAuthInfo {
+  email: string;
+  password: string;
 }
 
-const initialState: IUserState = { count: 0 };
+interface IUser {
+  id?: string;
+  displayName?: string;
+  email?: string;
+  createAt?: {
+    seconds: number;
+    nanoseconds: number;
+  };
+}
+
+interface IUserState {
+  currentUser: IUser;
+  errorMessage: string;
+  loading: boolean;
+}
+
+const initialState: IUserState = {
+  currentUser: {},
+  errorMessage: '',
+  loading: false,
+};
 
 const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    increment(state, action: PayloadAction<number>) {
-      state.count += action.payload;
+    googleSigInStart(state) {
+      state.loading = true;
+    },
+    sigInSuccess(state, action: PayloadAction<IUser>) {
+      state.loading = false;
+      state.currentUser = action.payload;
+    },
+    signInFailure(state, action: PayloadAction<string>) {
+      state.loading = false;
+      state.errorMessage = action.payload;
+    },
+    emailSigInStart(state, action: PayloadAction<IAuthInfo>) {
+      state.loading = true;
+    },
+    signOutStart(state) {},
+    signOutSuccess(state) {
+      state.loading = false;
+    },
+    signOutFailure(state, action: PayloadAction<string>) {
+      state.loading = false;
+      state.errorMessage = action.payload;
     },
   },
 });
 
-export const { increment } = userSlice.actions;
+export const { googleSigInStart } = userSlice.actions;
 export default userSlice.reducer;
