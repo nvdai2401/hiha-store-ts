@@ -10,7 +10,7 @@ function Main(props: IProps): React.ReactElement<IProps> {
 
   return (
     <div className="o-layout-main">
-      <NavBar currentUser={{}} hidden={false} signOutStart={() => {}} />
+      <NavBar />
       <main>{children}</main>
     </div>
   );
