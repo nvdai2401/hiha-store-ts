@@ -46,7 +46,6 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 export const convertCollectionsSnapshotToMap = (snapshot) => {
   const transformedCollections = snapshot.docs.map((doc) => {
     const { title, items } = doc.data();
-    console.log(doc.data());
     return {
       id: doc.id,
       routeName: encodeURI(title.toLowerCase()),
