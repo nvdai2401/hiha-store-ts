@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { googleSigInStart } from 'modules/user/state/user.slice';
-import { selectedCurrentUser } from 'modules/user/state/user.selectors';
 
-import { Spinner, AddToCartButton } from 'components';
+import { AddToCartButton } from 'components';
 
 import { TextField } from 'modules/user/components';
 

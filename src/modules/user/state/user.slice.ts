@@ -3,6 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 interface IAuthInfo {
   email: string;
   password: string;
+  displayName?: string;
 }
 
 interface IUser {
@@ -51,11 +52,13 @@ const userSlice = createSlice({
       state.loading = false;
       state.errorMessage = action.payload;
     },
-    signUpStart(state) {
+    signUpStart(state, action: PayloadAction<IAuthInfo>) {
+      console.log(action);
       state.loading = true;
     },
-    signUpSuccess(state) {
-      state.loading = false;
+    signUpSuccess(state, action: PayloadAction<any>) {
+      // state.loading = false;
+      // state.currentUser = action.payload;
     },
     signUpFailure(state, action: PayloadAction<string>) {
       state.loading = false;
