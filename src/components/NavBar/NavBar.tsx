@@ -9,6 +9,7 @@ import {
 } from 'modules/cart/state/cart.selectors';
 
 import { ReactComponent as Logo } from 'assets/svg/crown.svg';
+import { ReactComponent as User } from 'assets/svg/user.svg';
 import { CartIcon } from 'components';
 import { Cart } from 'modules/cart/components';
 
@@ -38,7 +39,8 @@ function NavBar(): React.ReactElement {
           <Link to="/contact">Contact</Link>
         </li>
         <li className="nav-bar__nav-list__item">
-          <Link to="/sign-in">Sign in</Link>
+          <User className="nav-bar__logo" />
+          {/* <Link to="/sign-in">Sign in</Link> */}
         </li>
       </ul>
       <div className="nav-bar__cart">
