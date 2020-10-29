@@ -34,6 +34,9 @@ const userSlice = createSlice({
     googleSigInStart(state) {
       state.loading = true;
     },
+    emailSigInStart(state, action: PayloadAction<IAuthInfo>) {
+      state.loading = true;
+    },
     sigInSuccess(state, action: PayloadAction<IUser>) {
       state.loading = false;
       state.currentUser = action.payload;
@@ -42,10 +45,9 @@ const userSlice = createSlice({
       state.loading = false;
       state.errorMessage = action.payload;
     },
-    emailSigInStart(state, action: PayloadAction<IAuthInfo>) {
+    signOutStart(state) {
       state.loading = true;
     },
-    signOutStart(state) {},
     signOutSuccess(state) {
       state.loading = false;
     },
@@ -53,8 +55,31 @@ const userSlice = createSlice({
       state.loading = false;
       state.errorMessage = action.payload;
     },
+    signUpStart(state) {
+      state.loading = true;
+    },
+    signUpSuccess(state) {
+      state.loading = false;
+    },
+    signUpFailure(state, action: PayloadAction<string>) {
+      state.loading = false;
+      state.errorMessage = action.payload;
+    },
+    checkUserSession(state) { },
   },
 });
 
-export const { googleSigInStart } = userSlice.actions;
+export const {
+  googleSigInStart,
+  emailSigInStart,
+  sigInSuccess,
+  signInFailure,
+  signOutStart,
+  signOutSuccess,
+  signOutFailure,
+  signUpStart,
+  signUpSuccess,
+  signUpFailure,
+  checkUserSession,
+} = userSlice.actions;
 export default userSlice.reducer;
