@@ -38,7 +38,7 @@ function NavBar(): React.ReactElement {
           <Link to="/contact">Contact</Link>
         </li>
         <li className="nav-bar__nav-list__item">
-          <Link to="/sing-in">Sign in</Link>
+          <Link to="/sign-in">Sign in</Link>
         </li>
       </ul>
       <div className="nav-bar__cart">
