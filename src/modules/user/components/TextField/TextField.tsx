@@ -16,7 +16,7 @@ function TextField(props: Props): React.ReactElement {
   return (
     <div className="text-field">
       <input
-        id="text-field"
+        id={`text-field-${name}`}
         value={value}
         name={name}
         className="text-field__input"
@@ -26,7 +26,7 @@ function TextField(props: Props): React.ReactElement {
       />
       {label ? (
         <label
-          htmlFor="text-field"
+          htmlFor={`text-field-${name}`}
           className={`${value.length ? 'is-shrink' : ''} text-field__label`}
         >
           {label}

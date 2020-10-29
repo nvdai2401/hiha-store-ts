@@ -9,10 +9,6 @@ interface IUser {
   id?: string;
   displayName?: string;
   email?: string;
-  createAt?: {
-    seconds: number;
-    nanoseconds: number;
-  };
 }
 
 interface IUserState {

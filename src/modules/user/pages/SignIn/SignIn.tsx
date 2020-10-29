@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { AddToCartButton } from 'components';
+import { googleSigInStart } from 'modules/user/state/user.slice';
+import { selectedCurrentUser } from 'modules/user/state/user.selectors';
+
+import { Spinner, AddToCartButton } from 'components';
+
 import { TextField } from 'modules/user/components';
 
 import { IEvent } from 'definitions/event';
 
 function SignIn(): React.ReactElement {
+  const dispatch = useDispatch();
   const [userCredentials, setUserCredentials] = useState({
     email: '',
     password: '',
@@ -45,9 +51,9 @@ function SignIn(): React.ReactElement {
         <div className="sign-in__group-button">
           <AddToCartButton onClick={() => {}}>Sign in</AddToCartButton>
           <AddToCartButton
-            // type="button"
-            onClick={() => {}}
-            // isGoogleSignIn
+            onClick={() => {
+              dispatch(googleSigInStart());
+            }}
           >
             Continue with Google
           </AddToCartButton>
