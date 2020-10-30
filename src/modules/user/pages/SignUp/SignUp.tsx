@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { signUpStart } from 'modules/user/state/user.slice';
+import { selectAuthLoading } from 'modules/user/state/user.selectors';
 
-import { AddToCartButton } from 'components';
+import { AddToCartButton, Spinner } from 'components';
 import { TextField } from 'modules/user/components';
 
 import { IEvent } from 'definitions/event';
@@ -18,6 +19,7 @@ function SignUp(): React.ReactElement {
     confirmPassword: '',
   });
   const { displayName, email, password, confirmPassword } = userCredentials;
+  const loading = useSelector(selectAuthLoading);
 
   const handleChange = (event: IEvent) => {
     const { name, value } = event.target;
@@ -77,7 +79,9 @@ function SignUp(): React.ReactElement {
         />
 
         <div className="sign-in__group-button">
-          <AddToCartButton onClick={handleSubmit}>Sign up</AddToCartButton>
+          <AddToCartButton onClick={handleSubmit}>
+            {loading ? <Spinner width="30px" height="30px" /> : 'Sign up'}
+          </AddToCartButton>
         </div>
       </div>
       <div />

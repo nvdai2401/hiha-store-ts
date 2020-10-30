@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { googleSigInStart } from 'modules/user/state/user.slice';
+import {
+  googleSigInStart,
+  emailSigInStart,
+} from 'modules/user/state/user.slice';
+import { selectAuthLoading } from 'modules/user/state/user.selectors';
 
-import { AddToCartButton } from 'components';
+import { AddToCartButton, Spinner } from 'components';
 
 import { TextField } from 'modules/user/components';
 
@@ -17,6 +21,8 @@ function SignIn(): React.ReactElement {
     password: '',
   });
   const { email, password } = userCredentials;
+  const loading = useSelector(selectAuthLoading);
+
   const handleChange = (event: IEvent) => {
     const { name, value } = event.target;
     setUserCredentials({ ...userCredentials, [name]: value });
@@ -48,7 +54,13 @@ function SignIn(): React.ReactElement {
         />
 
         <div className="sign-in__group-button">
-          <AddToCartButton onClick={() => {}}>Sign in</AddToCartButton>
+          <AddToCartButton
+            onClick={() => {
+              dispatch(emailSigInStart({ email, password }));
+            }}
+          >
+            {loading ? <Spinner width="30px" height="30px" /> : 'Sign in'}
+          </AddToCartButton>
           <AddToCartButton
             onClick={() => {
               dispatch(googleSigInStart());
