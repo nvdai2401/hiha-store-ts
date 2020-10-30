@@ -28,7 +28,7 @@ function CollectionPage(): React.ReactElement {
     dispatch(addItem(product));
   };
 
-  if (!collection) return <Spinner />;
+  if (!collection) return <Spinner width="50px" height="50px" />;
 
   return (
     <div className="collection-page">

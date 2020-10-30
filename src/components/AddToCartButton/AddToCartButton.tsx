@@ -1,7 +1,7 @@
 import React from 'react';
 
 type Props = {
-  children: string | React.Component | React.Component[];
+  children: string | React.Component | React.Component[] | React.ReactNode;
   onClick: () => void;
 };
 

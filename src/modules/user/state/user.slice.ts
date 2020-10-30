@@ -28,9 +28,7 @@ const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    googleSigInStart(state) {
-      state.loading = true;
-    },
+    googleSigInStart() { },
     emailSigInStart(state, action: PayloadAction<IAuthInfo>) {
       state.loading = true;
     },
@@ -53,18 +51,14 @@ const userSlice = createSlice({
       state.errorMessage = action.payload;
     },
     signUpStart(state, action: PayloadAction<IAuthInfo>) {
-      console.log(action);
       state.loading = true;
     },
-    signUpSuccess(state, action: PayloadAction<any>) {
-      // state.loading = false;
-      // state.currentUser = action.payload;
-    },
+    signUpSuccess(state, action: PayloadAction<any>) { },
     signUpFailure(state, action: PayloadAction<string>) {
       state.loading = false;
       state.errorMessage = action.payload;
     },
-    checkUserSession(state) { },
+    checkUserSession() { },
   },
 });
 
