@@ -2,12 +2,14 @@
 
 ## Todo
 
-- [ ] Make saga work well with reduxjs toolkit
-- [ ] Setup app routing
-- [ ] Develop base layout
-- [ ] Config CSS architecture
-- [ ] Setup firebase
-- [ ] Develop module: user, shop, cart, directory
+- [x] Make saga work well with reduxjs toolkit
+- [x] Setup app routing
+- [x] Develop base layout
+- [x] Config CSS architecture
+- [x] Setup firebase
+- [x] Develop module: user, shop, cart, directory
+- [ ] Setup hooks for dispatch, firebase
+- [ ] Add type for sagas, actions, utils
 - [ ] Implement test
 - [ ] Update README
 
@@ -18,3 +20,7 @@
 - [ ] Refactor firebase
 - [ ] Refactor button
 - [ ] Add prefix for component class
+- [ ] Create protected route for SignIn page
+- [ ] Setup some hooks for component before entering a route
+  - [ ] Scroll top
+  - [ ] Hide cart

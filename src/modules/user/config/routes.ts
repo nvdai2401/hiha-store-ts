@@ -4,7 +4,7 @@ import { UserInfo, SignIn, SignUp } from '../pages';
 
 const pages: IRoutePages[] = [
   {
-    path: '/user-info',
+    path: '/user',
     title: 'UserInfo',
     exact: true,
     component: UserInfo,

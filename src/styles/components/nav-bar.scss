@@ -1,10 +1,11 @@
 .nav-bar {
   position: relative;
-  height: 70px;
+  height: $global-navbar-height;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid $color-very-light-grey;
   margin-bottom: 24px;
 
   a {
@@ -16,18 +17,19 @@
     display: flex;
     align-items: center;
     list-style-type: none;
-    margin-right: 12px;
+    margin-right: 24px;
 
     &__item {
       padding: 8px 16px;
       text-transform: uppercase;
-      font-size: 1rem;
+      font-size: 1.125rem;
     }
   }
 
   &__cart {
     position: absolute;
     right: 0;
+    top: 9px;
   }
 
   .sign-out {
@@ -35,8 +37,5 @@
   }
 
   @include bp(medium) {
-    &__nav-list {
-      margin-right: 24px;
-    }
   }
 }

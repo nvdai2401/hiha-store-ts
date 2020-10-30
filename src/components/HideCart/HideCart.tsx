@@ -4,15 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 import { hideCart } from 'modules/cart/state/cart.slice';
-import { selectCartHidden } from 'modules/cart/state/cart.selectors';
+import { selectCartVisible } from 'modules/cart/state/cart.selectors';
 
 function HideCart(): null {
   const { pathname } = useLocation();
-  const hidden = useSelector(selectCartHidden);
+  const cartVisible = useSelector(selectCartVisible);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (hidden) {
+    if (cartVisible) {
       dispatch(hideCart());
     }
   }, [pathname]);

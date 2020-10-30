@@ -102,13 +102,13 @@ export function* onEmailSignInStart() {
   yield takeLatest('user/emailSigInStart', signInWithEmail);
 }
 
-// export function* onCheckUserSession() {
-//   yield takeLatest(userActionTypes.CHECK_USER_SESSION, isUserAuthenticated);
-// }
+export function* onCheckUserSession() {
+  yield takeLatest('user/checkUserSession', isUserAuthenticated);
+}
 
-// export function* onSignOutStart() {
-//   yield takeLatest('user/signOutStart', signOut);
-// }
+export function* onSignOutStart() {
+  yield takeLatest('user/signOutStart', signOut);
+}
 
 export function* onSignUpStart() {
   yield takeLatest('user/signUpStart', signUp);
@@ -122,8 +122,8 @@ export function* userSagas() {
   yield all([
     call(onGoogleSignInStart),
     call(onEmailSignInStart),
-    // call(onCheckUserSession),
-    // call(onSignOutStart),
+    call(onCheckUserSession),
+    call(onSignOutStart),
     call(onSignUpStart),
     call(onSignUpSuccess),
   ]);

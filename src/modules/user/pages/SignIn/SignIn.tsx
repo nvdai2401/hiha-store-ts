@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
   googleSigInStart,
   emailSigInStart,
 } from 'modules/user/state/user.slice';
-import { selectAuthLoading } from 'modules/user/state/user.selectors';
+import {
+  selectAuthLoading,
+  selectCurrentUser,
+} from 'modules/user/state/user.selectors';
 
 import { AddToCartButton, Spinner } from 'components';
 
@@ -15,12 +18,14 @@ import { TextField } from 'modules/user/components';
 import { IEvent } from 'definitions/event';
 
 function SignIn(): React.ReactElement {
+  const history = useHistory();
   const dispatch = useDispatch();
   const [userCredentials, setUserCredentials] = useState({
     email: '',
     password: '',
   });
   const { email, password } = userCredentials;
+  const currentUser = useSelector(selectCurrentUser);
   const loading = useSelector(selectAuthLoading);
 
   const handleChange = (event: IEvent) => {

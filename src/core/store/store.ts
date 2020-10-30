@@ -23,7 +23,7 @@ export default function configureAppStore(initialState = {}): Store {
   const persistConfig = {
     key: 'root',
     storage,
-    whitelist: ['cart'],
+    whitelist: ['cart', 'user'],
   };
   const rootReducer = persistReducer(persistConfig, createReducer());
 

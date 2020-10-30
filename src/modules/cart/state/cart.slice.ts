@@ -10,12 +10,12 @@ import {
 
 interface ICartState {
   items: IProduct[];
-  hidden: boolean;
+  visible: boolean;
 }
 
 const initialState: ICartState = {
   items: [],
-  hidden: false,
+  visible: false,
 };
 
 const cartSlice = createSlice({
@@ -23,10 +23,10 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     showCart(state) {
-      state.hidden = true;
+      state.visible = true;
     },
     hideCart(state) {
-      state.hidden = false;
+      state.visible = false;
     },
     addItem(state, action: PayloadAction<IProduct>) {
       state.items = addItemToCart(action.payload, state.items);

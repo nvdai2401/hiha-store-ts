@@ -40,14 +40,12 @@ const userSlice = createSlice({
       state.loading = false;
       state.errorMessage = action.payload;
     },
-    signOutStart(state) {
-      state.loading = true;
-    },
+    signOutStart(state) { },
     signOutSuccess(state) {
-      state.loading = false;
+      state.currentUser = {};
+      state.errorMessage = '';
     },
     signOutFailure(state, action: PayloadAction<string>) {
-      state.loading = false;
       state.errorMessage = action.payload;
     },
     signUpStart(state, action: PayloadAction<IAuthInfo>) {
