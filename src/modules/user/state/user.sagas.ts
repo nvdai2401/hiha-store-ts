@@ -8,7 +8,6 @@ import {
 } from 'core/api/firebase';
 
 import {
-  signUpStart,
   sigInSuccess,
   signInFailure,
   signOutSuccess,
@@ -23,6 +22,7 @@ export function* getUserSnapshotFromUserAuth(userAuth, additionalData = {}) {
     const userSnapshot = yield userRef.get();
     const userInfo = userSnapshot.data();
 
+    if (!userInfo) return;
     yield put(
       sigInSuccess({
         id: userSnapshot.id,
@@ -44,7 +44,8 @@ export function* signInWithGoogle() {
   }
 }
 
-export function* signInWithEmail({ payload: { email, password } }) {
+export function* signInWithEmail(data) {
+  const { email, password } = data.payload;
   try {
     const { user } = yield auth.signInWithEmailAndPassword(email, password);
     yield getUserSnapshotFromUserAuth(user);
@@ -97,9 +98,9 @@ export function* onGoogleSignInStart() {
   yield takeLatest('user/googleSigInStart', signInWithGoogle);
 }
 
-// export function* onEmailSignInStart() {
-//   yield takeLatest('user/emailSigInStart', signInWithEmail);
-// }
+export function* onEmailSignInStart() {
+  yield takeLatest('user/emailSigInStart', signInWithEmail);
+}
 
 // export function* onCheckUserSession() {
 //   yield takeLatest(userActionTypes.CHECK_USER_SESSION, isUserAuthenticated);
@@ -120,7 +121,7 @@ export function* onSignUpSuccess() {
 export function* userSagas() {
   yield all([
     call(onGoogleSignInStart),
-    // call(onEmailSignInStart),
+    call(onEmailSignInStart),
     // call(onCheckUserSession),
     // call(onSignOutStart),
     call(onSignUpStart),

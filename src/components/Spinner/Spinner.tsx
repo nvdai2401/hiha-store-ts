@@ -1,9 +1,16 @@
 import React from 'react';
 
-function Spinner(): React.ReactElement {
+type Props = {
+  width: string;
+  height: string;
+};
+
+function Spinner(props: Props): React.ReactElement {
+  const { width, height } = props;
+
   return (
     <div className="spinner">
-      <div className="spinner__loading" />
+      <div style={{ width, height }} className="spinner__loading" />
     </div>
   );
 }
