@@ -24,22 +24,22 @@ function LazyImage(props: Props): React.ReactElement {
     );
   };
 
-  const handleScroll = () => {
-    const { current } = imgRef;
-    if (!loaded && elementInViewport(current)) {
-      const { src } = props;
-      const imgLoader = new Image();
-      imgLoader.src = src;
-      imgLoader.onload = () => {
-        if (current) {
-          current.setAttribute(`src`, `${src}`);
-          setLoaded(true);
-        }
-      };
-    }
-  };
-
   useEffect(() => {
+    const handleScroll = () => {
+      const { current } = imgRef;
+      if (!loaded && elementInViewport(current)) {
+        const { src } = props;
+        const imgLoader = new Image();
+        imgLoader.src = src;
+        imgLoader.onload = () => {
+          if (current) {
+            current.setAttribute(`src`, `${src}`);
+            setLoaded(true);
+          }
+        };
+      }
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     return () => {

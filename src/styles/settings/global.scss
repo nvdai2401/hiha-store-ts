@@ -6,12 +6,14 @@
 
 $global-radius: 3px !default;
 $global-transition: all 300ms ease-in-out !default;
+$global-navbar-height: 72px;
 
 /* Fonts
    ========================================================================== */
 
-$font-sans-serif: 'Open Sans Condensed',-apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI',
-  'Roboto', 'Helvetica Neue', 'Arial', sans-serif !default;
+$font-sans-serif: 'Open Sans Condensed', -apple-system, system-ui,
+  BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial',
+  sans-serif !default;
 
 /* Breakpoints
    ========================================================================== */
@@ -23,7 +25,6 @@ $breakpoints: (
   xlarge: 1280px,
   full: 1600px,
 );
-
 
 /* Colors
    ========================================================================== */

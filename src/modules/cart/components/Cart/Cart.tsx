@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { showCart, hideCart } from 'modules/cart/state/cart.slice';
 import {
-  selectCartHidden,
+  selectCartVisible,
   selectCartItems,
 } from 'modules/cart/state/cart.selectors';
 
