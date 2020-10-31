@@ -1,4 +1,5 @@
 import { takeLatest, call, all, put } from 'redux-saga/effects';
+import { push } from 'connected-react-router';
 
 import {
   auth,
@@ -7,6 +8,8 @@ import {
   getCurrentUser,
 } from 'core/api/firebase';
 
+import { HOME_PAGE_PATH } from 'modules/directory/config';
+import { SIGN_IN_PAGE_PATH } from 'modules/user/config';
 import {
   sigInSuccess,
   signInFailure,
@@ -39,6 +42,7 @@ export function* signInWithGoogle() {
   try {
     const { user } = yield auth.signInWithPopup(googleProvider);
     yield getUserSnapshotFromUserAuth(user);
+    yield put(push(HOME_PAGE_PATH));
   } catch (error) {
     yield put(signInFailure(error.message));
   }
@@ -49,6 +53,7 @@ export function* signInWithEmail(data) {
   try {
     const { user } = yield auth.signInWithEmailAndPassword(email, password);
     yield getUserSnapshotFromUserAuth(user);
+    yield put(push(HOME_PAGE_PATH));
   } catch (error) {
     yield put(signInFailure(error.message));
   }
@@ -68,6 +73,7 @@ export function* signOut() {
   try {
     yield auth.signOut();
     yield put(signOutSuccess());
+    yield put(push(SIGN_IN_PAGE_PATH));
   } catch (error) {
     yield put(signOutFailure(error.message));
   }

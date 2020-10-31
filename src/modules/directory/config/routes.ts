@@ -2,9 +2,11 @@ import { IRoutePages } from 'definitions/routes';
 import { Main } from 'layouts';
 import { HomePage } from '../pages';
 
+const HOME_PAGE_PATH = '/';
+
 const pages: IRoutePages[] = [
   {
-    path: '/',
+    path: HOME_PAGE_PATH,
     title: 'HomePage',
     exact: true,
     component: HomePage,
@@ -12,4 +14,5 @@ const pages: IRoutePages[] = [
   },
 ];
 
+export { HOME_PAGE_PATH };
 export default pages;

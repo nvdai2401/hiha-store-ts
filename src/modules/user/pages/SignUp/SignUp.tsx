@@ -42,7 +42,7 @@ function SignUp(): React.ReactElement {
       <h2 className="sign-in__title">Sign Up</h2>
       <span>Sign up with your email, name and password</span>
       <span className="sign-in__signup-text">
-        Have an account? <Link to="/sign-in">Sign in here.</Link>
+        Already have account? <Link to="/sign-in">Sign in here.</Link>
       </span>
       <div className="sign-in__group-textfield">
         <TextField

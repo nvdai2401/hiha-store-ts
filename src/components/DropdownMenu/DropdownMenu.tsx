@@ -37,7 +37,7 @@ function DropdownMenu(): React.ReactElement {
           className="dropdown-menu__nav-list__item"
           onClick={() => dispatch(signOutStart())}
         >
-          <Link to="/">Sign out</Link>
+          Sign out
         </li>
       </ul>
     </div>

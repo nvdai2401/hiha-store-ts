@@ -1,15 +1,12 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-
-import { showCart, hideCart } from 'modules/cart/state/cart.slice';
-import {
-  selectCartVisible,
-  selectCartItems,
-} from 'modules/cart/state/cart.selectors';
+import { useSelector } from 'react-redux';
+import { selectCartItems } from 'modules/cart/state/cart.selectors';
 
 import { AddToCartButton } from 'components';
 import { CartItem } from 'modules/cart/components';
+
+// import { CHECKOUT_PAGE_PATH } from 'modules/cart/config';
 
 function Cart(): React.ReactElement {
   const history = useHistory();
