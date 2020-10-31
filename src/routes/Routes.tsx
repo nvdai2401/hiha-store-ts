@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { IRoutePages } from 'definitions/routes';
 
 import { selectCurrentUser } from 'modules/user/state/user.selectors';
-import { SIGN_IN_PAGE_PATH } from 'modules/user/config';
+import { SIGN_IN_PAGE_PATH, SIGN_UP_PAGE_PATH } from 'modules/user/config';
 import { HOME_PAGE_PATH } from 'modules/directory/config';
 
 interface IRoutesProps {
@@ -13,8 +13,8 @@ interface IRoutesProps {
 }
 
 function Routes(props: IRoutesProps): React.ReactElement {
-  const currentUser = useSelector(selectCurrentUser);
   const { pages } = props;
+  const currentUser = useSelector(selectCurrentUser);
 
   return (
     <Switch>
@@ -29,7 +29,11 @@ function Routes(props: IRoutesProps): React.ReactElement {
               const Layout = page.layout;
               const Component = page.component;
 
-              if (location.pathname === SIGN_IN_PAGE_PATH && currentUser.id) {
+              if (
+                (location.pathname === SIGN_IN_PAGE_PATH ||
+                  location.pathname === SIGN_UP_PAGE_PATH) &&
+                currentUser.id
+              ) {
                 history.push(HOME_PAGE_PATH);
               }
 
