@@ -6,7 +6,7 @@ import { selectCartItems } from 'modules/cart/state/cart.selectors';
 import { AddToCartButton } from 'components';
 import { CartItem } from 'modules/cart/components';
 
-import { CHECKOUT_PAGE_PATH } from 'modules/cart/config';
+// import { CHECKOUT_PAGE_PATH } from 'modules/cart/config';
 
 function Cart(): React.ReactElement {
   const history = useHistory();
@@ -21,7 +21,7 @@ function Cart(): React.ReactElement {
           <span className="is-empty">Your cart is empty!</span>
         )}
       </div>
-      <AddToCartButton onClick={() => history.push(CHECKOUT_PAGE_PATH)}>
+      <AddToCartButton onClick={() => history.push('/checkout')}>
         GO TO CHECKOUT
       </AddToCartButton>
     </div>

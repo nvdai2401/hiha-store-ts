@@ -6,7 +6,7 @@ import { userPages } from 'modules/user/config';
 import { directoryPages } from 'modules/directory/config';
 import { shopPages } from 'modules/shop/config';
 import { cartPages } from 'modules/cart/config';
-import { WithRouter } from 'routes';
+import { WithRouter } from 'common/routes';
 import { store, persistor } from './core/store';
 
 function App(): React.ReactElement {

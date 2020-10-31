@@ -8,11 +8,11 @@ import { selectCurrentUser } from 'modules/user/state/user.selectors';
 import { SIGN_IN_PAGE_PATH, SIGN_UP_PAGE_PATH } from 'modules/user/config';
 import { HOME_PAGE_PATH } from 'modules/directory/config';
 
-interface IRoutesProps {
+interface IAppRoutesProps {
   pages: IRoutePages[];
 }
 
-function Routes(props: IRoutesProps): React.ReactElement {
+function AppRoutes(props: IAppRoutesProps): React.ReactElement {
   const { pages } = props;
   const currentUser = useSelector(selectCurrentUser);
 
@@ -50,4 +50,4 @@ function Routes(props: IRoutesProps): React.ReactElement {
   );
 }
 
-export default Routes;
+export default AppRoutes;
