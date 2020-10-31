@@ -1,4 +1,5 @@
 import { takeLatest, call, all, put } from 'redux-saga/effects';
+import { push } from 'connected-react-router';
 
 import {
   auth,
@@ -7,6 +8,7 @@ import {
   getCurrentUser,
 } from 'core/api/firebase';
 
+import { SIGN_IN_PAGE_PATH } from 'modules/user/config';
 import {
   sigInSuccess,
   signInFailure,
@@ -68,6 +70,7 @@ export function* signOut() {
   try {
     yield auth.signOut();
     yield put(signOutSuccess());
+    yield put(push(SIGN_IN_PAGE_PATH));
   } catch (error) {
     yield put(signOutFailure(error.message));
   }

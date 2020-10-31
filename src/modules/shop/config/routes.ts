@@ -2,20 +2,23 @@ import { IRoutePages } from 'definitions/routes';
 import { Main } from 'layouts';
 import { CollectionPreview, CollectionPage } from '../pages';
 
+const SHOP_PAGE_PATH = '/shop';
+
 const pages: IRoutePages[] = [
   {
-    path: '/shop',
+    path: SHOP_PAGE_PATH,
     title: 'HomePage',
     exact: true,
     component: CollectionPreview,
     layout: Main,
   },
   {
-    path: '/shop/:collectionName',
+    path: `${SHOP_PAGE_PATH}/:collectionName`,
     title: 'CollectionPage',
     component: CollectionPage,
     layout: Main,
   },
 ];
 
+export { SHOP_PAGE_PATH };
 export default pages;
