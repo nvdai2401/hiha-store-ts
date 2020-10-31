@@ -1,17 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 
-import { signUpStart } from 'modules/user/state/user.slice';
-import { selectAuthLoading } from 'modules/user/state/user.selectors';
+import { IEvent } from 'definitions/event';
+import { useSignUpStart, useSignUpLoading } from 'hooks/state/userState';
 
 import { AddToCartButton, Spinner } from 'components';
 import { TextField } from 'modules/user/components';
 
-import { IEvent } from 'definitions/event';
-
 function SignUp(): React.ReactElement {
-  const dispatch = useDispatch();
   const [userCredentials, setUserCredentials] = useState({
     displayName: '',
     email: '',
@@ -19,22 +15,24 @@ function SignUp(): React.ReactElement {
     confirmPassword: '',
   });
   const { displayName, email, password, confirmPassword } = userCredentials;
-  const loading = useSelector(selectAuthLoading);
+  const signUpLoading = useSignUpLoading();
+  const signUpStart = useSignUpStart();
 
   const handleChange = (event: IEvent) => {
     const { name, value } = event.target;
     setUserCredentials({ ...userCredentials, [name]: value });
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = () => {
     if (password !== confirmPassword) {
       alert("Password don't match");
       return;
     }
     if (password.length < 6 && password.length < 6) {
       alert('Password should be at least 6 characters');
+      return;
     }
-    dispatch(signUpStart({ email, password, displayName }));
+    signUpStart({ email, password, displayName });
   };
 
   return (
@@ -80,7 +78,7 @@ function SignUp(): React.ReactElement {
 
         <div className="sign-in__group-button">
           <AddToCartButton onClick={handleSubmit}>
-            {loading ? <Spinner width="30px" height="30px" /> : 'Sign up'}
+            {signUpLoading ? <Spinner width="30px" height="30px" /> : 'Sign up'}
           </AddToCartButton>
         </div>
       </div>

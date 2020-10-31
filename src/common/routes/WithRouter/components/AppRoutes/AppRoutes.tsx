@@ -1,10 +1,9 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
 import { IRoutePages } from 'definitions/routes';
+import { useCurrentUser } from 'hooks/state/userState';
 
-import { selectCurrentUser } from 'modules/user/state/user.selectors';
 import { SIGN_IN_PAGE_PATH, SIGN_UP_PAGE_PATH } from 'modules/user/config';
 import { HOME_PAGE_PATH } from 'modules/directory/config';
 
@@ -14,7 +13,7 @@ interface IAppRoutesProps {
 
 function AppRoutes(props: IAppRoutesProps): React.ReactElement {
   const { pages } = props;
-  const currentUser = useSelector(selectCurrentUser);
+  const currentUser = useCurrentUser();
 
   return (
     <Switch>

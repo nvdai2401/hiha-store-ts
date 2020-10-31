@@ -7,7 +7,7 @@ import {
   selectCartVisible,
   selectCartItemCount,
 } from 'modules/cart/state/cart.selectors';
-import { selectCurrentUser } from 'modules/user/state/user.selectors';
+import { useCurrentUser } from 'hooks/state/userState';
 
 import { ReactComponent as Logo } from 'assets/svg/crown.svg';
 import { ReactComponent as User } from 'assets/svg/user.svg';
@@ -18,7 +18,7 @@ function NavBar(): React.ReactElement {
   const dispatch = useDispatch();
   const cartVisible = useSelector(selectCartVisible);
   const itemCount = useSelector(selectCartItemCount);
-  const currentUser = useSelector(selectCurrentUser);
+  const currentUser = useCurrentUser();
   const [dropdownMenuVisible, setDropdownMenuVisible] = useState(false);
 
   const handleToggleCart = () => {

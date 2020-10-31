@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ConnectedRouter } from 'connected-react-router';
 import { history } from 'core/config';
 
