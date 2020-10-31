@@ -11,7 +11,7 @@ function useAuthUser(): boolean {
     if (currentUser.id) {
       setIsUserAuthenticated(true);
     }
-  }, [currentUser]);
+  });
 
   return isUserAuthenticated;
 }

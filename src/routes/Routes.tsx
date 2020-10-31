@@ -1,9 +1,10 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import { IRoutePages } from 'definitions/routes';
-import { useAuthUser } from 'hooks/user';
 
+import { selectCurrentUser } from 'modules/user/state/user.selectors';
 import { SIGN_IN_PAGE_PATH } from 'modules/user/config';
 import { HOME_PAGE_PATH } from 'modules/directory/config';
 
@@ -12,8 +13,8 @@ interface IRoutesProps {
 }
 
 function Routes(props: IRoutesProps): React.ReactElement {
+  const currentUser = useSelector(selectCurrentUser);
   const { pages } = props;
-  const isUserAuthenticated = useAuthUser();
 
   return (
     <Switch>
@@ -25,14 +26,12 @@ function Routes(props: IRoutesProps): React.ReactElement {
             exact={page.exact}
             render={(routeProps) => {
               const { history, location } = routeProps;
-              if (
-                location.pathname === SIGN_IN_PAGE_PATH &&
-                isUserAuthenticated
-              ) {
-                history.push(HOME_PAGE_PATH);
-              }
               const Layout = page.layout;
               const Component = page.component;
+
+              if (location.pathname === SIGN_IN_PAGE_PATH && currentUser.id) {
+                history.push(HOME_PAGE_PATH);
+              }
 
               return (
                 <Layout>

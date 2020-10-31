@@ -15,7 +15,7 @@
 
 ### Technical Debts
 
-- [ ] Config font face
+- [ ] Config font face, change page title when mounting a page
 - [ ] Add type check for routing, layout
 - [ ] Refactor firebase
 - [ ] Refactor button
