@@ -1,9 +1,9 @@
 .cart {
   position: absolute;
-  width: 100vw;
+  width: 70vw;
   right: -18px;
-  height: calc(100vh - 66px);
-  top: 54px;
+  height: 100vh;
+  top: 0;
   display: flex;
   flex-direction: column;
   padding: 12px;
@@ -11,13 +11,26 @@
   background-color: $color-white;
   z-index: 5;
 
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    border-bottom: 1px solid $color-very-light-grey;
+    padding-bottom: 12px;
+
+    &__close-icon {
+      font-size: 2rem;
+    }
+  }
+
   &__items {
     height: 100%;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
     overflow-y: auto;
-    margin-bottom: 12px;
+    margin: 12px 0;
   }
 
   .is-empty {
