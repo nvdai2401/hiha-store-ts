@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
-import { fetchCollectionStart } from 'modules/shop/state/shop.slice';
-import { selectCollections } from 'modules/shop/state/shop.selectors';
+import {
+  useFetchCollectionStart,
+  useSelectCollection,
+} from 'hooks/state/shopState';
+
 import { addItem } from 'modules/cart/state/cart.slice';
 
 import { Spinner } from 'components';
@@ -15,12 +18,13 @@ type ParamsTypes = {
 
 function CollectionPage(): React.ReactElement {
   const dispatch = useDispatch();
+  const fetchCollectionStart = useFetchCollectionStart();
   const { collectionName } = useParams<ParamsTypes>();
-  const collection = useSelector(selectCollections(collectionName));
+  const collection = useSelectCollection(collectionName);
 
   useEffect(() => {
     if (!collection) {
-      dispatch(fetchCollectionStart(collectionName));
+      fetchCollectionStart(collectionName);
     }
   }, []);
 
