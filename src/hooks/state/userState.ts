@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { IAuthInfo } from 'definitions/user';
+import { IAuthInfo } from 'common/definitions/user';
 
 import {
   googleSigInStart,

@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { IProduct } from 'definitions/product';
+import { IProduct } from 'common/definitions/product';
 
 import {
   addItemToCart,

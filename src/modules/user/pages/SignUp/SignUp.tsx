@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { IEvent } from 'definitions/event';
+import { IEvent } from 'common/definitions/event';
 import { useSignUpStart, useSignUpLoading } from 'hooks/state/userState';
 
 import { AddToCartButton, Spinner } from 'components';

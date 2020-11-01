@@ -8,7 +8,7 @@ import {
   useEmailSignInLoading,
 } from 'hooks/state/userState';
 
-import { IEvent } from 'definitions/event';
+import { IEvent } from 'common/definitions/event';
 import { AddToCartButton, Spinner } from 'components';
 import { TextField } from 'modules/user/components';
 

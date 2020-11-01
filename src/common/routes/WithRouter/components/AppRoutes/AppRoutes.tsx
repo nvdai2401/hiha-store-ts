@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { IRoutePages } from 'definitions/routes';
+import { IRoutePages } from 'common/definitions/routes';
 import { useCurrentUser } from 'hooks/state/userState';
 
 import { SIGN_IN_PAGE_PATH, SIGN_UP_PAGE_PATH } from 'modules/user/config';

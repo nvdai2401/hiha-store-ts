@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IProduct } from 'definitions/product';
+import { IProduct } from 'common/definitions/product';
 
 type Props = {
   key?: number;

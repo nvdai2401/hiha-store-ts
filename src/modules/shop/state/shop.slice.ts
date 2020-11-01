@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ICollection } from 'definitions/product';
+import { ICollection } from 'common/definitions/product';
 
 interface ICollections {
   sneakers?: ICollection;

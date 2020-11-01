@@ -1,5 +1,5 @@
-import { IRoutePages } from 'definitions/routes';
-import { Main } from 'layouts';
+import { IRoutePages } from 'common/definitions/routes';
+import { Main } from 'common/layouts';
 import { HomePage } from '../pages';
 
 const HOME_PAGE_PATH = '/';

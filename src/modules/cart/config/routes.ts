@@ -1,5 +1,5 @@
-import { IRoutePages } from 'definitions/routes';
-import { Main } from 'layouts';
+import { IRoutePages } from 'common/definitions/routes';
+import { Main } from 'common/layouts';
 import { CheckOut } from '../pages';
 
 const CHECKOUT_PAGE_PATH = '/checkout';
