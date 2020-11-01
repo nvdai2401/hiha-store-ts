@@ -1,21 +1,11 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import { signOutStart } from 'modules/user/state/user.slice';
-import {
-  selectCartVisible,
-  selectCartItems,
-} from 'modules/cart/state/cart.selectors';
-import { selectCurrentUser } from 'modules/user/state/user.selectors';
-
-import { AddToCartButton } from 'components';
-import { UserProfile } from 'common/icons';
-import { CartItem } from 'modules/cart/components';
+import { useSignOutStart, useCurrentUser } from 'hooks/state/userState';
 
 function DropdownMenu(): React.ReactElement {
-  const dispatch = useDispatch();
-  const currentUser = useSelector(selectCurrentUser);
+  const currentUser = useCurrentUser();
+  const signOutStart = useSignOutStart();
 
   return (
     <div className="dropdown-menu">
@@ -33,10 +23,7 @@ function DropdownMenu(): React.ReactElement {
         <li className="dropdown-menu__nav-list__item">
           <Link to="/checkout">Cart</Link>
         </li>
-        <li
-          className="dropdown-menu__nav-list__item"
-          onClick={() => dispatch(signOutStart())}
-        >
+        <li className="dropdown-menu__nav-list__item" onClick={signOutStart}>
           Sign out
         </li>
       </ul>

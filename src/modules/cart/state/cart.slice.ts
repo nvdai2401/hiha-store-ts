@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { IProduct } from 'definitions/product';
+import { IProduct } from 'common/definitions/product';
 
 import {
   addItemToCart,
   removeItemFromCart,
-  clearItemFromCart,
+  clearItemsFromCart,
 } from './cart.utils';
 
 interface ICartState {
@@ -34,8 +34,8 @@ const cartSlice = createSlice({
     removeItem(state, action: PayloadAction<IProduct>) {
       state.items = removeItemFromCart(action.payload, state.items);
     },
-    clearItem(state, action: PayloadAction<IProduct>) {
-      state.items = clearItemFromCart(action.payload, state.items);
+    clearItems(state, action: PayloadAction<IProduct>) {
+      state.items = clearItemsFromCart(action.payload, state.items);
     },
     clearCart(state) {
       state.items = [];
@@ -48,7 +48,7 @@ export const {
   hideCart,
   addItem,
   removeItem,
-  clearItem,
+  clearItems,
   clearCart,
 } = cartSlice.actions;
 export default cartSlice.reducer;

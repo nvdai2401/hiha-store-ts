@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { showCart, hideCart } from 'modules/cart/state/cart.slice';
+import { useCurrentUser } from 'hooks/state/userState';
 import {
-  selectCartVisible,
-  selectCartItemCount,
-} from 'modules/cart/state/cart.selectors';
-import { selectCurrentUser } from 'modules/user/state/user.selectors';
+  useSelectCartVisible,
+  useSelectCartItemCount,
+  useShowCart,
+  useHideCart,
+} from 'hooks/state/cartState';
 
 import { ReactComponent as Logo } from 'assets/svg/crown.svg';
 import { ReactComponent as User } from 'assets/svg/user.svg';
@@ -15,26 +15,27 @@ import { CartIcon, DropdownMenu } from 'components';
 import { Cart } from 'modules/cart/components';
 
 function NavBar(): React.ReactElement {
-  const dispatch = useDispatch();
-  const cartVisible = useSelector(selectCartVisible);
-  const itemCount = useSelector(selectCartItemCount);
-  const currentUser = useSelector(selectCurrentUser);
   const [dropdownMenuVisible, setDropdownMenuVisible] = useState(false);
+  const currentUser = useCurrentUser();
+  const cartVisible = useSelectCartVisible();
+  const itemCount = useSelectCartItemCount();
+  const showCart = useShowCart();
+  const hideCart = useHideCart();
 
   const handleToggleCart = () => {
     if (dropdownMenuVisible) {
       setDropdownMenuVisible(false);
     }
     if (cartVisible) {
-      dispatch(hideCart());
+      hideCart();
       return;
     }
-    dispatch(showCart());
+    showCart();
   };
 
   const handleOnToggleDropdownMenu = () => {
     if (cartVisible) {
-      dispatch(hideCart());
+      hideCart();
     }
     setDropdownMenuVisible(!dropdownMenuVisible);
   };

@@ -1,22 +1,21 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchDirectorySectionsStart } from 'modules/directory/state/directory.slice';
 import {
-  selectDirectorySections,
-  selectDirectorySectionsFetching,
-} from 'modules/directory/state/directory.selectors';
+  useSelectDirectorySections,
+  useSelectDirectorySectionsFetching,
+  useFetchDirectorySectionsStart,
+} from 'hooks/state/directoryState';
 
 import { Spinner } from 'components';
 import MenuItem from '../MenuItem';
 
 function Directory(): React.ReactElement {
-  const dispatch = useDispatch();
-  const sections = useSelector(selectDirectorySections);
-  const loading = useSelector(selectDirectorySectionsFetching);
+  const sections = useSelectDirectorySections();
+  const loading = useSelectDirectorySectionsFetching();
+  const fetchDirectorySectionsStart = useFetchDirectorySectionsStart();
 
   useEffect(() => {
-    dispatch(fetchDirectorySectionsStart());
+    fetchDirectorySectionsStart();
   }, []);
 
   if (loading) return <Spinner width="50px" height="50px" />;

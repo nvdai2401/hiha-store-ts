@@ -1,5 +1,5 @@
 import React from 'react';
-import { IEvent } from 'definitions/event';
+import { IEvent } from 'common/definitions/event';
 
 type Props = {
   value: string;

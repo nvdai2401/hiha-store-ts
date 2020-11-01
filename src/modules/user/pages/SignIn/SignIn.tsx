@@ -1,32 +1,27 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import {
-  googleSigInStart,
-  emailSigInStart,
-} from 'modules/user/state/user.slice';
-import {
-  selectAuthLoading,
-  selectCurrentUser,
-} from 'modules/user/state/user.selectors';
+  useGoogleSignInStart,
+  useEmailSignInStart,
+  useGoogleSignInLoading,
+  useEmailSignInLoading,
+} from 'hooks/state/userState';
 
+import { IEvent } from 'common/definitions/event';
 import { AddToCartButton, Spinner } from 'components';
-
 import { TextField } from 'modules/user/components';
 
-import { IEvent } from 'definitions/event';
-
 function SignIn(): React.ReactElement {
-  const history = useHistory();
-  const dispatch = useDispatch();
   const [userCredentials, setUserCredentials] = useState({
     email: '',
     password: '',
   });
   const { email, password } = userCredentials;
-  const currentUser = useSelector(selectCurrentUser);
-  const loading = useSelector(selectAuthLoading);
+  const googleSignInLoading = useGoogleSignInLoading();
+  const emailSignInLoading = useEmailSignInLoading();
+  const googleSigInStart = useGoogleSignInStart();
+  const emailSigInStart = useEmailSignInStart();
 
   const handleChange = (event: IEvent) => {
     const { name, value } = event.target;
@@ -59,19 +54,19 @@ function SignIn(): React.ReactElement {
         />
 
         <div className="sign-in__group-button">
-          <AddToCartButton
-            onClick={() => {
-              dispatch(emailSigInStart({ email, password }));
-            }}
-          >
-            {loading ? <Spinner width="30px" height="30px" /> : 'Sign in'}
+          <AddToCartButton onClick={() => emailSigInStart({ email, password })}>
+            {emailSignInLoading ? (
+              <Spinner width="30px" height="30px" />
+            ) : (
+              'Sign in'
+            )}
           </AddToCartButton>
-          <AddToCartButton
-            onClick={() => {
-              dispatch(googleSigInStart());
-            }}
-          >
-            Continue with Google
+          <AddToCartButton onClick={googleSigInStart}>
+            {googleSignInLoading ? (
+              <Spinner width="30px" height="30px" />
+            ) : (
+              'Continue with Google'
+            )}
           </AddToCartButton>
         </div>
       </div>

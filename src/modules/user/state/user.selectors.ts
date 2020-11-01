@@ -8,7 +8,17 @@ export const selectCurrentUser = createSelector(
   (user) => user.currentUser,
 );
 
-export const selectAuthLoading = createSelector(
+export const selectGoogleSignInLoading = createSelector(
   [selectUser],
-  (user) => user.loading,
+  (user) => user.googleSignInLoading,
+);
+
+export const selectEmailSignInLoading = createSelector(
+  [selectUser],
+  (user) => user.emailSignInLoading,
+);
+
+export const selectSignUpLoading = createSelector(
+  [selectUser],
+  (user) => user.signUpLoading,
 );

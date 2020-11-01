@@ -1,18 +1,21 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 
-import { addItem, removeItem, clearItem } from 'modules/cart/state/cart.slice';
 import {
-  selectCartItems,
-  selectCartItemTotalPrice,
-} from 'modules/cart/state/cart.selectors';
+  useSelectCartItems,
+  useSelectCartItemTotalPrice,
+  useAddItemToCart,
+  useRemoveItemFromCart,
+  useClearItemsFromCart,
+} from 'hooks/state/cartState';
 
 import { CheckoutItem, PaymentButton } from './components';
 
 function CheckOut(): React.ReactElement {
-  const dispatch = useDispatch();
-  const cartItems = useSelector(selectCartItems);
-  const total = useSelector(selectCartItemTotalPrice);
+  const cartItems = useSelectCartItems();
+  const total = useSelectCartItemTotalPrice();
+  const addItem = useAddItemToCart();
+  const removeItem = useRemoveItemFromCart();
+  const clearItems = useClearItemsFromCart();
 
   return (
     <div className="checkout">
@@ -29,15 +32,9 @@ function CheckOut(): React.ReactElement {
         <CheckoutItem
           key={cartItem.id}
           item={cartItem}
-          addItem={(item) => {
-            dispatch(addItem(item));
-          }}
-          removeItem={(item) => {
-            dispatch(removeItem(item));
-          }}
-          clearItemFromCart={(item) => {
-            dispatch(clearItem(item));
-          }}
+          addItem={() => addItem(cartItem)}
+          removeItem={() => removeItem(cartItem)}
+          clearItemFromCart={() => clearItems(cartItem)}
         />
       ))}
       <div className="total">Total: ${total}</div>

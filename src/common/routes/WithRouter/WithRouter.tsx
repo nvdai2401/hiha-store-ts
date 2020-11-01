@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ConnectedRouter } from 'connected-react-router';
 import { history } from 'core/config';
 
-import { IRoutePages } from 'definitions/routes';
+import { IRoutePages } from 'common/definitions/routes';
 import { ScrollToTop, HideCart } from 'components';
 import { AppRoutes } from './components';
 

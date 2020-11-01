@@ -1,11 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { Link, useLocation } from 'react-router-dom';
 
-import { RootState } from 'core/store';
-import { IProduct } from 'definitions/product';
+import { IProduct } from 'common/definitions/product';
 
-import { addItem } from 'modules/cart/state/cart.slice';
+import { useAddItemToCart } from 'hooks/state/cartState';
 
 import { CollectionItem } from 'modules/shop/components';
 
@@ -16,14 +14,8 @@ type Props = {
 
 function CollectionList(props: Props): React.ReactElement {
   const { title, items } = props;
-  const dispatch = useDispatch();
-  const pathname = useSelector(
-    (state: RootState) => state.router.location.pathname,
-  );
-
-  const handleOnAddItem = (product): void => {
-    dispatch(addItem(product));
-  };
+  const { pathname } = useLocation();
+  const addItem = useAddItemToCart();
 
   return (
     <div className="collection-list">
@@ -40,7 +32,7 @@ function CollectionList(props: Props): React.ReactElement {
             <CollectionItem
               key={item.id}
               item={item}
-              addItem={() => handleOnAddItem(item)}
+              addItem={() => addItem(item)}
             />
           ))}
       </div>

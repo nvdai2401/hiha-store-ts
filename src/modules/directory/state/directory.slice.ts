@@ -1,12 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { ISection } from 'common/definitions/directory';
 
-interface ISection {
-  id: string;
-  imageUrl: string;
-  linkUrl: string;
-  title: string;
-  size?: string;
-}
 interface IDirectoryState {
   sections: ISection[];
   errorMessage: string;

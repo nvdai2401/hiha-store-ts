@@ -1,46 +1,43 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-interface IAuthInfo {
-  email: string;
-  password: string;
-  displayName?: string;
-}
-
-interface IUser {
-  id?: string;
-  displayName?: string;
-  email?: string;
-}
+import { IUser, IAuthInfo } from 'common/definitions/user';
 
 interface IUserState {
   currentUser: IUser;
   errorMessage: string;
-  loading: boolean;
+  googleSignInLoading: boolean;
+  emailSignInLoading: boolean;
+  signUpLoading: boolean;
 }
 
 const initialState: IUserState = {
   currentUser: {},
   errorMessage: '',
-  loading: false,
+  googleSignInLoading: false,
+  emailSignInLoading: false,
+  signUpLoading: false,
 };
 
 const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    googleSigInStart() { },
+    googleSigInStart(state) {
+      state.googleSignInLoading = true;
+    },
     emailSigInStart(state, action: PayloadAction<IAuthInfo>) {
-      state.loading = true;
+      state.emailSignInLoading = true;
     },
     sigInSuccess(state, action: PayloadAction<IUser>) {
-      state.loading = false;
+      state.googleSignInLoading = false;
+      state.emailSignInLoading = false;
       state.currentUser = action.payload;
     },
     signInFailure(state, action: PayloadAction<string>) {
-      state.loading = false;
+      state.googleSignInLoading = false;
+      state.emailSignInLoading = false;
       state.errorMessage = action.payload;
     },
-    signOutStart(state) { },
+    signOutStart(state) {},
     signOutSuccess(state) {
       state.currentUser = {};
       state.errorMessage = '';
@@ -49,14 +46,16 @@ const userSlice = createSlice({
       state.errorMessage = action.payload;
     },
     signUpStart(state, action: PayloadAction<IAuthInfo>) {
-      state.loading = true;
+      state.signUpLoading = true;
     },
-    signUpSuccess(state, action: PayloadAction<any>) { },
+    signUpSuccess(state, action: PayloadAction<any>) {
+      state.signUpLoading = false;
+    },
     signUpFailure(state, action: PayloadAction<string>) {
-      state.loading = false;
+      state.signUpLoading = false;
       state.errorMessage = action.payload;
     },
-    checkUserSession() { },
+    checkUserSession() {},
   },
 });
 
