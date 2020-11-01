@@ -27,6 +27,6 @@ export const removeItemFromCart = (cartItemToRemove, cartItems) => {
   );
 };
 
-export const clearItemFromCart = (cartItemToClear, cartItems) => {
+export const clearItemsFromCart = (cartItemToClear, cartItems) => {
   return cartItems.filter((cartItem) => cartItem.id !== cartItemToClear.id);
 };

@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 
 import {
-  useFetchCollectionStart,
   useSelectCollection,
+  useFetchCollectionStart,
 } from 'hooks/state/shopState';
-
-import { addItem } from 'modules/cart/state/cart.slice';
+import { useAddItemToCart } from 'hooks/state/cartState';
 
 import { Spinner } from 'components';
 import { CollectionItem } from 'modules/shop/components';
@@ -17,20 +15,16 @@ type ParamsTypes = {
 };
 
 function CollectionPage(): React.ReactElement {
-  const dispatch = useDispatch();
-  const fetchCollectionStart = useFetchCollectionStart();
   const { collectionName } = useParams<ParamsTypes>();
   const collection = useSelectCollection(collectionName);
+  const addItem = useAddItemToCart();
+  const fetchCollectionStart = useFetchCollectionStart();
 
   useEffect(() => {
     if (!collection) {
       fetchCollectionStart(collectionName);
     }
   }, []);
-
-  const handleOnAddItem = (product): void => {
-    dispatch(addItem(product));
-  };
 
   if (!collection) return <Spinner width="50px" height="50px" />;
 
@@ -42,7 +36,7 @@ function CollectionPage(): React.ReactElement {
           <CollectionItem
             key={item.id}
             item={item}
-            addItem={() => handleOnAddItem(item)}
+            addItem={() => addItem(item)}
           />
         ))}
       </div>
