@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useCurrentUser } from 'hooks/state/userState';
@@ -11,7 +11,7 @@ import {
 
 import { ReactComponent as Logo } from 'assets/svg/crown.svg';
 import { ReactComponent as User } from 'assets/svg/user.svg';
-import { CartIcon, DropdownMenu } from 'components';
+import { CartIcon, DropdownMenu, Overlay } from 'components';
 import { Cart } from 'modules/cart/components';
 
 function NavBar(): React.ReactElement {
@@ -21,11 +21,6 @@ function NavBar(): React.ReactElement {
   const itemCount = useSelectCartItemCount();
   const showCart = useShowCart();
   const hideCart = useHideCart();
-
-  useEffect(() => {
-    // cartVisible && document.body.style.overflow = 'hidden';
-    // !cartVisible && document.body.style.overflow = 'unset';
-  }, [cartVisible]);
 
   const handleToggleCart = () => {
     if (dropdownMenuVisible) {
@@ -59,13 +54,10 @@ function NavBar(): React.ReactElement {
         </li>
         <li className="nav-bar__nav-list__item">
           {currentUser.id ? (
-            <>
-              <User
-                className="nav-bar__logo"
-                onClick={handleOnToggleDropdownMenu}
-              />
-              {dropdownMenuVisible ? <DropdownMenu /> : null}
-            </>
+            <User
+              className="nav-bar__logo pointer"
+              onClick={handleOnToggleDropdownMenu}
+            />
           ) : (
             <Link to="/sign-in">Sign in</Link>
           )}
@@ -74,10 +66,17 @@ function NavBar(): React.ReactElement {
       <div className="nav-bar__cart">
         <CartIcon itemCount={itemCount} toggleCart={handleToggleCart} />
       </div>
+
       <Cart open={cartVisible} isEmpty={itemCount === 0} hideCart={hideCart} />
-      <div
-        className={`overlay ${cartVisible ? 'is-visible' : ''}`}
-        onClick={() => handleToggleCart()}
+
+      <DropdownMenu
+        open={dropdownMenuVisible}
+        onClose={() => setDropdownMenuVisible(false)}
+      />
+
+      <Overlay
+        open={cartVisible || dropdownMenuVisible}
+        onClose={() => handleToggleCart()}
       />
     </header>
   );

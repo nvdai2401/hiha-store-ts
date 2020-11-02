@@ -6,3 +6,5 @@ export { default as AddToCartButton } from './AddToCartButton';
 export { default as LazyImage } from './LazyImage';
 export { default as HideCart } from './HideCart';
 export { default as DropdownMenu } from './DropdownMenu';
+export { default as WithDrawer } from './WithDrawer';
+export { default as Overlay } from './Overlay';
