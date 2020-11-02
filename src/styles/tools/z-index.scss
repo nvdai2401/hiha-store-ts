@@ -3,13 +3,16 @@
 //   ======================================================================== */
 
 $z-layers: (
-  'home': 1000,
-  'nav-bar': 2000,
-  'drawer': 3000,
+  'nav-bar': 1000,
+  'main-layout': 2000,
+  'home': 3000,
   'collection-preview': 4000,
   'collection-page': 5000,
+  'drawer': 6000,
   'default': 1,
   'below': -1,
+  'infinity': 999999999,
+  'negative-infinity': -999999999,
 );
 
 @function zIndex($layer) {

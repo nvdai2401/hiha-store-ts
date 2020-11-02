@@ -8,3 +8,4 @@ export { default as HideCart } from './HideCart';
 export { default as DropdownMenu } from './DropdownMenu';
 export { default as WithDrawer } from './WithDrawer';
 export { default as Overlay } from './Overlay';
+export { default as Drawer } from './Drawer';

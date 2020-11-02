@@ -9,7 +9,7 @@
 - [x] Setup firebase
 - [x] Develop module: user, shop, cart, directory
 - [x] Setup hooks for dispatch, firebase
-- [ ] Develop contact page, animation for cart, dropdown menu on mobile
+- [x] Develop contact page, animation for cart, dropdown menu on mobile
 - [ ] Add type for sagas, actions, utils
 - [ ] Implement test
 - [ ] Update README
@@ -21,7 +21,7 @@
 - [ ] Refactor firebase
 - [ ] Refactor button
 - [ ] Add prefix for component class
-- [ ] Create protected route for SignIn page
-- [ ] Setup some hooks for component before entering a route
-  - [ ] Scroll top
-  - [ ] Hide cart
+- [x] Create protected route for SignIn page
+- [x] Setup some hooks for component before entering a route
+  - [x] Scroll top
+  - [x] Hide cart
