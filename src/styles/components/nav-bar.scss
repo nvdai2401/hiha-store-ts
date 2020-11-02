@@ -1,10 +1,11 @@
 .nav-bar {
-  position: relative;
-  height: $global-navbar-height;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include relative();
+  @include size(100%, $global-navbar-height);
+  @include flex-box;
+  @include justify-content(space-between);
+  @include align-items(center);
+
+  z-index: zIndex('nav-bar');
   border-bottom: 1px solid $color-very-light-grey;
   margin-bottom: 24px;
 
@@ -13,9 +14,10 @@
   }
 
   &__nav-list {
-    height: 100%;
-    display: flex;
-    align-items: center;
+    @include flex-box;
+    @include align-items(center);
+    @include size($height: 100%);
+
     list-style-type: none;
     margin-right: 24px;
 
@@ -27,15 +29,32 @@
   }
 
   &__cart {
-    position: absolute;
-    right: 0;
-    top: 9px;
+    @include absolute($top: 9px, $right: 0);
   }
 
   .sign-out {
     cursor: pointer;
   }
 
+  .overlay {
+    @include fixed($top: 0, $left: 0);
+    @include size(100%, 100vh);
+
+    z-index: zIndex('nav-bar') + 1;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+    pointer-events: none;
+
+    &.is-visible {
+      z-index: zIndex('below');
+      background-color: rgba(34, 34, 34, 0.4);
+      pointer-events: auto;
+    }
+  }
+
   @include bp(medium) {
+    .overlay {
+      display: none;
+    }
   }
 }

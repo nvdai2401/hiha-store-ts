@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useCurrentUser } from 'hooks/state/userState';
@@ -21,6 +21,11 @@ function NavBar(): React.ReactElement {
   const itemCount = useSelectCartItemCount();
   const showCart = useShowCart();
   const hideCart = useHideCart();
+
+  useEffect(() => {
+    // cartVisible && document.body.style.overflow = 'hidden';
+    // !cartVisible && document.body.style.overflow = 'unset';
+  }, [cartVisible]);
 
   const handleToggleCart = () => {
     if (dropdownMenuVisible) {
@@ -68,8 +73,12 @@ function NavBar(): React.ReactElement {
       </ul>
       <div className="nav-bar__cart">
         <CartIcon itemCount={itemCount} toggleCart={handleToggleCart} />
-        {cartVisible ? <Cart /> : null}
       </div>
+      <Cart open={cartVisible} isEmpty={itemCount === 0} hideCart={hideCart} />
+      <div
+        className={`overlay ${cartVisible ? 'is-visible' : ''}`}
+        onClick={() => handleToggleCart()}
+      />
     </header>
   );
 }

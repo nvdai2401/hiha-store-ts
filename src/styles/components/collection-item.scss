@@ -25,11 +25,7 @@
     margin-bottom: 6px;
 
     span {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 1;
-      -webkit-box-orient: vertical;
+      @include ellipsis(1);
 
       &:first-child {
         max-width: 120px;
