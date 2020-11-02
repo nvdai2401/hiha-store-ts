@@ -1,47 +1,68 @@
 .cart {
-  position: absolute;
-  width: 70vw;
-  right: -18px;
-  height: 100vh;
-  top: 0;
-  display: flex;
-  flex-direction: column;
+  @include fixed($top: 0, $right: 0);
+  @include size(70vw, 100vh);
+  @include flex-box;
+  @include flex-direction(column);
+  @include translateX(100%);
+
+  z-index: zIndex('nav-bar') + 2;
+  border-left: 1px solid $color-very-light-grey;
   padding: 12px;
-  border: 1px solid $color-very-light-grey;
   background-color: $color-white;
-  z-index: 5;
+  transition: $global-transition;
+
+  &.is-visible {
+    @include translateX(0);
+  }
 
   &__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex-box;
+    @include justify-content(space-between);
+    @include align-items(center);
+
     font-size: 1.5rem;
     border-bottom: 1px solid $color-very-light-grey;
     padding-bottom: 12px;
-
-    &__close-icon {
-      font-size: 2rem;
-    }
   }
 
   &__items {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
+    @include size($height: 100%);
+    @include flex-box;
+    @include flex-direction(column);
+
     overflow-y: auto;
     margin: 12px 0;
   }
 
   .is-empty {
+    @include flex-box;
+    @include align-self(center);
+
     font-size: 1.25rem;
-    display: flex;
-    align-self: center;
   }
 
   @include bp(medium) {
-    width: 240px;
-    height: 340px;
-    right: 6px;
+    @include absolute(
+      $top: $global-navbar-height - 12px,
+      $right: 0,
+      $left: auto
+    );
+    @include size(240px, 340px);
+    @include visible();
+    @include translateX(unset);
+
+    border: 1px solid $color-very-light-grey;
+
+    &.is-invisible {
+      @include invisible();
+    }
+
+    &__header {
+      font-size: 1.125rem;
+    }
+
+    .is-empty {
+      font-size: 1rem;
+    }
   }
 }

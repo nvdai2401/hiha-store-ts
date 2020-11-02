@@ -74,8 +74,11 @@ function NavBar(): React.ReactElement {
       <div className="nav-bar__cart">
         <CartIcon itemCount={itemCount} toggleCart={handleToggleCart} />
       </div>
-      {cartVisible ? <Cart hideCart={hideCart} /> : null}
-      {cartVisible ? <div className="overlay" /> : null}
+      <Cart open={cartVisible} isEmpty={itemCount === 0} hideCart={hideCart} />
+      <div
+        className={`overlay ${cartVisible ? 'is-visible' : ''}`}
+        onClick={() => handleToggleCart()}
+      />
     </header>
   );
 }

@@ -1,8 +1,8 @@
 ///* ========================================================================
 //   #HIDDEN-VISUALLY
 //   ======================================================================== */
-
 // Mixin to quickly apply accessible hiding to elements.
+
 @mixin hidden-visually() {
   border: 0 !important;
   clip: rect(0 0 0 0) !important;
@@ -14,4 +14,14 @@
   position: absolute !important;
   white-space: nowrap !important;
   width: 1px !important;
+}
+
+@mixin invisible() {
+  visibility: hidden;
+  opacity: 0;
+}
+
+@mixin visible() {
+  visibility: visible;
+  opacity: 1;
 }

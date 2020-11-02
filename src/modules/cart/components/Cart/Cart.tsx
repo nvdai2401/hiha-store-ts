@@ -7,19 +7,21 @@ import { AddToCartButton } from 'components';
 import { CartItem } from 'modules/cart/components';
 
 type Props = {
+  open: boolean;
+  isEmpty: boolean;
   hideCart: () => void;
 };
 
 function Cart(props: Props): React.ReactElement {
-  const { hideCart } = props;
+  const { open, isEmpty, hideCart } = props;
   const history = useHistory();
   const items = useSelector(selectCartItems);
 
   return (
-    <div className="cart">
+    <div className={`cart ${open ? 'is-visible' : 'is-invisible'}`}>
       <div className="cart__header">
         <span>Your cart</span>
-        <span onClick={hideCart} className="cart__header__close-icon">
+        <span onClick={hideCart} className="pointer">
           &#10005;
         </span>
       </div>
@@ -30,9 +32,16 @@ function Cart(props: Props): React.ReactElement {
           <span className="is-empty">Your cart is empty!</span>
         )}
       </div>
-      <AddToCartButton onClick={() => history.push('/checkout')}>
-        GO TO CHECKOUT
-      </AddToCartButton>
+
+      {!isEmpty ? (
+        <AddToCartButton onClick={() => history.push('/checkout')}>
+          GO TO CHECKOUT
+        </AddToCartButton>
+      ) : (
+        <AddToCartButton onClick={() => history.push('/shop')}>
+          EXPLORE MORE
+        </AddToCartButton>
+      )}
     </div>
   );
 }
