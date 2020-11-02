@@ -18,7 +18,7 @@ function Cart(props: Props): React.ReactElement {
   const items = useSelector(selectCartItems);
 
   return (
-    <div className={`cart ${open ? 'is-visible' : 'is-invisible'}`}>
+    <div className={`drawer cart ${open ? 'is-visible' : 'is-invisible'}`}>
       <div className="cart__header">
         <span>Your cart</span>
         <span onClick={hideCart} className="pointer">

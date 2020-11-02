@@ -1,18 +1,5 @@
 .dropdown-menu {
-  position: absolute;
-  top: #{$global-navbar-height - 1px};
-  right: -18px;
-  z-index: 5;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid $color-very-light-grey;
-  width: 40vw;
-  height: calc(100vh - #{$global-navbar-height - 1px});
-  padding: 12px;
-  background-color: $color-white;
-  box-shadow: hsla(210, 8%, 62%, 0.2) 0px 8px 24px 0px;
-  transition: $global-transition;
-  color: $color-link;
+  @include size(70vw, 100vh);
 
   &__user {
     display: flex;
@@ -31,6 +18,11 @@
     }
   }
 
+  &__close-icon {
+    @include absolute($top: 12px, $right: 12px);
+    font-size: 1.5rem;
+  }
+
   &__nav-list {
     list-style-type: none;
 
@@ -44,12 +36,14 @@
   }
 
   @include bp(medium) {
-    width: 200px;
-    height: auto;
-    right: 0;
+    @include size(240px, auto);
 
     &__user {
       font-size: 1rem;
+    }
+
+    &__close-icon {
+      display: none;
     }
 
     &__nav-list {
