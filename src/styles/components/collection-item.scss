@@ -1,56 +1,49 @@
-.collection-item {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  height: 320px;
+.c-collection-item {
+  @include flex-box;
+  @include flex-direction(column);
+  @include size($height: 320px);
+
   margin-bottom: 24px;
 
-  .image {
-    height: 75%;
-    object-fit: cover;
-    object-position: center;
-    margin-bottom: 6px;
-    transition: all 0.2s ease-in;
+  img {
+    @include size($height: 75%);
   }
 
-  .add-to-cart-button {
+  .c-add-to-cart-button {
     width: 100%;
   }
 
   &__info {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+    @include flex-box;
+    @include justify-content(space-between);
+    @include size(100%);
+
     font-size: 1.125rem;
-    margin-bottom: 6px;
 
-    span {
+    &__name {
       @include ellipsis(1);
-
-      &:first-child {
-        max-width: 120px;
-      }
+      @include size($max-width: 70%);
     }
   }
 
-  @include bp(medium) {
-    position: relative;
-    z-index: 1;
-    flex-basis: 24%;
-    height: 400px;
+  @include bp(sm) {
+    @include relative();
+    @include align-items(center);
+    @include size($height: 420px);
 
-    .image {
-      height: 100%;
+    z-index: zIndex('collection-preview') + 1;
+
+    img {
+      @include size($height: 100%);
     }
 
-    .add-to-cart-button {
-      position: absolute;
-      top: 40%;
-      z-index: 2;
-      width: 80%;
-      opacity: 0.7;
-      transition: all 0.2s ease-in;
-      display: none;
+    .c-add-to-cart-button {
+      @include absolute($top: 40%);
+      @include size(80%);
+      @include transition(all 200ms ease-in-out);
+      @include invisible();
+
+      z-index: zIndex('collection-preview') + 2;
     }
 
     &__info {
@@ -62,13 +55,12 @@
     }
 
     &:hover {
-      .image {
+      img {
         opacity: 0.8;
       }
 
-      .add-to-cart-button {
-        display: block;
-        opacity: 0.85;
+      .c-add-to-cart-button {
+        @include visible();
       }
     }
   }

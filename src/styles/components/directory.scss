@@ -2,7 +2,7 @@
   @include flex-box;
   @include flex-direction(column);
 
-  @include bp(medium) {
+  @include bp(sm) {
     @include flex-direction(row);
     @include flex-wrap(wrap);
     @include justify-content(space-between);

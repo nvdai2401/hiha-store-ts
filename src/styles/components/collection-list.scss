@@ -1,21 +1,19 @@
-.collection-list {
-  display: flex;
-  flex-direction: column;
+.c-collection-list {
+  @include flex-box;
+  @include flex-direction(column);
+
   margin-bottom: 12px;
 
   &__title {
     font-size: 1.5rem;
-    margin-bottom: 18px;
     font-weight: 700;
   }
 
   &__products {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 12px;
+    @include grid-column-gap(repeat(2, 1fr), 12px);
   }
 
-  @include bp(medium) {
+  @include bp(sm) {
     margin-bottom: 24px;
 
     &__products {

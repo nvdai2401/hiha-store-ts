@@ -26,7 +26,7 @@
     font-size: 1.25rem;
   }
 
-  @include bp(medium) {
+  @include bp(sm) {
     @include size(240px, 340px);
 
     &__header {

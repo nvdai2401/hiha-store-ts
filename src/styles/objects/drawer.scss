@@ -14,7 +14,7 @@
     @include translateX(0);
   }
 
-  @include bp(medium) {
+  @include bp(sm) {
     @include absolute(
       $top: $global-navbar-height - 12px,
       $right: 0,

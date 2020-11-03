@@ -19,7 +19,7 @@ function CheckOut(): React.ReactElement {
 
   return (
     <div className="checkout">
-      <h2 className="checkout__title">Checkout</h2>
+      <h1 className="checkout__title">Checkout</h1>
       <ul className="checkout__header">
         <li>Product</li>
         <li>Description</li>

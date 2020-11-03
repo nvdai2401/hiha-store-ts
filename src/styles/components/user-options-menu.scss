@@ -38,7 +38,7 @@
     }
   }
 
-  @include bp(medium) {
+  @include bp(sm) {
     @include size(180px, auto);
 
     &__user {

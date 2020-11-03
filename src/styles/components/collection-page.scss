@@ -1,18 +1,15 @@
-.collection-page {
-  display: flex;
-  flex-direction: column;
+.c-collection-page {
+  @include flex-box;
+  @include flex-direction(column);
 
   &__title {
-    font-size: 2.5rem;
     margin: 0 auto 30px;
   }
 
   &__items {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 12px;
+    @include grid-column-gap(repeat(2, 1fr), 12px);
 
-    @include bp(medium) {
+    @include bp(sm) {
       grid-template-columns: repeat(4, 1fr);
     }
   }

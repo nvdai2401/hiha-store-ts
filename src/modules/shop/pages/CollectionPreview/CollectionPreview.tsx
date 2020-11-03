@@ -21,7 +21,7 @@ function CollectionPreview(): React.ReactElement {
   if (loading) return <Spinner classes="m-t-210" />;
 
   return (
-    <div className="collection-preview u-flex-column">
+    <div className="c-collection-preview">
       {collections.map(({ id, ...otherCollectionsProps }) => (
         <CollectionList key={id.toString()} {...otherCollectionsProps} />
       ))}

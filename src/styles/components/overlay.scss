@@ -12,7 +12,7 @@
     pointer-events: auto;
   }
 
-  @include bp(medium) {
+  @include bp(sm) {
     display: none;
   }
 }

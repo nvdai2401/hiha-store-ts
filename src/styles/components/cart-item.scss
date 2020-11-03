@@ -14,7 +14,7 @@
     font-size: 1.25rem;
   }
 
-  @include bp(medium) {
+  @include bp(sm) {
     &__image {
       @include size(25%);
     }

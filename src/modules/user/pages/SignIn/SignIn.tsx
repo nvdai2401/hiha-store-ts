@@ -30,7 +30,7 @@ function SignIn(): React.ReactElement {
 
   return (
     <div className="sign-in">
-      <h2 className="sign-in__title">Sign In</h2>
+      <h1 className="sign-in__title">Sign In</h1>
       <span>Sign in with your email and password.</span>
       <span className="sign-in__signup-text">
         No account? <Link to="/sign-up">Create here.</Link>

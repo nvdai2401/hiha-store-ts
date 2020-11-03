@@ -18,14 +18,14 @@ function CollectionList(props: Props): React.ReactElement {
   const addItem = useAddItemToCart();
 
   return (
-    <div className="collection-list">
+    <div className="c-collection-list">
       <Link
         to={`${pathname}/${title.toLowerCase()}`}
-        className="collection-list__title"
+        className="c-collection-list__title m-b-18"
       >
         {title.toUpperCase()}
       </Link>
-      <div className="collection-list__products">
+      <div className="c-collection-list__products">
         {items
           .filter((item, index) => index < 4)
           .map((item) => (

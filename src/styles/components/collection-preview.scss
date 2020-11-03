@@ -1,2 +1,4 @@
-.collection-preview {
+.c-collection-preview {
+  @include flex-box;
+  @include flex-direction(column);
 }
