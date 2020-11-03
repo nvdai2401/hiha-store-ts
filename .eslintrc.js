@@ -21,6 +21,7 @@ module.exports = {
   ignorePatterns: ['node_modules/', 'build'],
   rules: {
     'react/require-default-props': OFF, // TODO
+    'react/jsx-props-no-spreading': OFF, // TODO
     'prettier/prettier': ['error'],
     'react/jsx-filename-extension': [
       1,

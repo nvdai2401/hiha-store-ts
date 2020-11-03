@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ReactComponent as ShoppingIcon } from 'assets/svg/shopping-bag.svg';
+import { ShoppingBagIcon } from 'common/icons';
 
 type Props = {
   itemCount: number | string;
@@ -12,7 +12,7 @@ function CartIcon(props: Props): React.ReactElement {
 
   return (
     <div className="cart-icon" onClick={toggleCart} aria-hidden="true">
-      <ShoppingIcon className="cart-icon__icon" />
+      <ShoppingBagIcon className="cart-icon__icon" />
       <span className="cart-icon__count">
         {itemCount < 100 ? itemCount : '99+'}
       </span>

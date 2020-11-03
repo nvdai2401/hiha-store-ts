@@ -9,7 +9,7 @@
 - [x] Setup firebase
 - [x] Develop module: user, shop, cart, directory
 - [x] Setup hooks for dispatch, firebase
-- [ ] Develop contact page, animation for cart, dropdown menu on mobile
+- [x] Develop contact page, animation for cart, dropdown menu on mobile
 - [ ] Add type for sagas, actions, utils
 - [ ] Implement test
 - [ ] Update README

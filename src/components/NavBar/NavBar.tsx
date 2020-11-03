@@ -9,10 +9,9 @@ import {
   useHideCart,
 } from 'hooks/state/cartState';
 
-import { ReactComponent as Logo } from 'assets/svg/crown.svg';
-import { ReactComponent as User } from 'assets/svg/user.svg';
 import { CartIcon, UserOptionsMenu, Overlay } from 'components';
 import { Cart } from 'modules/cart/components';
+import { CrownIcon, UserIcon } from 'common/icons';
 
 function NavBar(): React.ReactElement {
   const [dropdownMenuVisible, setDropdownMenuVisible] = useState(false);
@@ -47,7 +46,7 @@ function NavBar(): React.ReactElement {
     <>
       <header className="c-nav-bar m-b-24">
         <Link to="/" className="c-nav-bar__logo">
-          <Logo className="c-nav-bar__logo" />
+          <CrownIcon className="c-nav-bar__logo" />
         </Link>
         <ul className="c-nav-bar__nav-list m-r-24 o-list-bare">
           <li className="c-nav-bar__nav-list__item ">
@@ -58,7 +57,7 @@ function NavBar(): React.ReactElement {
           </li>
           <li className="c-nav-bar__nav-list__item">
             {currentUser.id ? (
-              <User
+              <UserIcon
                 className="c-nav-bar__logo pointer"
                 onClick={handleOnToggleDropdownMenu}
               />
