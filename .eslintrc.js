@@ -21,6 +21,7 @@ module.exports = {
   ignorePatterns: ['node_modules/', 'build'],
   rules: {
     'react/require-default-props': OFF, // TODO
+    'react/jsx-props-no-spreading': OFF, // TODO
     'prettier/prettier': ['error'],
     'react/jsx-filename-extension': [
       1,
@@ -65,7 +66,10 @@ module.exports = {
         },
       },
     ],
-    'no-param-reassign': OFF
+    'no-param-reassign': OFF,
+    'jsx-a11y/click-events-have-key-events': OFF,
+    'jsx-a11y/no-static-element-interactions': OFF,
+    'jsx-a11y/no-noninteractive-element-interactions': OFF,
   },
   env: {
     browser: true,

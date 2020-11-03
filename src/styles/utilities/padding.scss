@@ -1,0 +1,40 @@
+///* ========================================================================
+//   #MARGIN
+//   ======================================================================== */
+// Quick margin css classes
+
+$padding: 6 12 18 24;
+
+@each $i in $padding {
+  .p-#{$i} {
+    padding: $i;
+  }
+
+  .p-t-#{$i} {
+    padding-top: $i + px;
+  }
+
+  .p-b-#{$i} {
+    padding-bottom: $i + px;
+  }
+
+  .p-l-#{$i} {
+    padding-left: $i + px;
+  }
+
+  .p-r-#{$i} {
+    padding-right: $i + px;
+  }
+
+  .p-t-b-#{$i} {
+    padding: $i + px auto;
+  }
+
+  .p-l-r-#{$i} {
+    padding: 0 $i + px;
+  }
+
+  .p-v-h-h-#{$i} {
+    padding: round($i / 2) + px $i + px;
+  }
+}

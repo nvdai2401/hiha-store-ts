@@ -1,0 +1,62 @@
+.c-user-options-menu {
+  @include size(50vw, 100vh);
+
+  &__user {
+    @include flex-box;
+    @include flex-direction(column);
+
+    border-bottom: 1px solid $color-very-light-grey;
+    font-size: 1.25rem;
+
+    &__name {
+      font-weight: 700;
+      word-wrap: break-word;
+      padding-right: 24px;
+    }
+  }
+
+  &__close-icon {
+    @include absolute($top: 12px, $right: 12px);
+
+    font-size: 1.5rem;
+  }
+
+  &__options {
+    &__item {
+      @include flex-box;
+      @include align-items(center);
+
+      padding: 4px 0;
+      text-transform: capitalize;
+      font-size: 1.25rem;
+      color: $color-link;
+      cursor: pointer;
+
+      &:hover {
+        color: $color-hover;
+      }
+    }
+  }
+
+  @include bp(sm) {
+    @include size(180px, auto);
+
+    &__user {
+      font-size: 1rem;
+
+      &__name {
+        padding-right: 0;
+      }
+    }
+
+    &__close-icon {
+      display: none;
+    }
+
+    &__options {
+      &__item {
+        font-size: 1rem;
+      }
+    }
+  }
+}

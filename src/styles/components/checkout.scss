@@ -6,15 +6,14 @@
   align-items: center;
 
   &__title {
-    font-size: 2.5rem;
     margin: 0;
   }
 
   &__header {
+    @include grid-column-gap(20% 30% 20% 15% 15%);
+
     width: 100%;
     padding: 12px 0;
-    display: grid;
-    grid-template-columns: 20% 30% 20% 15% 15%;
     border-bottom: 1px solid $color-light-grey;
     list-style: none;
 
@@ -38,6 +37,6 @@
     text-align: center;
   }
 
-  @include bp(medium) {
+  @include bp(sm) {
   }
 }

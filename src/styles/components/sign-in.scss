@@ -9,7 +9,6 @@
   }
 
   &__title {
-    font-size: 2.5rem;
     text-align: center;
   }
 
@@ -28,12 +27,10 @@
   }
 
   &__group-button {
-    display: grid;
-    grid-template-columns: auto 70%;
-    grid-gap: 12px;
+    @include grid-column-gap(auto 70%, 12px);
   }
 
-  @include bp(medium) {
+  @include bp(sm) {
     width: 380px;
   }
 }

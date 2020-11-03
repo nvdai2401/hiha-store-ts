@@ -3,7 +3,7 @@ import React from 'react';
 function Contact(): React.ReactElement {
   return (
     <div className="contact">
-      <h2 className="contact__title">Contact with me via:</h2>
+      <h1 className="contact__title">Contact with me via:</h1>
       <ul>
         <li>
           LinkedIn:{' '}

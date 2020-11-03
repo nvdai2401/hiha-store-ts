@@ -1,15 +1,13 @@
 .checkout-item {
+  @include grid-column-gap(20% 30% 20% 15% 15%);
+
   width: 100%;
-  display: grid;
-  grid-template-columns: 20% 30% 20% 15% 15%;
   height: 120px;
   border-bottom: 1px solid darkgrey;
   font-size: 1.2rem;
 
   &__product {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-align-content;
     text-align: center;
 
     span {
@@ -37,7 +35,7 @@
     cursor: pointer;
   }
 
-  @include bp(medium) {
+  @include bp(sm) {
     img {
       height: 100px;
       width: 84px;

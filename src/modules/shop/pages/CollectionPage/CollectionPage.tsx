@@ -26,12 +26,12 @@ function CollectionPage(): React.ReactElement {
     }
   }, []);
 
-  if (!collection) return <Spinner width="50px" height="50px" />;
+  if (!collection) return <Spinner classes="m-t-210" />;
 
   return (
-    <div className="collection-page">
-      <h2 className="collection-page__title">{collection.title}</h2>
-      <div className="collection-page__items">
+    <div className="c-collection-page">
+      <h1 className="c-collection-page__title">{collection.title}</h1>
+      <div className="c-collection-page__items">
         {collection.items.map((item) => (
           <CollectionItem
             key={item.id}

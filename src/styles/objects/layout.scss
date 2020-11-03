@@ -7,7 +7,7 @@
 .o-layout {
   display: block;
 
-  @include bp(medium) {
+  @include bp(sm) {
     display: flex;
   }
 }
@@ -25,14 +25,17 @@
 }
 
 .o-layout-main {
-  display: flex;
-  flex-direction: column;
+  @include relative();
+  @include flex-box;
+  @include flex-direction(column);
+  @include size($width: 100vw, $min-height: 100vh);
+
   margin: 0 auto;
-  width: 100vw;
   padding: 0 18px;
 
-  @include bp(medium) {
-    width: 70vw;
+  @include bp(sm) {
+    @include size($width: 70vw);
+
     padding: 0;
   }
 }

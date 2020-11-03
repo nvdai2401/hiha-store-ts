@@ -3,21 +3,6 @@
 //   ======================================================================== */
 // Mixin to quickly apply transform property to elements.
 
-/*==================VENDOR PREFIX==================*/
-
-$known-prefixes: webkit, moz, ms, o;
-
-@mixin prefix($property, $value, $prefixes) {
-  #{$property}: $value;
-  @each $prefix in $prefixes {
-    @if not index($known-prefixes, $prefix) {
-      @warn "Unknown prefix #{$prefix}.";
-    }
-
-    -#{$prefix}-#{$property}: $value;
-  }
-}
-
 @mixin transform($args...) {
   @include prefix(transform, $args...);
 }
@@ -29,4 +14,3 @@ $known-prefixes: webkit, moz, ms, o;
 @mixin scale($value) {
   @include transform(scale($value), webkit moz ms o);
 }
-

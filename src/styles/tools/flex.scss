@@ -218,3 +218,14 @@
   }
   align-self: $value;
 }
+
+@mixin flex-align-content(
+  $direction: row,
+  $align-item: center,
+  $justify-item: center
+) {
+  @include flex-box;
+  @include flex-direction($direction);
+  @include align-items($align-item);
+  @include justify-content($justify-item);
+}

@@ -7,7 +7,7 @@ import {
 } from 'hooks/state/directoryState';
 
 import { Spinner } from 'components';
-import MenuItem from '../MenuItem';
+import DirectoryItem from '../DirectoryItem';
 
 function Directory(): React.ReactElement {
   const sections = useSelectDirectorySections();
@@ -18,12 +18,12 @@ function Directory(): React.ReactElement {
     fetchDirectorySectionsStart();
   }, []);
 
-  if (loading) return <Spinner width="50px" height="50px" />;
+  if (loading) return <Spinner classes="m-t-210" />;
 
   return (
-    <div className="directory">
+    <div className="c-directory">
       {sections.map(({ id, ...otherSectionsItems }) => (
-        <MenuItem key={id} {...otherSectionsItems} />
+        <DirectoryItem key={id} {...otherSectionsItems} />
       ))}
     </div>
   );

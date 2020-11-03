@@ -9,10 +9,9 @@ import {
   useHideCart,
 } from 'hooks/state/cartState';
 
-import { ReactComponent as Logo } from 'assets/svg/crown.svg';
-import { ReactComponent as User } from 'assets/svg/user.svg';
-import { CartIcon, DropdownMenu, Overlay } from 'components';
+import { ShoppingBag, UserOptionsMenu, Overlay } from 'components';
 import { Cart } from 'modules/cart/components';
+import { CrownIcon, UserIcon } from 'common/icons';
 
 function NavBar(): React.ReactElement {
   const [dropdownMenuVisible, setDropdownMenuVisible] = useState(false);
@@ -26,10 +25,12 @@ function NavBar(): React.ReactElement {
     if (dropdownMenuVisible) {
       setDropdownMenuVisible(false);
     }
+
     if (cartVisible) {
       hideCart();
       return;
     }
+
     showCart();
   };
 
@@ -37,48 +38,53 @@ function NavBar(): React.ReactElement {
     if (cartVisible) {
       hideCart();
     }
+
     setDropdownMenuVisible(!dropdownMenuVisible);
   };
 
   return (
-    <header className="nav-bar">
-      <Link to="/" className="nav-bar__logo">
-        <Logo className="nav-bar__logo" />
-      </Link>
-      <ul className="nav-bar__nav-list">
-        <li className="nav-bar__nav-list__item">
-          <Link to="/shop">Shop</Link>
-        </li>
-        <li className="nav-bar__nav-list__item">
-          <Link to="/contact">Contact</Link>
-        </li>
-        <li className="nav-bar__nav-list__item">
-          {currentUser.id ? (
-            <User
-              className="nav-bar__logo pointer"
-              onClick={handleOnToggleDropdownMenu}
-            />
-          ) : (
-            <Link to="/sign-in">Sign in</Link>
-          )}
-        </li>
-      </ul>
-      <div className="nav-bar__cart">
-        <CartIcon itemCount={itemCount} toggleCart={handleToggleCart} />
-      </div>
-
+    <>
+      <header className="c-nav-bar m-b-24">
+        <Link to="/" className="c-nav-bar__logo">
+          <CrownIcon className="c-nav-bar__logo" />
+        </Link>
+        <ul className="c-nav-bar__nav-list m-r-24 o-list-bare">
+          <li className="c-nav-bar__nav-list__item ">
+            <Link to="/shop">Shop</Link>
+          </li>
+          <li className="c-nav-bar__nav-list__item">
+            <Link to="/contact">Contact</Link>
+          </li>
+          <li className="c-nav-bar__nav-list__item">
+            {currentUser.id ? (
+              <UserIcon
+                className="c-nav-bar__logo pointer"
+                onClick={handleOnToggleDropdownMenu}
+              />
+            ) : (
+              <Link to="/sign-in">Sign in</Link>
+            )}
+          </li>
+        </ul>
+        <div className="c-nav-bar__cart">
+          <ShoppingBag quantity={itemCount} toggleCart={handleToggleCart} />
+        </div>
+      </header>
       <Cart open={cartVisible} isEmpty={itemCount === 0} hideCart={hideCart} />
 
-      <DropdownMenu
+      <UserOptionsMenu
         open={dropdownMenuVisible}
         onClose={() => setDropdownMenuVisible(false)}
       />
 
       <Overlay
         open={cartVisible || dropdownMenuVisible}
-        onClose={() => handleToggleCart()}
+        onClose={() => {
+          hideCart();
+          setDropdownMenuVisible(false);
+        }}
       />
-    </header>
+    </>
   );
 }
 

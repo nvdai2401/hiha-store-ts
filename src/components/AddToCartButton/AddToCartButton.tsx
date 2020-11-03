@@ -7,8 +7,13 @@ type Props = {
 
 function AddToCartButton(props: Props): React.ReactElement {
   const { children, onClick } = props;
+
   return (
-    <button className="add-to-cart-button" type="button" onClick={onClick}>
+    <button
+      className="c-add-to-cart-button o-button"
+      type="button"
+      onClick={onClick}
+    >
       {children}
     </button>
   );

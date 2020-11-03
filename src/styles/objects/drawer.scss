@@ -1,20 +1,20 @@
-.drawer {
+.o-drawer {
   @include fixed($top: 0, $right: 0);
   @include flex-box;
   @include flex-direction(column);
   @include translateX(100%);
+  @include transition($global-transition);
 
-  z-index: zIndex('nav-bar') + 2;
+  z-index: zIndex('drawer') + 2;
   border-left: 1px solid $color-very-light-grey;
   padding: 12px;
   background-color: $color-white;
-  transition: $global-transition;
 
   &.is-visible {
     @include translateX(0);
   }
 
-  @include bp(medium) {
+  @include bp(sm) {
     @include absolute(
       $top: $global-navbar-height - 12px,
       $right: 0,
