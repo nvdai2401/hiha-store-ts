@@ -67,7 +67,8 @@ module.exports = {
     ],
     'no-param-reassign': OFF,
     'jsx-a11y/click-events-have-key-events': OFF,
-    'jsx-a11y/no-static-element-interactions': OFF
+    'jsx-a11y/no-static-element-interactions': OFF,
+    'jsx-a11y/no-noninteractive-element-interactions': OFF,
   },
   env: {
     browser: true,

@@ -25,6 +25,7 @@
 }
 
 .o-layout-main {
+  @include relative();
   @include flex-box;
   @include flex-direction(column);
   @include size($width: 100vw, $min-height: 100vh);

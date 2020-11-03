@@ -8,16 +8,10 @@
   z-index: zIndex('nav-bar');
   border-bottom: 1px solid $color-very-light-grey;
 
-  a {
-    text-decoration: none;
-  }
-
   &__nav-list {
     @include flex-box;
     @include align-items(center);
     @include size($height: 100%);
-
-    list-style-type: none;
 
     &__item {
       padding: 8px 16px;

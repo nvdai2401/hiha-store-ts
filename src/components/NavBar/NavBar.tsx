@@ -11,7 +11,7 @@ import {
 
 import { ReactComponent as Logo } from 'assets/svg/crown.svg';
 import { ReactComponent as User } from 'assets/svg/user.svg';
-import { CartIcon, DropdownMenu, Overlay } from 'components';
+import { CartIcon, UserOptionsMenu, Overlay } from 'components';
 import { Cart } from 'modules/cart/components';
 
 function NavBar(): React.ReactElement {
@@ -49,7 +49,7 @@ function NavBar(): React.ReactElement {
         <Link to="/" className="c-nav-bar__logo">
           <Logo className="c-nav-bar__logo" />
         </Link>
-        <ul className="c-nav-bar__nav-list m-r-24">
+        <ul className="c-nav-bar__nav-list m-r-24 o-list-bare">
           <li className="c-nav-bar__nav-list__item ">
             <Link to="/shop">Shop</Link>
           </li>
@@ -73,7 +73,7 @@ function NavBar(): React.ReactElement {
       </header>
       <Cart open={cartVisible} isEmpty={itemCount === 0} hideCart={hideCart} />
 
-      <DropdownMenu
+      <UserOptionsMenu
         open={dropdownMenuVisible}
         onClose={() => setDropdownMenuVisible(false)}
       />
