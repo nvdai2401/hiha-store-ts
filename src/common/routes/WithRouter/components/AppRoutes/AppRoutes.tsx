@@ -1,11 +1,12 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import { IRoutePages } from 'common/definitions/routes';
 import { useCurrentUser } from 'hooks/state/userState';
 
 import { SIGN_IN_PAGE_PATH, SIGN_UP_PAGE_PATH } from 'modules/user/config';
 import { HOME_PAGE_PATH } from 'modules/directory/config';
+import { NOT_FOUND_PAGE_PATH } from 'common/pages';
 
 type AppRoutesProps = {
   pages: IRoutePages[];
@@ -48,6 +49,7 @@ function AppRoutes(props: AppRoutesProps): React.ReactElement {
           />
         );
       })}
+      <Redirect to={NOT_FOUND_PAGE_PATH} />
     </Switch>
   );
 }

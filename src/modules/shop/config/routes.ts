@@ -20,5 +20,4 @@ const pages: IRoutePages[] = [
   },
 ];
 
-export { SHOP_PAGE_PATH };
-export default pages;
+export { SHOP_PAGE_PATH, pages };

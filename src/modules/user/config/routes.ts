@@ -34,5 +34,4 @@ const pages: IRoutePages[] = [
   },
 ];
 
-export { USER_PAGE_PATH, SIGN_IN_PAGE_PATH, SIGN_UP_PAGE_PATH };
-export default pages;
+export { USER_PAGE_PATH, SIGN_IN_PAGE_PATH, SIGN_UP_PAGE_PATH, pages };

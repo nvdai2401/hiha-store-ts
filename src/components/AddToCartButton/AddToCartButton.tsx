@@ -2,7 +2,7 @@ import React from 'react';
 
 type Props = {
   children: string | React.Component | React.Component[] | React.ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 function AddToCartButton(props: Props): React.ReactElement {
