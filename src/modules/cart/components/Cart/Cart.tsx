@@ -18,14 +18,14 @@ function Cart(props: Props): React.ReactElement {
   const items = useSelector(selectCartItems);
 
   return (
-    <div className={`o-drawer cart ${open ? 'is-visible' : 'is-invisible'}`}>
-      <div className="cart__header">
+    <div className={`o-drawer c-cart ${open ? 'is-visible' : 'is-invisible'}`}>
+      <div className="c-cart__header p-b-12">
         <span>Your cart</span>
         <span onClick={hideCart} className="pointer">
           &#10005;
         </span>
       </div>
-      <div className="cart__items">
+      <div className="c-cart__items">
         {items.length ? (
           items.map((item) => <CartItem key={item.id} {...item} />)
         ) : (

@@ -1,4 +1,4 @@
-.cart {
+.c-cart {
   @include size(70vw, 100vh);
 
   &__header {
@@ -8,13 +8,12 @@
 
     font-size: 1.5rem;
     border-bottom: 1px solid $color-very-light-grey;
-    padding-bottom: 12px;
   }
 
   &__items {
-    @include size($height: 100%);
     @include flex-box;
     @include flex-direction(column);
+    @include size($height: 100%);
 
     overflow-y: auto;
     margin: 12px 0;

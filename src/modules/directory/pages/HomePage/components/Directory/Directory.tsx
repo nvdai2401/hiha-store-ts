@@ -18,7 +18,7 @@ function Directory(): React.ReactElement {
     fetchDirectorySectionsStart();
   }, []);
 
-  if (loading) return <Spinner classes="m-t-200" />;
+  if (loading) return <Spinner classes="m-t-210" />;
 
   return (
     <div className="c-directory">

@@ -19,7 +19,7 @@ function UserOptionsMenu(props: Props): React.ReactElement {
         open ? 'is-visible' : 'is-invisible'
       }`}
     >
-      <div className="c-user-options-menu__user p-b-4">
+      <div className="c-user-options-menu__user p-b-6">
         <span>Signed in as </span>
 
         <span className="c-user-options-menu__user__name">
