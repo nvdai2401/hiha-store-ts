@@ -14,5 +14,4 @@ const pages: IRoutePages[] = [
   },
 ];
 
-export { CHECKOUT_PAGE_PATH };
-export default pages;
+export { CHECKOUT_PAGE_PATH, pages };

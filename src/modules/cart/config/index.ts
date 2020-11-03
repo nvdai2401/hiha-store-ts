@@ -1,3 +1,3 @@
-import pages, { CHECKOUT_PAGE_PATH } from './routes';
+import { CHECKOUT_PAGE_PATH, pages } from './routes';
 
-export { pages as cartPages, CHECKOUT_PAGE_PATH };
+export { CHECKOUT_PAGE_PATH, pages as cartPages };

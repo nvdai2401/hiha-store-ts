@@ -1,3 +1,13 @@
-import pages, { USER_PAGE_PATH, SIGN_IN_PAGE_PATH, SIGN_UP_PAGE_PATH } from './routes';
+import {
+  USER_PAGE_PATH,
+  SIGN_IN_PAGE_PATH,
+  SIGN_UP_PAGE_PATH,
+  pages,
+} from './routes';
 
-export { pages as userPages, USER_PAGE_PATH, SIGN_IN_PAGE_PATH, SIGN_UP_PAGE_PATH };
+export {
+  USER_PAGE_PATH,
+  SIGN_IN_PAGE_PATH,
+  SIGN_UP_PAGE_PATH,
+  pages as userPages,
+};
