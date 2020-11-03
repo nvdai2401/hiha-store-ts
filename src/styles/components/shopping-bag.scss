@@ -1,0 +1,12 @@
+.c-shopping-bag {
+  @include relative();
+  @include flex-align-content;
+  @include size($height: 45px);
+
+  &__quantity {
+    @include absolute($bottom: 12px);
+
+    font-size: 10px;
+    font-weight: 700;
+  }
+}
