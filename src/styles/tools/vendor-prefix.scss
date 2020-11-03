@@ -1,0 +1,17 @@
+///* ========================================================================
+//   #VENDOR PREFIX
+//   ======================================================================== */
+// Mixin to quickly apply vendor prefix for css properties.
+
+$known-prefixes: webkit, moz, ms, o;
+
+@mixin prefix($property, $value, $prefixes) {
+  #{$property}: $value;
+  @each $prefix in $prefixes {
+    @if not index($known-prefixes, $prefix) {
+      @warn "Unknown prefix #{$prefix}.";
+    }
+
+    -#{$prefix}-#{$property}: $value;
+  }
+}

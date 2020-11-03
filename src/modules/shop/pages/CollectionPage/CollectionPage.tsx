@@ -26,7 +26,7 @@ function CollectionPage(): React.ReactElement {
     }
   }, []);
 
-  if (!collection) return <Spinner width="50px" height="50px" />;
+  if (!collection) return <Spinner classes="m-t-200" />;;
 
   return (
     <div className="collection-page">

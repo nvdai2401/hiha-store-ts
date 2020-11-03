@@ -3,9 +3,18 @@
 //   ======================================================================== */
 // // Mixin to quickly apply width and height to elements.
 
-@mixin size($width: null, $height: null, $maxWidth: null, $maxHeight: null) {
+@mixin size(
+  $width: null,
+  $height: null,
+  $max-width: null,
+  $max-height: null,
+  $min-width: null,
+  $min-height: null
+) {
   width: $width;
   height: $height;
-  max-width: $maxWidth;
-  max-height: $maxHeight;
+  max-width: $max-width;
+  max-height: $max-height;
+  min-width: $min-width;
+  min-height: $min-height;
 }

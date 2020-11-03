@@ -1,0 +1,60 @@
+.c-directory-item {
+  @include flex-align-content;
+  @include size($min-width: 30%, $height: 240px);
+
+  border: 1px solid $color-medium-grey;
+  margin-bottom: 18px;
+  overflow: hidden;
+
+  &:hover {
+    .c-directory-item__image {
+      @include scale(1.1);
+    }
+
+    .c-directory-item__content {
+      opacity: 0.9;
+    }
+  }
+
+  &.large {
+    @include size($height: 380px);
+  }
+
+  &__image {
+    @include transition(transform 300ms cubic-bezier(0.25, 0.45, 0.45, 0.95));
+    @include size(100%, 100%);
+
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__content {
+    @include absolute;
+    @include flex-align-content(column);
+    @include size($height: 90px);
+
+    z-index: zIndex(home);
+    border: 1px solid $color-medium-grey;
+    background-color: $color-white;
+    padding: 0 24px;
+    opacity: 0.7;
+
+    &__title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $color-dark-grey;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    &__sub-title {
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+  }
+
+  @include bp(medium) {
+    @include flex(1, 1, auto);
+    margin: 9px;
+  }
+}

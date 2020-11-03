@@ -18,7 +18,7 @@ function CollectionPreview(): React.ReactElement {
     fetchCollectionsStart();
   }, []);
 
-  if (loading) return <Spinner width="50px" height="50px" />;
+  if (loading) return <Spinner classes="m-t-200" />;
 
   return (
     <div className="collection-preview u-flex-column">

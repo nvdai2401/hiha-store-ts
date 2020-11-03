@@ -1,9 +1,6 @@
-.spinner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+.c-spinner {
+  @include flex-align-content;
+  @include size(100%, 100%);
 
   &__loading {
     display: inline-block;

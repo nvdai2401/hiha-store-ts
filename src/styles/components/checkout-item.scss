@@ -7,9 +7,7 @@
   font-size: 1.2rem;
 
   &__product {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-align-content;
     text-align: center;
 
     span {
