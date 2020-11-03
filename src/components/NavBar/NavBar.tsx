@@ -26,10 +26,12 @@ function NavBar(): React.ReactElement {
     if (dropdownMenuVisible) {
       setDropdownMenuVisible(false);
     }
+
     if (cartVisible) {
       hideCart();
       return;
     }
+
     showCart();
   };
 
@@ -37,36 +39,38 @@ function NavBar(): React.ReactElement {
     if (cartVisible) {
       hideCart();
     }
+
     setDropdownMenuVisible(!dropdownMenuVisible);
   };
 
   return (
-    <header className="nav-bar">
-      <Link to="/" className="nav-bar__logo">
-        <Logo className="nav-bar__logo" />
-      </Link>
-      <ul className="nav-bar__nav-list">
-        <li className="nav-bar__nav-list__item">
-          <Link to="/shop">Shop</Link>
-        </li>
-        <li className="nav-bar__nav-list__item">
-          <Link to="/contact">Contact</Link>
-        </li>
-        <li className="nav-bar__nav-list__item">
-          {currentUser.id ? (
-            <User
-              className="nav-bar__logo pointer"
-              onClick={handleOnToggleDropdownMenu}
-            />
-          ) : (
-            <Link to="/sign-in">Sign in</Link>
-          )}
-        </li>
-      </ul>
-      <div className="nav-bar__cart">
-        <CartIcon itemCount={itemCount} toggleCart={handleToggleCart} />
-      </div>
-
+    <>
+      <header className="c-nav-bar m-b-24">
+        <Link to="/" className="c-nav-bar__logo">
+          <Logo className="c-nav-bar__logo" />
+        </Link>
+        <ul className="c-nav-bar__nav-list m-r-24">
+          <li className="c-nav-bar__nav-list__item ">
+            <Link to="/shop">Shop</Link>
+          </li>
+          <li className="c-nav-bar__nav-list__item">
+            <Link to="/contact">Contact</Link>
+          </li>
+          <li className="c-nav-bar__nav-list__item">
+            {currentUser.id ? (
+              <User
+                className="c-nav-bar__logo pointer"
+                onClick={handleOnToggleDropdownMenu}
+              />
+            ) : (
+              <Link to="/sign-in">Sign in</Link>
+            )}
+          </li>
+        </ul>
+        <div className="c-nav-bar__cart">
+          <CartIcon itemCount={itemCount} toggleCart={handleToggleCart} />
+        </div>
+      </header>
       <Cart open={cartVisible} isEmpty={itemCount === 0} hideCart={hideCart} />
 
       <DropdownMenu
@@ -76,9 +80,12 @@ function NavBar(): React.ReactElement {
 
       <Overlay
         open={cartVisible || dropdownMenuVisible}
-        onClose={() => handleToggleCart()}
+        onClose={() => {
+          hideCart();
+          setDropdownMenuVisible(false);
+        }}
       />
-    </header>
+    </>
   );
 }
 

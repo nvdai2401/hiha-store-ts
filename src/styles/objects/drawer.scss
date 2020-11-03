@@ -4,7 +4,7 @@
   @include flex-direction(column);
   @include translateX(100%);
 
-  z-index: zIndex('nav-bar') + 2;
+  z-index: zIndex('drawer') + 2;
   border-left: 1px solid $color-very-light-grey;
   padding: 12px;
   background-color: $color-white;

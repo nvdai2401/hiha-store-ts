@@ -10,27 +10,3 @@
 .bold {
   font-weight: 700;
 }
-
-$margin: 100 200;
-
-@each $i in $margin {
-  .m-t-#{$i} {
-    margin-top: $i + px;
-  }
-
-  .m-b-#{$i} {
-    margin-bottom: $i + px;
-  }
-
-  .m-l-#{$i} {
-    margin-left: $i + px;
-  }
-
-  .m-r-#{$i} {
-    margin-right: $i + px;
-  }
-
-  .m-t-b-#{$i} {
-    margin: $i auto;
-  }
-}

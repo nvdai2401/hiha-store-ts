@@ -23,8 +23,8 @@ function DirectoryItem(props: Props): React.ReactElement {
           backgroundImage: `url(${imageUrl})`,
         }}
       />
-      <div className="c-directory-item__content">
-        <h3 className="c-directory-item__content__title">{title}</h3>
+      <div className="c-directory-item__content p-l-r-24">
+        <h3 className="c-directory-item__content__title m-b-6">{title}</h3>
         <p className="c-directory-item__content__sub-title">Shop now</p>
       </div>
     </div>

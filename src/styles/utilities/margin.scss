@@ -1,3 +1,32 @@
-.u-m-b-6 {
-  margin-bottom: 6px;
+///* ========================================================================
+//   #MARGIN
+//   ======================================================================== */
+// Quick margin css classes
+
+$margin: 6 24 200;
+
+@each $i in $margin {
+  .m-#{$i} {
+    margin: $i;
+  }
+
+  .m-t-#{$i} {
+    margin-top: $i + px;
+  }
+
+  .m-b-#{$i} {
+    margin-bottom: $i + px;
+  }
+
+  .m-l-#{$i} {
+    margin-left: $i + px;
+  }
+
+  .m-r-#{$i} {
+    margin-right: $i + px;
+  }
+
+  .m-t-b-#{$i} {
+    margin: $i auto;
+  }
 }

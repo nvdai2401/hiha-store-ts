@@ -36,7 +36,6 @@
     z-index: zIndex(home);
     border: 1px solid $color-medium-grey;
     background-color: $color-white;
-    padding: 0 24px;
     opacity: 0.7;
 
     &__title {
@@ -44,7 +43,6 @@
       font-weight: 700;
       color: $color-dark-grey;
       text-transform: uppercase;
-      margin-bottom: 6px;
     }
 
     &__sub-title {
@@ -55,6 +53,7 @@
 
   @include bp(medium) {
     @include flex(1, 1, auto);
+    
     margin: 9px;
   }
 }

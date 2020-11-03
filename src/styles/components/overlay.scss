@@ -2,13 +2,12 @@
   @include fixed($top: 0, $left: 0);
   @include size(100%, 100vh);
 
-  z-index: zIndex('nav-bar') + 1;
+  z-index: zIndex('drawer') + 1;
   background-color: transparent;
   transition: background-color 0.3s ease-in-out;
   pointer-events: none;
 
   &.is-visible {
-    z-index: zIndex('below');
     background-color: rgba(34, 34, 34, 0.4);
     pointer-events: auto;
   }
