@@ -14,15 +14,16 @@ function PaymentButton(props: Props): React.ReactElement {
   };
 
   return (
-    <div className="payment-button">
+    <div className="c-payment-button m-t-12 m-b-12">
       <StripeCheckout
+        name="HiHa Store"
         label="Pay Now"
         image="https://stripe.com/img/documentation/checkout/marketplace.png"
-        name="Hiha Store"
         locale="en"
+        currency="USD"
         billingAddress
         shippingAddress
-        description={`Your total is $${price}`}
+        description={`Your total is $${price}.`}
         amount={price * 100}
         panelLabel="Pay Now"
         token={onToken}

@@ -21,7 +21,7 @@ function CollectionList(props: Props): React.ReactElement {
     <div className="c-collection-list">
       <Link
         to={`${pathname}/${title.toLowerCase()}`}
-        className="c-collection-list__title m-b-18"
+        className="c-collection-list__title bold m-b-18"
       >
         {title.toUpperCase()}
       </Link>

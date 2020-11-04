@@ -2,8 +2,9 @@ import React from 'react';
 
 import { IProduct } from 'common/definitions/product';
 
+import { LazyImage } from 'components';
+
 type Props = {
-  key?: number;
   item: IProduct;
   addItem: () => void;
   removeItem: () => void;
@@ -13,29 +14,33 @@ type Props = {
 function CheckoutItem(props: Props): React.ReactElement {
   const { item, addItem, removeItem, clearItemFromCart } = props;
   const { imageUrl, name, quantity, price } = item;
+  const placeHolder = `${imageUrl}?tr=bl-30,q-50`;
 
   return (
-    <div className="checkout-item">
-      <div className="checkout-item__product">
-        <img src={imageUrl} alt="cart item" />
+    <div className="c-checkout-item">
+      <div className="c-checkout-item__product u-text-center">
+        <LazyImage placeHolder={placeHolder} src={imageUrl} alt={name} />
       </div>
-      <div className="checkout-item__product">
-        <span>{name}</span>
+      <div className="c-checkout-item__product u-text-center">
+        <span className="c-checkout-item__product__name">{name}</span>
       </div>
-      <div className="checkout-item__product">
+      <div className="c-checkout-item__product u-text-center">
         <div className="u-flex-row quantity">
-          <div className="arrow" onClick={removeItem}>
+          <div className="pointer" onClick={removeItem}>
             &#10094;
           </div>
-          <span className="value">{quantity}</span>
-          <div className="arrow" onClick={addItem}>
+          <span className="m-l-6 m-r-6">{quantity}</span>
+          <div className="pointer" onClick={addItem}>
             &#10095;
           </div>
         </div>
       </div>
-      <span className="checkout-item__product">${price}</span>
+      <span className="c-checkout-item__product u-text-center">
+$
+{price}
+      </span>
       <div
-        className="checkout-item__product remove-button"
+        className="c-checkout-item__product pointer u-text-center"
         onClick={clearItemFromCart}
       >
         &#10005;

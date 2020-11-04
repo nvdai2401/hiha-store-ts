@@ -9,7 +9,11 @@ import {
 } from 'hooks/state/userState';
 
 import { IEvent } from 'common/definitions/event';
-import { AddToCartButton, Spinner } from 'components';
+import {
+  CustomButton as SignInButton,
+  CustomButton as GoogleSignInButton,
+  Spinner,
+} from 'components';
 import { TextField } from 'modules/user/components';
 
 function SignIn(): React.ReactElement {
@@ -28,48 +32,62 @@ function SignIn(): React.ReactElement {
     setUserCredentials({ ...userCredentials, [name]: value });
   };
 
+  const handleSubmit = () => {
+    emailSigInStart({ email, password });
+  };
+
   return (
-    <div className="sign-in">
-      <h1 className="sign-in__title">Sign In</h1>
+    <div className="c-sign-in m-t-b-0">
+      <h1 className="m-t-b-0 m-b-24">Sign In</h1>
       <span>Sign in with your email and password.</span>
-      <span className="sign-in__signup-text">
-        No account? <Link to="/sign-up">Create here.</Link>
+      <span className="m-b-18">
+        No account?{' '}
+        <Link to="/sign-up" className="bold">
+          Create here.
+        </Link>
       </span>
-      <div className="sign-in__group-textfield">
+
+      <form className="c-sign-in__form" onSubmit={handleSubmit}>
         <TextField
+          type="email"
           name="email"
           label="Email"
           value={email}
-          handleChange={handleChange}
-          type="email"
           required
+          autoFocus
+          classes="m-b-30"
+          handleChange={handleChange}
         />
         <TextField
+          type="password"
           name="password"
           label="Password"
           value={password}
-          handleChange={handleChange}
-          type="password"
           required
+          classes="m-b-30"
+          handleChange={handleChange}
         />
 
-        <div className="sign-in__group-button">
-          <AddToCartButton onClick={() => emailSigInStart({ email, password })}>
+        <div className="c-sign-in__form__group-button">
+          <SignInButton type="submit">
             {emailSignInLoading ? (
-              <Spinner width="30px" height="30px" />
+              <Spinner width="30px" height="30px" isInverted />
             ) : (
               'Sign in'
             )}
-          </AddToCartButton>
-          <AddToCartButton onClick={googleSigInStart}>
+          </SignInButton>
+          <GoogleSignInButton
+            classes="google-sign-in-button"
+            onClick={googleSigInStart}
+          >
             {googleSignInLoading ? (
               <Spinner width="30px" height="30px" />
             ) : (
               'Continue with Google'
             )}
-          </AddToCartButton>
+          </GoogleSignInButton>
         </div>
-      </div>
+      </form>
       <div />
     </div>
   );

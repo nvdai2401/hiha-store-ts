@@ -1,0 +1,19 @@
+.c-sign-up {
+  @include flex-box;
+  @include flex-direction(column);
+  @include size(100%);
+
+  &__form {
+    &__group-button {
+      @include grid-column-gap(auto 70%, 12px);
+    }
+  }
+
+  .sign-up-button {
+    width: 40%;
+  }
+
+  @include bp(sm) {
+    @include size(380px);
+  }
+}

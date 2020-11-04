@@ -3,7 +3,10 @@ import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { selectCartItems } from 'modules/cart/state/cart.selectors';
 
-import { AddToCartButton } from 'components';
+import {
+  CustomButton as GoToCheckoutButton,
+  CustomButton as ExploreMoreButton,
+} from 'components';
 import { CartItem } from 'modules/cart/components';
 
 type Props = {
@@ -34,13 +37,13 @@ function Cart(props: Props): React.ReactElement {
       </div>
 
       {!isEmpty ? (
-        <AddToCartButton onClick={() => history.push('/checkout')}>
+        <GoToCheckoutButton onClick={() => history.push('/checkout')}>
           GO TO CHECKOUT
-        </AddToCartButton>
+        </GoToCheckoutButton>
       ) : (
-        <AddToCartButton onClick={() => history.push('/shop')}>
+        <ExploreMoreButton onClick={() => history.push('/shop')}>
           EXPLORE MORE
-        </AddToCartButton>
+        </ExploreMoreButton>
       )}
     </div>
   );

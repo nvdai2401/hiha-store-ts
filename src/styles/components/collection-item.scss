@@ -9,7 +9,7 @@
     @include size($height: 75%);
   }
 
-  .c-add-to-cart-button {
+  .add-to-cart-button {
     width: 100%;
   }
 
@@ -37,7 +37,7 @@
       @include size($height: 100%);
     }
 
-    .c-add-to-cart-button {
+    .add-to-cart-button {
       @include absolute($top: 40%);
       @include size(80%);
       @include transition(all 200ms ease-in-out);
@@ -59,7 +59,7 @@
         opacity: 0.8;
       }
 
-      .c-add-to-cart-button {
+      .add-to-cart-button {
         @include visible();
       }
     }
