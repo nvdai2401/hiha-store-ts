@@ -1,36 +1,27 @@
-.sign-in {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
+.c-sign-in {
+  @include flex-box;
+  @include flex-direction(column);
+  @include size(100%);
 
-  span {
-    line-height: 1.5rem;
-  }
-
-  &__title {
-    text-align: center;
-  }
-
-  &__signup-text {
-    margin-bottom: 18px;
-
-    a {
-      font-weight: 700;
+  &__form {
+    &__group-button {
+      @include grid-column-gap(auto 70%, 12px);
     }
   }
 
-  &__group-textfield {
-    .text-field {
-      margin-bottom: 30px;
-    }
-  }
+  .google-sign-in-button {
+    background-color: $color-blue;
 
-  &__group-button {
-    @include grid-column-gap(auto 70%, 12px);
+    @include bp(xl) {
+      &:hover {
+        background-color: $color-white;
+        border-color: $color-blue;
+        color: $color-blue;
+      }
+    }
   }
 
   @include bp(sm) {
-    width: 380px;
+    @include size(380px);
   }
 }

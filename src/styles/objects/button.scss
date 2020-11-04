@@ -1,4 +1,6 @@
 .o-button {
+  @include transition(all 150ms ease-in-out);
+
   letter-spacing: 0.5px;
   height: 50px;
   font-weight: 700;

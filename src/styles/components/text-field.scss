@@ -2,18 +2,22 @@
   top: -12px;
   font-size: 1rem;
   color: $color-black;
+
+  @include bp(xl) {
+    font-size: 0.875rem;
+  }
 }
 
-.text-field {
-  position: relative;
+.c-text-field {
+  @include relative();
 
   &__input {
-    width: 100%;
+    @include size(100%);
+
     border: none;
     border-bottom: 1px solid $color-medium-grey;
     padding: 12px 6px;
-    font-size: 1.25rem;
-    line-height: 1.5rem;
+    font-size: 1rem;
 
     &:focus {
       outline: none;
@@ -29,14 +33,16 @@
   }
 
   &__label {
-    position: absolute;
-    left: 5px;
-    top: 10px;
-    font-size: 1.2rem;
-    font-weight: normal;
+    @include absolute($top: 10px, $left: 5px);
+    @include transition(all 200ms ease-in-out);
+
+    font-size: 1.125rem;
     color: $color-medium-grey;
     pointer-events: none;
-    transition: 300ms ease all;
+
+    @include bp(xl) {
+      font-size: 1rem;
+    }
   }
 
   .is-shrink {

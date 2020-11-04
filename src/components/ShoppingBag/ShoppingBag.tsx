@@ -13,7 +13,7 @@ function ShoppingBag(props: Props): React.ReactElement {
   return (
     <div className="c-shopping-bag pointer" onClick={toggleCart}>
       <ShoppingBagIcon />
-      <span className="c-shopping-bag__quantity">
+      <span className="c-shopping-bag__quantity bold">
         {quantity < 100 ? quantity : '99+'}
       </span>
     </div>

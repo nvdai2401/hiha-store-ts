@@ -1,0 +1,31 @@
+.c-custom-button {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  background-color: $color-black;
+  color: $color-white;
+  text-transform: uppercase;
+
+  @include bp(xl) {
+    font-size: 1rem;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-black;
+      border: 1px solid $color-black;
+    }
+  }
+
+  &.is-inverted {
+    background-color: $color-white;
+    color: $color-black;
+    border: 1px solid $color-black;
+
+    @include bp(xl) {
+      &:hover {
+        background-color: $color-black;
+        color: $color-white;
+        border: none;
+      }
+    }
+  }
+}

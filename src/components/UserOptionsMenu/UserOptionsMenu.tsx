@@ -22,7 +22,7 @@ function UserOptionsMenu(props: Props): React.ReactElement {
       <div className="c-user-options-menu__user p-b-6">
         <span>Signed in as </span>
 
-        <span className="c-user-options-menu__user__name">
+        <span className="c-user-options-menu__user__name bold">
           {currentUser.displayName}
         </span>
       </div>
