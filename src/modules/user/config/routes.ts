@@ -2,7 +2,7 @@ import { IRoutePages } from 'common/definitions/routes';
 import { Main } from 'common/layouts';
 import { UserInfo, SignIn, SignUp, Contact } from '../pages';
 
-const USER_PAGE_PATH = '/user';
+const USER_PAGE_PATH = '/user-info';
 const SIGN_IN_PAGE_PATH = '/sign-in';
 const SIGN_UP_PAGE_PATH = '/sign-up';
 const CONTACT_PAGE_PATH = '/contact';

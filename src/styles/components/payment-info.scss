@@ -1,0 +1,11 @@
+.c-payment-info {
+  @include flex-box;
+  @include flex-direction(column);
+  @include size(100%);
+
+  &__warning {
+    font-size: 1.125rem;
+    color: $color-blue;
+    text-align: center;
+  }
+}

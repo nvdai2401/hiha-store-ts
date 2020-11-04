@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { takeLatest, call, all, put } from 'redux-saga/effects';
 import { push } from 'connected-react-router';
 
@@ -7,6 +8,7 @@ import {
   createUserProfileDocument,
   getCurrentUser,
 } from 'core/api/firebase';
+import { convertTimestampToDateTime } from 'utils';
 
 import { HOME_PAGE_PATH } from 'modules/directory/config';
 import { SIGN_IN_PAGE_PATH } from 'modules/user/config';
@@ -24,13 +26,18 @@ export function* getUserSnapshotFromUserAuth(userAuth, additionalData = {}) {
     const userRef = yield createUserProfileDocument(userAuth, additionalData);
     const userSnapshot = yield userRef.get();
     const userInfo = userSnapshot.data();
-
     if (!userInfo) return;
+
+    const createdAt = convertTimestampToDateTime(
+      userInfo.createAt.seconds * 1000,
+    );
+
     yield put(
       sigInSuccess({
         id: userSnapshot.id,
         displayName: userInfo.displayName,
         email: userInfo.email,
+        createdAt,
       }),
     );
   } catch (error) {
@@ -45,6 +52,7 @@ export function* signInWithGoogle() {
     yield put(push(HOME_PAGE_PATH));
   } catch (error) {
     yield put(signInFailure(error.message));
+    alert(error.message);
   }
 }
 
@@ -56,6 +64,7 @@ export function* signInWithEmail(data) {
     yield put(push(HOME_PAGE_PATH));
   } catch (error) {
     yield put(signInFailure(error.message));
+    alert(error.message);
   }
 }
 
@@ -66,6 +75,7 @@ export function* isUserAuthenticated() {
     yield getUserSnapshotFromUserAuth(userAuth);
   } catch (error) {
     yield put(signInFailure(error.message));
+    alert(error.message);
   }
 }
 
@@ -76,6 +86,7 @@ export function* signOut() {
     yield put(push(SIGN_IN_PAGE_PATH));
   } catch (error) {
     yield put(signOutFailure(error.message));
+    alert(error.message);
   }
 }
 
@@ -91,7 +102,7 @@ export function* signUp(data) {
     );
   } catch (error) {
     yield put(signUpFailure(error));
-    yield alert(error.message);
+    alert(error.message);
   }
 }
 

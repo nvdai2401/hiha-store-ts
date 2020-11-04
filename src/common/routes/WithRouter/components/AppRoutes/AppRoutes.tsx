@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 import { IRoutePages } from 'common/definitions/routes';
-import { useCurrentUser } from 'hooks/state/userState';
+import { useCurrentUser, useCheckUserSession } from 'hooks/state/userState';
 
 import { SIGN_IN_PAGE_PATH, SIGN_UP_PAGE_PATH } from 'modules/user/config';
 import { HOME_PAGE_PATH } from 'modules/directory/config';
@@ -15,6 +15,13 @@ type AppRoutesProps = {
 function AppRoutes(props: AppRoutesProps): React.ReactElement {
   const { pages } = props;
   const currentUser = useCurrentUser();
+  const checkUserSession = useCheckUserSession();
+
+  useEffect(() => {
+    if (!currentUser.id) {
+      checkUserSession();
+    }
+  }, []);
 
   const beforeRender = ({ location, history }) => {
     if (

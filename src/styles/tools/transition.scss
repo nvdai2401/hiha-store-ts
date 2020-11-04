@@ -18,9 +18,6 @@
   }
 
   @include prefix(transition, $unfoldedTransitions, webkit moz);
-
-  // -webkit-transition: $unfoldedTransitions;
-  // transition: $unfoldedTransitions;
 }
 
 @function unfoldTransition($transition) {

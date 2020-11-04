@@ -1,0 +1,26 @@
+.c-shopping-cart {
+  @include flex-box;
+  @include flex-direction(column);
+  @include align-items(center);
+  @include size(100%);
+
+  &__header {
+    @include grid-column-gap(20% 30% 20% 12% 18%);
+    @include size(100%);
+
+    padding: 12px 0;
+    border-bottom: 1px solid $color-light-grey;
+
+    li {
+      font-size: 1.25rem;
+      font-weight: 500;
+      text-transform: capitalize;
+      text-align: center;
+    }
+  }
+
+  .total {
+    margin-left: auto;
+    font-size: 1.5rem;
+  }
+}

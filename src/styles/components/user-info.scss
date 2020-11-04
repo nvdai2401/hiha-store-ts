@@ -1,6 +1,7 @@
-.c-contact {
+.c-user-info {
   @include flex-box;
   @include flex-direction(column);
+  @include size(100%);
 
   font-size: 1.25rem;
 }

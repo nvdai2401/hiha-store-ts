@@ -32,7 +32,9 @@ function SignIn(): React.ReactElement {
     setUserCredentials({ ...userCredentials, [name]: value });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
     emailSigInStart({ email, password });
   };
 

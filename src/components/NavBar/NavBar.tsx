@@ -10,7 +10,7 @@ import {
 } from 'hooks/state/cartState';
 
 import { ShoppingBag, UserOptionsMenu, Overlay } from 'components';
-import { Cart } from 'modules/cart/components';
+import { MiniCart } from 'modules/cart/components';
 import { CrownIcon, UserIcon } from 'common/icons';
 
 function NavBar(): React.ReactElement {
@@ -70,7 +70,11 @@ function NavBar(): React.ReactElement {
           <ShoppingBag quantity={itemCount} toggleCart={handleToggleCart} />
         </div>
       </header>
-      <Cart open={cartVisible} isEmpty={itemCount === 0} hideCart={hideCart} />
+      <MiniCart
+        open={cartVisible}
+        isEmpty={itemCount === 0}
+        hideCart={hideCart}
+      />
 
       <UserOptionsMenu
         open={dropdownMenuVisible}
