@@ -9,8 +9,8 @@ type Props = {
 };
 
 function DirectoryItem(props: Props): React.ReactElement {
-  const { title, imageUrl, size, linkUrl } = props;
   const history = useHistory();
+  const { title, imageUrl, size, linkUrl } = props;
 
   return (
     <div

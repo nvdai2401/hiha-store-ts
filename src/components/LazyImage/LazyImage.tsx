@@ -4,13 +4,13 @@ type Props = {
   width?: number;
   height?: number;
   src: string;
-  className?: string;
+  classes?: string;
   alt: string;
   placeHolder: string;
 };
 
 function LazyImage(props: Props): React.ReactElement {
-  const { width, height, className = '', alt, placeHolder } = props;
+  const { width, height, classes = '', alt = '', placeHolder = '' } = props;
   const [loaded, setLoaded] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
 
@@ -50,12 +50,12 @@ function LazyImage(props: Props): React.ReactElement {
   return (
     <img
       src={placeHolder}
-      width={width || '100%'}
-      height={height || '100%'}
-      ref={imgRef}
-      className={`c-lazy-image ${className}`}
       alt={alt}
-      sizes="80vw"
+      width={width}
+      height={height}
+      ref={imgRef}
+      loading="lazy"
+      className={`c-lazy-image ${classes}`}
     />
   );
 }

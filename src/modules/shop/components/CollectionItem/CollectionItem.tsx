@@ -17,13 +17,11 @@ type Props = {
 function CollectionItem(props: Props): React.ReactElement {
   const { item, addItem } = props;
   const { name, price, imageUrl } = item;
+  const placeHolder = `${imageUrl}?tr=bl-30,q-50`;
+
   return (
     <div className="c-collection-item">
-      <LazyImage
-        placeHolder={`${imageUrl}?tr=bl-30,q-50`}
-        src={imageUrl}
-        alt={name}
-      />
+      <LazyImage placeHolder={placeHolder} src={imageUrl} alt={name} />
       <div className="c-collection-item__info m-b-6">
         <span className="c-collection-item__info__name">{name}</span>
         <span>{`$${price}`}</span>

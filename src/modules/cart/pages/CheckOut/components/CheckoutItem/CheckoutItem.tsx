@@ -2,6 +2,8 @@ import React from 'react';
 
 import { IProduct } from 'common/definitions/product';
 
+import { LazyImage } from 'components';
+
 type Props = {
   item: IProduct;
   addItem: () => void;
@@ -12,11 +14,12 @@ type Props = {
 function CheckoutItem(props: Props): React.ReactElement {
   const { item, addItem, removeItem, clearItemFromCart } = props;
   const { imageUrl, name, quantity, price } = item;
+  const placeHolder = `${imageUrl}?tr=bl-30,q-50`;
 
   return (
     <div className="c-checkout-item">
       <div className="c-checkout-item__product u-text-center">
-        <img src={imageUrl} alt="cart item" />
+        <LazyImage placeHolder={placeHolder} src={imageUrl} alt={name} />
       </div>
       <div className="c-checkout-item__product u-text-center">
         <span className="c-checkout-item__product__name">{name}</span>
@@ -32,7 +35,10 @@ function CheckoutItem(props: Props): React.ReactElement {
           </div>
         </div>
       </div>
-      <span className="c-checkout-item__product u-text-center">${price}</span>
+      <span className="c-checkout-item__product u-text-center">
+$
+{price}
+      </span>
       <div
         className="c-checkout-item__product pointer u-text-center"
         onClick={clearItemFromCart}

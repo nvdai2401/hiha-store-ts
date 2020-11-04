@@ -4,14 +4,12 @@
 
   &__image {
     @include size(20%);
-
-    object-fit: cover;
   }
 
   &__body {
     @include flex-align-content(column, flex-start, center);
 
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 
   @include bp(sm) {
@@ -20,7 +18,7 @@
     }
 
     &__body {
-      font-size: 1rem;
+      font-size: 0.875rem;
     }
   }
 }
