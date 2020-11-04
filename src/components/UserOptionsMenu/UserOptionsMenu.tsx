@@ -35,7 +35,7 @@ function UserOptionsMenu(props: Props): React.ReactElement {
       </div>
       <ul className="c-user-options-menu__options o-list-bare">
         <li className="c-user-options-menu__options__item">
-          <Link to="/user">Your profile</Link>
+          <Link to="/user-info">Your profile</Link>
         </li>
         <li className="c-user-options-menu__options__item">
           <Link to="/checkout">Cart</Link>

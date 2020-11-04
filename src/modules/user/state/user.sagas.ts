@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { takeLatest, call, all, put } from 'redux-saga/effects';
 import { push } from 'connected-react-router';
 
@@ -51,6 +52,7 @@ export function* signInWithGoogle() {
     yield put(push(HOME_PAGE_PATH));
   } catch (error) {
     yield put(signInFailure(error.message));
+    alert(error.message);
   }
 }
 
@@ -62,6 +64,7 @@ export function* signInWithEmail(data) {
     yield put(push(HOME_PAGE_PATH));
   } catch (error) {
     yield put(signInFailure(error.message));
+    alert(error.message);
   }
 }
 
@@ -72,6 +75,7 @@ export function* isUserAuthenticated() {
     yield getUserSnapshotFromUserAuth(userAuth);
   } catch (error) {
     yield put(signInFailure(error.message));
+    alert(error.message);
   }
 }
 
@@ -82,6 +86,7 @@ export function* signOut() {
     yield put(push(SIGN_IN_PAGE_PATH));
   } catch (error) {
     yield put(signOutFailure(error.message));
+    alert(error.message);
   }
 }
 
@@ -97,7 +102,7 @@ export function* signUp(data) {
     );
   } catch (error) {
     yield put(signUpFailure(error));
-    yield alert(error.message);
+    alert(error.message);
   }
 }
 
