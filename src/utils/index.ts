@@ -1,3 +1,3 @@
-import { getDateTimeFromTimestamp } from './time';
+import { convertTimestampToDateTime } from './time';
 
-export { getDateTimeFromTimestamp };
+export { convertTimestampToDateTime };

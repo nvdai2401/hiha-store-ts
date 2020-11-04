@@ -8,7 +8,7 @@ import {
   createUserProfileDocument,
   getCurrentUser,
 } from 'core/api/firebase';
-import { getDateTimeFromTimestamp } from 'utils';
+import { convertTimestampToDateTime } from 'utils';
 
 import { HOME_PAGE_PATH } from 'modules/directory/config';
 import { SIGN_IN_PAGE_PATH } from 'modules/user/config';
@@ -28,7 +28,7 @@ export function* getUserSnapshotFromUserAuth(userAuth, additionalData = {}) {
     const userInfo = userSnapshot.data();
     if (!userInfo) return;
 
-    const createdAt = getDateTimeFromTimestamp(
+    const createdAt = convertTimestampToDateTime(
       userInfo.createAt.seconds * 1000,
     );
 

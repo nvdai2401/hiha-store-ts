@@ -3,10 +3,10 @@ import React from 'react';
 function Contact(): React.ReactElement {
   return (
     <div className="c-contact">
-      <h1 className="c-contact__title">Contact information</h1>
+      <h1 className="m-t-b-0 m-b-24">Contact information</h1>
       <p className="bold">Contact with me via:</p>
       <ul>
-        <li>
+        <li className="m-l-24">
           LinkedIn:{' '}
           <a
             href="https://www.linkedin.com/in/nvdai2401/"
@@ -16,7 +16,7 @@ function Contact(): React.ReactElement {
             https://www.linkedin.com/in/nvdai2401/
           </a>
         </li>
-        <li>
+        <li className="m-l-24">
           Github:{' '}
           <a
             href="https://github.com/nvdai2401"
@@ -26,7 +26,7 @@ function Contact(): React.ReactElement {
             https://github.com/nvdai2401
           </a>
         </li>
-        <li>
+        <li className="m-l-24">
           Stackoverflow:{' '}
           <a
             href="https://stackoverflow.com/users/9548285/michael"

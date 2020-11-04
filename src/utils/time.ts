@@ -1,4 +1,4 @@
-export function getDateTimeFromTimestamp(
+export function convertTimestampToDateTime(
   unixTimeStamp: string | number,
 ): string {
   const date = new Date(unixTimeStamp);

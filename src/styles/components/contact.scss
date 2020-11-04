@@ -3,14 +3,4 @@
   @include flex-direction(column);
 
   font-size: 1.25rem;
-
-  &__title {
-    margin: 0 auto 30px;
-  }
-
-  ul {
-    li {
-      margin-left: 24px;
-    }
-  }
 }
