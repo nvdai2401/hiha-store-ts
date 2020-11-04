@@ -77,7 +77,7 @@ function SignIn(): React.ReactElement {
             )}
           </SignInButton>
           <GoogleSignInButton
-            classes="google-c-sign-in-button"
+            classes="google-sign-in-button"
             onClick={googleSigInStart}
           >
             {googleSignInLoading ? (
