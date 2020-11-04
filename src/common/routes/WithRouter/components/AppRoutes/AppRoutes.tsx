@@ -23,7 +23,7 @@ function AppRoutes(props: AppRoutesProps): React.ReactElement {
     }
   }, []);
 
-  const beforeRender = ({ location, history }) => {
+  const beforeRender = ({ location, history }, page) => {
     if (
       (location.pathname === SIGN_IN_PAGE_PATH ||
         location.pathname === SIGN_UP_PAGE_PATH) &&
@@ -31,6 +31,9 @@ function AppRoutes(props: AppRoutesProps): React.ReactElement {
     ) {
       history.push(HOME_PAGE_PATH);
     }
+    document.title = page.title
+      ? `${page.title} | HiHa Store`
+      : 'Unknown title';
   };
 
   return (
@@ -38,14 +41,14 @@ function AppRoutes(props: AppRoutesProps): React.ReactElement {
       {pages.map((page) => {
         return (
           <Route
-            key={page.title}
+            key={page.path}
             path={page.path}
             exact={page.exact}
             render={(routeProps) => {
               const Layout = page.layout;
               const Component = page.component;
 
-              beforeRender(routeProps);
+              beforeRender(routeProps, page);
 
               return (
                 <Layout>

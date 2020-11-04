@@ -7,7 +7,7 @@ const HOME_PAGE_PATH = '/';
 const pages: IRoutePages[] = [
   {
     path: HOME_PAGE_PATH,
-    title: 'HomePage',
+    title: 'Home page',
     exact: true,
     component: HomePage,
     layout: Main,

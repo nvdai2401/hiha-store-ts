@@ -12,7 +12,7 @@ const NOT_FOUND_PAGE_PATH = '/404-not-found';
 const commonPages: IRoutePages[] = [
   {
     path: NOT_FOUND_PAGE_PATH,
-    title: 'NotFound',
+    title: '404 - Not found',
     component: NotFound,
     layout: Main,
   },

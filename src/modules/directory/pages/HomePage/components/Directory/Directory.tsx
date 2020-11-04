@@ -22,8 +22,8 @@ function Directory(): React.ReactElement {
 
   return (
     <div className="c-directory">
-      {sections.map(({ id, ...otherSectionsItems }) => (
-        <DirectoryItem key={id} {...otherSectionsItems} />
+      {sections.map((section) => (
+        <DirectoryItem key={section.id} {...section} />
       ))}
     </div>
   );
