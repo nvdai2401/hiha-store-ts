@@ -10,25 +10,25 @@ const CONTACT_PAGE_PATH = '/contact';
 const pages: IRoutePages[] = [
   {
     path: USER_PAGE_PATH,
-    title: 'UserInfo',
+    title: 'User information',
     component: UserInfo,
     layout: Main,
   },
   {
     path: SIGN_IN_PAGE_PATH,
-    title: 'SignIn',
+    title: 'Sign In',
     component: SignIn,
     layout: Main,
   },
   {
     path: SIGN_UP_PAGE_PATH,
-    title: 'SignUp',
+    title: 'Sign Up',
     component: SignUp,
     layout: Main,
   },
   {
     path: CONTACT_PAGE_PATH,
-    title: 'Contact',
+    title: 'Contact information',
     component: Contact,
     layout: Main,
   },

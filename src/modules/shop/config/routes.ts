@@ -7,14 +7,14 @@ const SHOP_PAGE_PATH = '/shop';
 const pages: IRoutePages[] = [
   {
     path: SHOP_PAGE_PATH,
-    title: 'HomePage',
+    title: 'Shop page',
     exact: true,
     component: CollectionPreview,
     layout: Main,
   },
   {
     path: `${SHOP_PAGE_PATH}/:collectionName`,
-    title: 'CollectionPage',
+    title: 'Collection page',
     component: CollectionPage,
     layout: Main,
   },

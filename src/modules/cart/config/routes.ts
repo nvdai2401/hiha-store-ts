@@ -7,7 +7,7 @@ const CHECKOUT_PAGE_PATH = '/checkout';
 const pages: IRoutePages[] = [
   {
     path: CHECKOUT_PAGE_PATH,
-    title: 'CheckOutPage',
+    title: 'Checkout',
     exact: true,
     component: CheckOut,
     layout: Main,
