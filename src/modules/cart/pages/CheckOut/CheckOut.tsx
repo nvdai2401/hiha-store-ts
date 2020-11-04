@@ -18,9 +18,9 @@ function CheckOut(): React.ReactElement {
   const clearItems = useClearItemsFromCart();
 
   return (
-    <div className="checkout">
-      <h1 className="checkout__title">Checkout</h1>
-      <ul className="checkout__header">
+    <div className="c-checkout">
+      <h1 className="m-t-b-0 m-b-24">Checkout</h1>
+      <ul className="c-checkout__header o-list-bare">
         <li>Product</li>
         <li>Description</li>
         <li>Quantity</li>
@@ -37,9 +37,9 @@ function CheckOut(): React.ReactElement {
           clearItemFromCart={() => clearItems(cartItem)}
         />
       ))}
-      <div className="total">Total: ${total}</div>
+      <div className="total m-t-18">Total: ${total}</div>
       <PaymentButton price={total} />
-      <div className="test-warning">
+      <div className="test-warning m-b-24">
         *Please use the following test credit card for payment*
         <br />
         4242 4242 4242 4242 - Exp: 01/24 - CVV: 123
