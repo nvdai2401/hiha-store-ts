@@ -4,11 +4,7 @@ import { Link } from 'react-router-dom';
 import { IEvent } from 'common/definitions/event';
 import { useSignUpStart, useSignUpLoading } from 'hooks/state/userState';
 
-import {
-  CustomButton as SignUpButton,
-  AddToCartButton,
-  Spinner,
-} from 'components';
+import { CustomButton as SignUpButton, Spinner } from 'components';
 import { TextField } from 'modules/user/components';
 
 function SignUp(): React.ReactElement {

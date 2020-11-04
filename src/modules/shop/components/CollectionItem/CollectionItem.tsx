@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { LazyImage, AddToCartButton } from 'components';
+import { LazyImage, CustomButton as AddToCartButton } from 'components';
 
 interface ICollection {
   id?: number;
@@ -28,7 +28,9 @@ function CollectionItem(props: Props): React.ReactElement {
         <span className="c-collection-item__info__name">{name}</span>
         <span>{`$${price}`}</span>
       </div>
-      <AddToCartButton onClick={addItem}>Add to cart</AddToCartButton>
+      <AddToCartButton onClick={addItem} classes="add-to-cart-button">
+        Add to cart
+      </AddToCartButton>
     </div>
   );
 }
