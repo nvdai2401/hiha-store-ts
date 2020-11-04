@@ -1,11 +1,15 @@
-.contact {
+.c-contact {
+  @include flex-box;
+  @include flex-direction(column);
+
+  font-size: 1.25rem;
+
   &__title {
-    margin: 0;
+    margin: 0 auto 30px;
   }
 
   ul {
     li {
-      font-size: 1.25rem;
       margin-left: 24px;
     }
   }

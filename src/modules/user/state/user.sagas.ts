@@ -7,6 +7,7 @@ import {
   createUserProfileDocument,
   getCurrentUser,
 } from 'core/api/firebase';
+import { getDateTimeFromTimestamp } from 'utils';
 
 import { HOME_PAGE_PATH } from 'modules/directory/config';
 import { SIGN_IN_PAGE_PATH } from 'modules/user/config';
@@ -24,13 +25,18 @@ export function* getUserSnapshotFromUserAuth(userAuth, additionalData = {}) {
     const userRef = yield createUserProfileDocument(userAuth, additionalData);
     const userSnapshot = yield userRef.get();
     const userInfo = userSnapshot.data();
-
     if (!userInfo) return;
+
+    const createdAt = getDateTimeFromTimestamp(
+      userInfo.createAt.seconds * 1000,
+    );
+
     yield put(
       sigInSuccess({
         id: userSnapshot.id,
         displayName: userInfo.displayName,
         email: userInfo.email,
+        createdAt,
       }),
     );
   } catch (error) {

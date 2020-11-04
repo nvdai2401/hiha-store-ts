@@ -18,10 +18,10 @@
 
 - [ ] Config font face, change page title when mounting a page
 - [ ] Add type check for routing, layout, sagas
-- [ ] Refactor firebase
-- [ ] Refactor button
-- [ ] Add prefix for component class
-- [ ] Create protected route for SignIn page
-- [ ] Setup some hooks for component before entering a route
-  - [ ] Scroll top
-  - [ ] Hide cart
+- [x] Refactor firebase
+- [x] Refactor button
+- [x] Add prefix for component class
+- [x] Create protected route for SignIn page
+- [x] Setup some hooks for component before entering a route
+  - [x] Scroll top
+  - [x] Hide cart

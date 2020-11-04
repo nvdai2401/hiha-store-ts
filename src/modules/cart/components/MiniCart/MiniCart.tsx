@@ -15,7 +15,7 @@ type Props = {
   hideCart: () => void;
 };
 
-function Cart(props: Props): React.ReactElement {
+function MiniCart(props: Props): React.ReactElement {
   const { open, isEmpty, hideCart } = props;
   const history = useHistory();
   const items = useSelector(selectCartItems);
@@ -49,4 +49,4 @@ function Cart(props: Props): React.ReactElement {
   );
 }
 
-export default Cart;
+export default MiniCart;

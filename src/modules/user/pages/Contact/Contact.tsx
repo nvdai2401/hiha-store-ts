@@ -2,8 +2,9 @@ import React from 'react';
 
 function Contact(): React.ReactElement {
   return (
-    <div className="contact">
-      <h1 className="contact__title">Contact with me via:</h1>
+    <div className="c-contact">
+      <h1 className="c-contact__title">Contact information</h1>
+      <p className="bold">Contact with me via:</p>
       <ul>
         <li>
           LinkedIn:{' '}
