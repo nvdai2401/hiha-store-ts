@@ -1,5 +1,21 @@
 # HiHa Store TypeScript
 
+- Intro app: ref to hiha
+- Intro frontend architecture
+  - Module
+  - SCSS
+- Technique:
+  - Like hiha
+  - web font
+- Todo
+  - Safer type
+  - features
+  - Backend
+  - Tests
+- Installation guide
+- Require
+- Pic
+
 ## Todo
 
 - [x] Make saga work well with reduxjs toolkit
