@@ -4,7 +4,7 @@
     "static/js/0.54c23f50.chunk.js.map": "/hiha-store-ts/static/js/0.54c23f50.chunk.js.map",
     "static/js/1.60dd2045.chunk.js": "/hiha-store-ts/static/js/1.60dd2045.chunk.js",
     "static/js/1.60dd2045.chunk.js.map": "/hiha-store-ts/static/js/1.60dd2045.chunk.js.map",
-    "main.css": "/hiha-store-ts/static/css/main.15c9323d.chunk.css",
+    "main.css": "/hiha-store-ts/static/css/main.95b2f52a.chunk.css",
     "main.js": "/hiha-store-ts/static/js/main.ff8b3630.chunk.js",
     "main.js.map": "/hiha-store-ts/static/js/main.ff8b3630.chunk.js.map",
     "runtime-main.js": "/hiha-store-ts/static/js/runtime-main.3a190098.js",
@@ -18,9 +18,9 @@
     "static/js/7.9d0ce9c9.chunk.js": "/hiha-store-ts/static/js/7.9d0ce9c9.chunk.js",
     "static/js/7.9d0ce9c9.chunk.js.map": "/hiha-store-ts/static/js/7.9d0ce9c9.chunk.js.map",
     "index.html": "/hiha-store-ts/index.html",
-    "precache-manifest.aabd40d050054ef7d99f0d3ca80dd64a.js": "/hiha-store-ts/precache-manifest.aabd40d050054ef7d99f0d3ca80dd64a.js",
+    "precache-manifest.bd83ed9d2766fe6da990bad49085b505.js": "/hiha-store-ts/precache-manifest.bd83ed9d2766fe6da990bad49085b505.js",
     "service-worker.js": "/hiha-store-ts/service-worker.js",
-    "static/css/main.15c9323d.chunk.css.map": "/hiha-store-ts/static/css/main.15c9323d.chunk.css.map",
+    "static/css/main.95b2f52a.chunk.css.map": "/hiha-store-ts/static/css/main.95b2f52a.chunk.css.map",
     "static/js/4.3257bc78.chunk.js.LICENSE.txt": "/hiha-store-ts/static/js/4.3257bc78.chunk.js.LICENSE.txt",
     "static/media/crown.2ad462a3.svg": "/hiha-store-ts/static/media/crown.2ad462a3.svg",
     "static/media/index.scss": "/hiha-store-ts/static/media/lato-regular-webfont.fcc9fe9d.woff",
@@ -30,7 +30,7 @@
   "entrypoints": [
     "static/js/runtime-main.3a190098.js",
     "static/js/4.3257bc78.chunk.js",
-    "static/css/main.15c9323d.chunk.css",
+    "static/css/main.95b2f52a.chunk.css",
     "static/js/main.ff8b3630.chunk.js"
   ]
 }

@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3d83758a424838bdeec7aded99bfa62b",
+    "revision": "f06ab08a5a472f895b0bc386c929c792",
     "url": "/hiha-store-ts/index.html"
   },
   {
-    "revision": "90e197389e2a84cb4195",
-    "url": "/hiha-store-ts/static/css/main.15c9323d.chunk.css"
+    "revision": "00d13941130a8c80a0f8",
+    "url": "/hiha-store-ts/static/css/main.95b2f52a.chunk.css"
   },
   {
     "revision": "66a6c736aea045fa5d4e",
@@ -36,7 +36,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hiha-store-ts/static/js/7.9d0ce9c9.chunk.js"
   },
   {
-    "revision": "90e197389e2a84cb4195",
+    "revision": "00d13941130a8c80a0f8",
     "url": "/hiha-store-ts/static/js/main.ff8b3630.chunk.js"
   },
   {
