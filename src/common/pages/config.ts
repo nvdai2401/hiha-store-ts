@@ -2,6 +2,7 @@ import { lazy } from 'react';
 import { IRoute } from 'common/definitions/routes';
 
 import { Main } from 'common/layouts';
+import { Spinner } from 'components';
 
 const NotFoundPage = lazy(() => import('common/pages/NotFound'));
 
@@ -12,6 +13,7 @@ const routes: IRoute[] = [
     path: NOT_FOUND_PAGE_PATH,
     title: '404 - Not found',
     component: NotFoundPage,
+    fallback: Spinner,
     layout: Main,
   },
 ];

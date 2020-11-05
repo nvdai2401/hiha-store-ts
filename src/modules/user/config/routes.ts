@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 import { IRoute } from 'common/definitions/routes';
 import { Main } from 'common/layouts';
+import { Spinner } from 'components';
 
 const UserInfoPage = lazy(() =>
   import('modules/user/pages').then(({ UserInfo }) => ({
@@ -35,24 +36,28 @@ const routes: IRoute[] = [
   {
     path: USER_INFO_PAGE_PATH,
     title: 'User information',
+    fallback: Spinner,
     component: UserInfoPage,
     layout: Main,
   },
   {
     path: SIGN_IN_PAGE_PATH,
     title: 'Sign In',
+    fallback: Spinner,
     component: SignInPage,
     layout: Main,
   },
   {
     path: SIGN_UP_PAGE_PATH,
     title: 'Sign Up',
+    fallback: Spinner,
     component: SignUpPage,
     layout: Main,
   },
   {
     path: CONTACT_PAGE_PATH,
     title: 'Contact information',
+    fallback: Spinner,
     component: ContactPage,
     layout: Main,
   },
