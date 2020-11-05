@@ -1,25 +1,26 @@
 {
   "files": {
-    "main.css": "/hiha-store-ts/static/css/main.8a8b0514.chunk.css",
-    "main.js": "/hiha-store-ts/static/js/main.c59b494f.chunk.js",
-    "main.js.map": "/hiha-store-ts/static/js/main.c59b494f.chunk.js.map",
-    "runtime-main.js": "/hiha-store-ts/static/js/runtime-main.0a47db6b.js",
-    "runtime-main.js.map": "/hiha-store-ts/static/js/runtime-main.0a47db6b.js.map",
-    "static/js/2.6d0560ff.chunk.js": "/hiha-store-ts/static/js/2.6d0560ff.chunk.js",
-    "static/js/2.6d0560ff.chunk.js.map": "/hiha-store-ts/static/js/2.6d0560ff.chunk.js.map",
-    "index.html": "/hiha-store-ts/index.html",
-    "precache-manifest.22607ecbd46db7ae863ba194c6aaf3b9.js": "/hiha-store-ts/precache-manifest.22607ecbd46db7ae863ba194c6aaf3b9.js",
-    "service-worker.js": "/hiha-store-ts/service-worker.js",
-    "static/css/main.8a8b0514.chunk.css.map": "/hiha-store-ts/static/css/main.8a8b0514.chunk.css.map",
-    "static/js/2.6d0560ff.chunk.js.LICENSE.txt": "/hiha-store-ts/static/js/2.6d0560ff.chunk.js.LICENSE.txt",
-    "static/media/crown.2ad462a3.svg": "/hiha-store-ts/static/media/crown.2ad462a3.svg",
-    "static/media/shopping-bag.11b9bb05.svg": "/hiha-store-ts/static/media/shopping-bag.11b9bb05.svg",
-    "static/media/user.3165bf5d.svg": "/hiha-store-ts/static/media/user.3165bf5d.svg"
+    "main.css": "/static/css/main.782e21ed.chunk.css",
+    "main.js": "/static/js/main.d6e90676.chunk.js",
+    "main.js.map": "/static/js/main.d6e90676.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.1be90b96.js",
+    "runtime-main.js.map": "/static/js/runtime-main.1be90b96.js.map",
+    "static/js/2.6d495d0e.chunk.js": "/static/js/2.6d495d0e.chunk.js",
+    "static/js/2.6d495d0e.chunk.js.map": "/static/js/2.6d495d0e.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.962b47b632fc393966f3bb97fdbeb57a.js": "/precache-manifest.962b47b632fc393966f3bb97fdbeb57a.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.782e21ed.chunk.css.map": "/static/css/main.782e21ed.chunk.css.map",
+    "static/js/2.6d495d0e.chunk.js.LICENSE.txt": "/static/js/2.6d495d0e.chunk.js.LICENSE.txt",
+    "static/media/crown.2ad462a3.svg": "/static/media/crown.2ad462a3.svg",
+    "static/media/index.scss": "/static/media/lato-regular-webfont.fcc9fe9d.woff",
+    "static/media/shopping-bag.11b9bb05.svg": "/static/media/shopping-bag.11b9bb05.svg",
+    "static/media/user.3165bf5d.svg": "/static/media/user.3165bf5d.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.0a47db6b.js",
-    "static/js/2.6d0560ff.chunk.js",
-    "static/css/main.8a8b0514.chunk.css",
-    "static/js/main.c59b494f.chunk.js"
+    "static/js/runtime-main.1be90b96.js",
+    "static/js/2.6d495d0e.chunk.js",
+    "static/css/main.782e21ed.chunk.css",
+    "static/js/main.d6e90676.chunk.js"
   ]
 }
