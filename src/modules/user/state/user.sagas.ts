@@ -13,6 +13,12 @@ import { convertTimestampToDateTime } from 'utils';
 import { HOME_PAGE_PATH } from 'modules/directory/config';
 import { SIGN_IN_PAGE_PATH } from 'modules/user/config';
 import {
+  GOOGLE_SIGN_IN_START,
+  EMAIL_SIGN_IN_START,
+  CHECK_USER_SESSION,
+  SIGN_OUT_START,
+  SIGN_UP_START,
+  SIGN_UP_SUCCESS,
   sigInSuccess,
   signInFailure,
   signOutSuccess,
@@ -112,27 +118,27 @@ export function* signInAfterSignUp(data) {
 }
 
 export function* onGoogleSignInStart() {
-  yield takeLatest('user/googleSigInStart', signInWithGoogle);
+  yield takeLatest(GOOGLE_SIGN_IN_START, signInWithGoogle);
 }
 
 export function* onEmailSignInStart() {
-  yield takeLatest('user/emailSigInStart', signInWithEmail);
+  yield takeLatest(EMAIL_SIGN_IN_START, signInWithEmail);
 }
 
 export function* onCheckUserSession() {
-  yield takeLatest('user/checkUserSession', isUserAuthenticated);
+  yield takeLatest(CHECK_USER_SESSION, isUserAuthenticated);
 }
 
 export function* onSignOutStart() {
-  yield takeLatest('user/signOutStart', signOut);
+  yield takeLatest(SIGN_OUT_START, signOut);
 }
 
 export function* onSignUpStart() {
-  yield takeLatest('user/signUpStart', signUp);
+  yield takeLatest(SIGN_UP_START, signUp);
 }
 
 export function* onSignUpSuccess() {
-  yield takeLatest('user/signUpSuccess', signInAfterSignUp);
+  yield takeLatest(SIGN_UP_SUCCESS, signInAfterSignUp);
 }
 
 export function* userSagas() {

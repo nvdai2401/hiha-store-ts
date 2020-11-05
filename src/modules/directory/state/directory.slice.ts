@@ -30,9 +30,12 @@ const directorySlice = createSlice({
   },
 });
 
+export const FETCH_DIRECTORY_SECTIONS_START = `${directorySlice.name}/fetchDirectorySectionsStart`;
+
 export const {
   fetchDirectorySectionsStart,
   fetchDirectorySectionsSuccess,
   fetchDirectorySectionsFailure,
 } = directorySlice.actions;
+
 export default directorySlice.reducer;

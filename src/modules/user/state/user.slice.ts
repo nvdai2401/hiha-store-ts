@@ -37,7 +37,7 @@ const userSlice = createSlice({
       state.emailSignInLoading = false;
       state.errorMessage = action.payload;
     },
-    signOutStart(state) {},
+    signOutStart() { },
     signOutSuccess(state) {
       state.currentUser = {};
       state.errorMessage = '';
@@ -55,9 +55,16 @@ const userSlice = createSlice({
       state.signUpLoading = false;
       state.errorMessage = action.payload;
     },
-    checkUserSession() {},
+    checkUserSession() { },
   },
 });
+
+export const GOOGLE_SIGN_IN_START = `${userSlice.name}/googleSigInStart`;
+export const EMAIL_SIGN_IN_START = `${userSlice.name}/emailSigInStart`;
+export const CHECK_USER_SESSION = `${userSlice.name}/checkUserSession`;
+export const SIGN_OUT_START = `${userSlice.name}/signOutStart`;
+export const SIGN_UP_START = `${userSlice.name}/signUpStart`;
+export const SIGN_UP_SUCCESS = `${userSlice.name}/signUpSuccess`;
 
 export const {
   googleSigInStart,

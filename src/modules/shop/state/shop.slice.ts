@@ -48,6 +48,9 @@ const shopSlice = createSlice({
   },
 });
 
+export const FETCH_COLLECTIONS_START = `${shopSlice.name}/fetchCollectionsStart`;
+export const FETCH_COLLECTION_START = `${shopSlice.name}/fetchCollectionStart`;
+
 export const {
   fetchCollectionsStart,
   fetchCollectionsSuccess,
@@ -56,4 +59,5 @@ export const {
   fetchCollectionSuccess,
   fetchCollectionFailure,
 } = shopSlice.actions;
+
 export default shopSlice.reducer;
