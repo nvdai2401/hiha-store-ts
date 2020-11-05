@@ -34,8 +34,12 @@
   padding: 0 18px;
 
   @include bp(sm) {
-    @include size($width: 70vw);
+    @include size($width: 85vw);
 
     padding: 0;
+  }
+
+  @include bp(lg) {
+    @include size($width: 70vw);
   }
 }

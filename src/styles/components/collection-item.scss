@@ -26,7 +26,7 @@
     }
   }
 
-  @include bp(sm) {
+  @include bp(lg) {
     @include relative();
     @include align-items(center);
     @include size($height: 420px);
