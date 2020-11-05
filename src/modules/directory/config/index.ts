@@ -1,3 +1,3 @@
-import { HOME_PAGE_PATH, pages } from './routes';
+import { HOME_PAGE_PATH, routes } from './routes';
 
-export { HOME_PAGE_PATH, pages as directoryPages };
+export { HOME_PAGE_PATH, routes as directoryRoutes };

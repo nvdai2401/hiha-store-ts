@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 
 import { useSignOutStart, useCurrentUser } from 'hooks/state/userState';
 
+import { USER_INFO_PAGE_PATH } from 'modules/user/config';
+import { CHECKOUT_PAGE_PATH } from 'modules/cart/config';
+
 type Props = {
   open: boolean;
   onClose: () => void;
@@ -35,10 +38,10 @@ function UserOptionsMenu(props: Props): React.ReactElement {
       </div>
       <ul className="c-user-options-menu__options o-list-bare">
         <li className="c-user-options-menu__options__item">
-          <Link to="/user-info">Your profile</Link>
+          <Link to={USER_INFO_PAGE_PATH}>Your profile</Link>
         </li>
         <li className="c-user-options-menu__options__item">
-          <Link to="/checkout">Cart</Link>
+          <Link to={CHECKOUT_PAGE_PATH}>Cart</Link>
         </li>
         <li
           className="c-user-options-menu__options__item"

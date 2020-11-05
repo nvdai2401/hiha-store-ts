@@ -1,3 +1,3 @@
-import { SHOP_PAGE_PATH, pages } from './routes';
+import { SHOP_PAGE_PATH, routes } from './routes';
 
-export { SHOP_PAGE_PATH, pages as shopPages };
+export { SHOP_PAGE_PATH, routes as shopRoutes };

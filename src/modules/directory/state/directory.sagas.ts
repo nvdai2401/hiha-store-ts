@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { call, all, takeLatest, put } from 'redux-saga/effects';
 import { firestore } from 'core/api/firebase';
 import {
+  FETCH_DIRECTORY_SECTIONS_START,
   fetchDirectorySectionsSuccess,
   fetchDirectorySectionsFailure,
 } from './directory.slice';
@@ -18,10 +20,7 @@ export function* fetchDirectorySections() {
 }
 
 export function* onFetchDirectorySectionsStart() {
-  yield takeLatest(
-    'directory/fetchDirectorySectionsStart',
-    fetchDirectorySections,
-  );
+  yield takeLatest(FETCH_DIRECTORY_SECTIONS_START, fetchDirectorySections);
 }
 
 export function* directorySagas() {

@@ -1,6 +1,9 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { takeLatest, call, put, all } from 'redux-saga/effects';
 import { firestore, convertCollectionsSnapshotToMap } from 'core/api/firebase';
 import {
+  FETCH_COLLECTIONS_START,
+  FETCH_COLLECTION_START,
   fetchCollectionsFailure,
   fetchCollectionsSuccess,
   fetchCollectionSuccess,
@@ -46,11 +49,11 @@ export function* fetchCollectionAsync(data) {
 }
 
 export function* onFetchCollectionsStart() {
-  yield takeLatest('shop/fetchCollectionsStart', fetchCollectionsAsync);
+  yield takeLatest(FETCH_COLLECTIONS_START, fetchCollectionsAsync);
 }
 
 export function* onFetchCollectionStart() {
-  yield takeLatest('shop/fetchCollectionStart', fetchCollectionAsync);
+  yield takeLatest(FETCH_COLLECTION_START, fetchCollectionAsync);
 }
 
 export function* shopSagas() {

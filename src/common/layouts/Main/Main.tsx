@@ -5,7 +5,7 @@ interface IProps {
   children: React.Component | React.Component[];
 }
 
-function Main(props: IProps): React.ReactElement<IProps> {
+function Main(props: IProps): React.ReactElement {
   const { children } = props;
 
   return (

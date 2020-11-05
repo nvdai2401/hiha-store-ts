@@ -9,6 +9,9 @@ import {
 } from 'components';
 import { CartItem } from 'modules/cart/components';
 
+import { CHECKOUT_PAGE_PATH } from 'modules/cart/config';
+import { SHOP_PAGE_PATH } from 'modules/shop/config';
+
 type Props = {
   open: boolean;
   isEmpty: boolean;
@@ -37,11 +40,11 @@ function MiniCart(props: Props): React.ReactElement {
       </div>
 
       {!isEmpty ? (
-        <GoToCheckoutButton onClick={() => history.push('/checkout')}>
+        <GoToCheckoutButton onClick={() => history.push(CHECKOUT_PAGE_PATH)}>
           GO TO CHECKOUT
         </GoToCheckoutButton>
       ) : (
-        <ExploreMoreButton onClick={() => history.push('/shop')}>
+        <ExploreMoreButton onClick={() => history.push(SHOP_PAGE_PATH)}>
           EXPLORE MORE
         </ExploreMoreButton>
       )}

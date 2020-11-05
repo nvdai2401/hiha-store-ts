@@ -13,6 +13,10 @@ import { ShoppingBag, UserOptionsMenu, Overlay } from 'components';
 import { MiniCart } from 'modules/cart/components';
 import { CrownIcon, UserIcon } from 'common/icons';
 
+import { HOME_PAGE_PATH } from 'modules/directory/config';
+import { SHOP_PAGE_PATH } from 'modules/shop/config';
+import { CONTACT_PAGE_PATH } from 'modules/user/config';
+
 function NavBar(): React.ReactElement {
   const [dropdownMenuVisible, setDropdownMenuVisible] = useState(false);
   const currentUser = useCurrentUser();
@@ -45,15 +49,15 @@ function NavBar(): React.ReactElement {
   return (
     <>
       <header className="c-nav-bar m-b-24">
-        <Link to="/" className="c-nav-bar__logo">
+        <Link to={HOME_PAGE_PATH} className="c-nav-bar__logo">
           <CrownIcon className="c-nav-bar__logo" />
         </Link>
         <ul className="c-nav-bar__nav-list m-r-24 o-list-bare">
           <li className="c-nav-bar__nav-list__item ">
-            <Link to="/shop">Shop</Link>
+            <Link to={SHOP_PAGE_PATH}>Shop</Link>
           </li>
           <li className="c-nav-bar__nav-list__item">
-            <Link to="/contact">Contact</Link>
+            <Link to={CONTACT_PAGE_PATH}>Contact</Link>
           </li>
           <li className="c-nav-bar__nav-list__item">
             {currentUser.id ? (
