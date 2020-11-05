@@ -8,6 +8,16 @@
  * http://csswizardry.com/2016/02/managing-typography-on-large-apps/).
  */
 
+.fonts-stage-2 h1,
+.fonts-stage-2 h2,
+.fonts-stage-2 h3,
+.fonts-stage-2 h4,
+.fonts-stage-2 h5,
+.fonts-stage-2 h6 {
+  font-family: LatoBold, sans-serif;
+  font-weight: 700;
+}
+
 h1 {
   font-size: 2.25rem;
 }
