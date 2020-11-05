@@ -26,14 +26,14 @@ const ContactPage = lazy(() =>
   })),
 );
 
-const USER_PAGE_PATH = '/user-info';
+const USER_INFO_PAGE_PATH = '/user-info';
 const SIGN_IN_PAGE_PATH = '/sign-in';
 const SIGN_UP_PAGE_PATH = '/sign-up';
 const CONTACT_PAGE_PATH = '/contact';
 
 const routes: IRoute[] = [
   {
-    path: USER_PAGE_PATH,
+    path: USER_INFO_PAGE_PATH,
     title: 'User information',
     component: UserInfoPage,
     layout: Main,
@@ -58,4 +58,10 @@ const routes: IRoute[] = [
   },
 ];
 
-export { USER_PAGE_PATH, SIGN_IN_PAGE_PATH, SIGN_UP_PAGE_PATH, routes };
+export {
+  USER_INFO_PAGE_PATH,
+  SIGN_IN_PAGE_PATH,
+  SIGN_UP_PAGE_PATH,
+  CONTACT_PAGE_PATH,
+  routes,
+};
