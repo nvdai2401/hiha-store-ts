@@ -2,12 +2,12 @@ import {
   USER_PAGE_PATH,
   SIGN_IN_PAGE_PATH,
   SIGN_UP_PAGE_PATH,
-  pages,
+  routes,
 } from './routes';
 
 export {
   USER_PAGE_PATH,
   SIGN_IN_PAGE_PATH,
   SIGN_UP_PAGE_PATH,
-  pages as userPages,
+  routes as userRoutes,
 };

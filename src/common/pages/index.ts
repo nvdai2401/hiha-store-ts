@@ -1,3 +1,3 @@
-import { pages, NOT_FOUND_PAGE_PATH } from './config';
+import { routes, NOT_FOUND_PAGE_PATH } from './config';
 
-export { pages, NOT_FOUND_PAGE_PATH };
+export { routes as commonRoutes, NOT_FOUND_PAGE_PATH };

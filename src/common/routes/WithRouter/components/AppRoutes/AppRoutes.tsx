@@ -1,19 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
-import { IRoutePages } from 'common/definitions/routes';
+import { IRoute } from 'common/definitions/routes';
 import { useCurrentUser, useCheckUserSession } from 'hooks/state/userState';
+
+import { Spinner } from 'components';
 
 import { SIGN_IN_PAGE_PATH, SIGN_UP_PAGE_PATH } from 'modules/user/config';
 import { HOME_PAGE_PATH } from 'modules/directory/config';
 import { NOT_FOUND_PAGE_PATH } from 'common/pages';
 
 type AppRoutesProps = {
-  pages: IRoutePages[];
+  routes: IRoute[];
 };
 
 function AppRoutes(props: AppRoutesProps): React.ReactElement {
-  const { pages } = props;
+  const { routes } = props;
   const currentUser = useCurrentUser();
   const checkUserSession = useCheckUserSession();
 
@@ -38,7 +40,7 @@ function AppRoutes(props: AppRoutesProps): React.ReactElement {
 
   return (
     <Switch>
-      {pages.map((page) => {
+      {routes.map((page) => {
         return (
           <Route
             key={page.path}
@@ -51,9 +53,11 @@ function AppRoutes(props: AppRoutesProps): React.ReactElement {
               beforeRender(routeProps, page);
 
               return (
-                <Layout>
-                  <Component />
-                </Layout>
+                <Suspense fallback={<Spinner classes="m-t-210" />}>
+                  <Layout>
+                    <Component />
+                  </Layout>
+                </Suspense>
               );
             }}
           />

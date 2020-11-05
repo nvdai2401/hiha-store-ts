@@ -1,37 +1,61 @@
-import { IRoutePages } from 'common/definitions/routes';
+import { lazy } from 'react';
+import { IRoute } from 'common/definitions/routes';
 import { Main } from 'common/layouts';
-import { UserInfo, SignIn, SignUp, Contact } from '../pages';
+
+const UserInfoPage = lazy(() =>
+  import('modules/user/pages').then(({ UserInfo }) => ({
+    default: UserInfo,
+  })),
+);
+
+const SignInPage = lazy(() =>
+  import('modules/user/pages').then(({ SignIn }) => ({
+    default: SignIn,
+  })),
+);
+
+const SignUpPage = lazy(() =>
+  import('modules/user/pages').then(({ SignUp }) => ({
+    default: SignUp,
+  })),
+);
+
+const ContactPage = lazy(() =>
+  import('modules/user/pages').then(({ Contact }) => ({
+    default: Contact,
+  })),
+);
 
 const USER_PAGE_PATH = '/user-info';
 const SIGN_IN_PAGE_PATH = '/sign-in';
 const SIGN_UP_PAGE_PATH = '/sign-up';
 const CONTACT_PAGE_PATH = '/contact';
 
-const pages: IRoutePages[] = [
+const routes: IRoute[] = [
   {
     path: USER_PAGE_PATH,
     title: 'User information',
-    component: UserInfo,
+    component: UserInfoPage,
     layout: Main,
   },
   {
     path: SIGN_IN_PAGE_PATH,
     title: 'Sign In',
-    component: SignIn,
+    component: SignInPage,
     layout: Main,
   },
   {
     path: SIGN_UP_PAGE_PATH,
     title: 'Sign Up',
-    component: SignUp,
+    component: SignUpPage,
     layout: Main,
   },
   {
     path: CONTACT_PAGE_PATH,
     title: 'Contact information',
-    component: Contact,
+    component: ContactPage,
     layout: Main,
   },
 ];
 
-export { USER_PAGE_PATH, SIGN_IN_PAGE_PATH, SIGN_UP_PAGE_PATH, pages };
+export { USER_PAGE_PATH, SIGN_IN_PAGE_PATH, SIGN_UP_PAGE_PATH, routes };

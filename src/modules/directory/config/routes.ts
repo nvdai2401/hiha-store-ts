@@ -1,10 +1,16 @@
-import { IRoutePages } from 'common/definitions/routes';
+import { lazy } from 'react';
+import { IRoute } from 'common/definitions/routes';
 import { Main } from 'common/layouts';
-import { HomePage } from '../pages';
+
+const HomePage = lazy(() =>
+  import('modules/directory/pages').then(({ HomePage }) => ({
+    default: HomePage,
+  })),
+);
 
 const HOME_PAGE_PATH = '/';
 
-const pages: IRoutePages[] = [
+const routes: IRoute[] = [
   {
     path: HOME_PAGE_PATH,
     title: 'Home page',
@@ -14,4 +20,4 @@ const pages: IRoutePages[] = [
   },
 ];
 
-export { HOME_PAGE_PATH, pages };
+export { HOME_PAGE_PATH, routes };

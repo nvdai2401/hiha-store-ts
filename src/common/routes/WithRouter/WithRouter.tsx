@@ -2,12 +2,12 @@ import React from 'react';
 import { ConnectedRouter } from 'connected-react-router';
 import { history } from 'core/config';
 
-import { IRoutePages } from 'common/definitions/routes';
+import { IRoute } from 'common/definitions/routes';
 import { ScrollToTop, HideCart } from 'components';
 import { AppRoutes } from './components';
 
 type Props = {
-  pages: IRoutePages[];
+  routes: IRoute[];
 };
 
 function WithRouter(props: Props): React.ReactElement {

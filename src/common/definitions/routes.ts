@@ -1,7 +1,7 @@
-export interface IRoutePages {
+export interface IRoute {
   path: string;
   title: string;
   exact?: boolean;
-  component: () => React.ReactElement;
+  component: React.LazyExoticComponent<React.ComponentType<any>>;
   layout?: any;
 }
