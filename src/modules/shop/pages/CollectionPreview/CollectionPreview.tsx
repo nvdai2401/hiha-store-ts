@@ -16,7 +16,7 @@ function CollectionPreview(): React.ReactElement {
 
   useEffect(() => {
     fetchCollectionsStart();
-  }, []);
+  }, [fetchCollectionsStart]);
 
   if (loading) return <Spinner classes="m-t-210" />;
 
