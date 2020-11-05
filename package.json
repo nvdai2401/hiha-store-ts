@@ -1,5 +1,6 @@
 {
   "name": "hiha-store-ts",
+  "homepage": "/hiha-store-ts",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
