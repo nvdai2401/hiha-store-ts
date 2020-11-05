@@ -1,26 +1,36 @@
 {
   "files": {
+    "static/js/0.54c23f50.chunk.js": "/hiha-store-ts/static/js/0.54c23f50.chunk.js",
+    "static/js/0.54c23f50.chunk.js.map": "/hiha-store-ts/static/js/0.54c23f50.chunk.js.map",
+    "static/js/1.60dd2045.chunk.js": "/hiha-store-ts/static/js/1.60dd2045.chunk.js",
+    "static/js/1.60dd2045.chunk.js.map": "/hiha-store-ts/static/js/1.60dd2045.chunk.js.map",
     "main.css": "/hiha-store-ts/static/css/main.15c9323d.chunk.css",
-    "main.js": "/hiha-store-ts/static/js/main.c59b494f.chunk.js",
-    "main.js.map": "/hiha-store-ts/static/js/main.c59b494f.chunk.js.map",
-    "runtime-main.js": "/hiha-store-ts/static/js/runtime-main.0a47db6b.js",
-    "runtime-main.js.map": "/hiha-store-ts/static/js/runtime-main.0a47db6b.js.map",
-    "static/js/2.6d0560ff.chunk.js": "/hiha-store-ts/static/js/2.6d0560ff.chunk.js",
-    "static/js/2.6d0560ff.chunk.js.map": "/hiha-store-ts/static/js/2.6d0560ff.chunk.js.map",
+    "main.js": "/hiha-store-ts/static/js/main.ff8b3630.chunk.js",
+    "main.js.map": "/hiha-store-ts/static/js/main.ff8b3630.chunk.js.map",
+    "runtime-main.js": "/hiha-store-ts/static/js/runtime-main.3a190098.js",
+    "runtime-main.js.map": "/hiha-store-ts/static/js/runtime-main.3a190098.js.map",
+    "static/js/4.3257bc78.chunk.js": "/hiha-store-ts/static/js/4.3257bc78.chunk.js",
+    "static/js/4.3257bc78.chunk.js.map": "/hiha-store-ts/static/js/4.3257bc78.chunk.js.map",
+    "static/js/5.e7cb5a96.chunk.js": "/hiha-store-ts/static/js/5.e7cb5a96.chunk.js",
+    "static/js/5.e7cb5a96.chunk.js.map": "/hiha-store-ts/static/js/5.e7cb5a96.chunk.js.map",
+    "static/js/6.6c3c1977.chunk.js": "/hiha-store-ts/static/js/6.6c3c1977.chunk.js",
+    "static/js/6.6c3c1977.chunk.js.map": "/hiha-store-ts/static/js/6.6c3c1977.chunk.js.map",
+    "static/js/7.9d0ce9c9.chunk.js": "/hiha-store-ts/static/js/7.9d0ce9c9.chunk.js",
+    "static/js/7.9d0ce9c9.chunk.js.map": "/hiha-store-ts/static/js/7.9d0ce9c9.chunk.js.map",
     "index.html": "/hiha-store-ts/index.html",
-    "precache-manifest.2306e1e615aaffba54287da2f22a6e18.js": "/hiha-store-ts/precache-manifest.2306e1e615aaffba54287da2f22a6e18.js",
+    "precache-manifest.aabd40d050054ef7d99f0d3ca80dd64a.js": "/hiha-store-ts/precache-manifest.aabd40d050054ef7d99f0d3ca80dd64a.js",
     "service-worker.js": "/hiha-store-ts/service-worker.js",
     "static/css/main.15c9323d.chunk.css.map": "/hiha-store-ts/static/css/main.15c9323d.chunk.css.map",
-    "static/js/2.6d0560ff.chunk.js.LICENSE.txt": "/hiha-store-ts/static/js/2.6d0560ff.chunk.js.LICENSE.txt",
+    "static/js/4.3257bc78.chunk.js.LICENSE.txt": "/hiha-store-ts/static/js/4.3257bc78.chunk.js.LICENSE.txt",
     "static/media/crown.2ad462a3.svg": "/hiha-store-ts/static/media/crown.2ad462a3.svg",
     "static/media/index.scss": "/hiha-store-ts/static/media/lato-regular-webfont.fcc9fe9d.woff",
     "static/media/shopping-bag.11b9bb05.svg": "/hiha-store-ts/static/media/shopping-bag.11b9bb05.svg",
     "static/media/user.3165bf5d.svg": "/hiha-store-ts/static/media/user.3165bf5d.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.0a47db6b.js",
-    "static/js/2.6d0560ff.chunk.js",
+    "static/js/runtime-main.3a190098.js",
+    "static/js/4.3257bc78.chunk.js",
     "static/css/main.15c9323d.chunk.css",
-    "static/js/main.c59b494f.chunk.js"
+    "static/js/main.ff8b3630.chunk.js"
   ]
 }
