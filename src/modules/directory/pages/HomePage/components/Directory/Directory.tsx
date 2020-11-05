@@ -16,7 +16,7 @@ function Directory(): React.ReactElement {
 
   useEffect(() => {
     fetchDirectorySectionsStart();
-  }, []);
+  }, [fetchDirectorySectionsStart]);
 
   if (loading) return <Spinner classes="m-t-210" />;
 

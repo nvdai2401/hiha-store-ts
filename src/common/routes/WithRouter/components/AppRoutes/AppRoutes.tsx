@@ -21,7 +21,7 @@ function AppRoutes(props: AppRoutesProps): React.ReactElement {
     if (!currentUser.id) {
       checkUserSession();
     }
-  }, []);
+  }, [checkUserSession, currentUser.id]);
 
   const beforeRender = ({ location, history }, page) => {
     if (

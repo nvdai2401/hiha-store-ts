@@ -45,7 +45,7 @@ function LazyImage(props: Props): React.ReactElement {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [loaded, props]);
 
   return (
     <img

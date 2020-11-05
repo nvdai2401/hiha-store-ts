@@ -1,21 +1,19 @@
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-
 import { useLocation } from 'react-router-dom';
 
-import { hideCart } from 'modules/cart/state/cart.slice';
-import { selectCartVisible } from 'modules/cart/state/cart.selectors';
+import { useSelectCartVisible, useHideCart } from 'hooks/state/cartState';
 
 function HideCart(): null {
   const { pathname } = useLocation();
-  const cartVisible = useSelector(selectCartVisible);
-  const dispatch = useDispatch();
+  const cartVisible = useSelectCartVisible();
+  const hideCart = useHideCart();
 
   useEffect(() => {
     if (cartVisible) {
-      dispatch(hideCart());
+      hideCart();
     }
-  }, [pathname]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname, hideCart]);
 
   return null;
 }
