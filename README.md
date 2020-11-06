@@ -164,15 +164,15 @@ The `styles` directory holds all the CSS files.
 
 ## Demo
 
-### Desktop version
-
-<p align="center"><img src="/images/desktop_homepage" /></p>
-<p align="center"><img src="/images/desktop_collectionpage" /></p>
-<p align="center"><img src="/images/desktop_checkoutpage" /></p>
-
 ### Mobile version
 
-<p align="center"><img src="/images/mobile_signinpage" /></p>
-<p align="center"><img src="/images/mobile_userinfopage" /></p>
-<p align="center"><img src="/images/desktop_collectionpage" /></p>
-<p align="center"><img src="/images/desktop_payment" /></p>
+<p align="center"><img src="/images/mobile_signinpage.PNG" /></p>
+<p align="center"><img src="/images/mobile_userinfopage.PNG" /></p>
+<p align="center"><img src="/images/mobile_collectionpage.PNG" /></p>
+<p align="center"><img src="/images/mobile_payment.PNG" /></p>
+
+### Desktop version
+
+<p align="center"><img src="/images/desktop_homepage.PNG" /></p>
+<p align="center"><img src="/images/desktop_collectionpage.PNG" /></p>
+<p align="center"><img src="/images/desktop_checkoutpage.PNG" /></p>
