@@ -8,9 +8,9 @@ Visit the store: <https://nvdai2401.github.io/hiha-store-ts>
 
 ## Front-end architecture
 
-### Why do we need a scalable architecture
+### Why do we need a scalable architecture?
 
-Modern front-end frameworks and libraries make it easy to create reusable UI components. This is a step in a good direction to create maintainable front-end applications. Yet, in many projects over my career I have found that making reusable components is often not enough. My projects became unmaintainable, as requirements changed or new requirements came up. It took longer and longer to find the correct file or debug something across many files.
+Modern front-end frameworks and libraries make it easy to create reusable UI components. This is a step in a good direction to create maintainable front-end applications. Yet, in many projects over my career, I have found that making reusable components is often not enough. My projects became unmaintainable, as requirements changed or new requirements came up. It took longer and longer to find the correct file or debug something across many files.
 
 Change needed to happen. I can improve my search skills, or be more proficient in using Visual Studio Code. But, I often not the only one working on the front-end. So, we need to the setup of our front-end projects. We need to make them maintainable and scalable. This means that we can apply changes in the current features, but also add new features quicker.
 
@@ -24,7 +24,7 @@ We expect modern front-end applications to do more and more of the heavy lifting
 
 ### A scalable and maintainable front-end architecture
 
-This app is using a [reliable, maintainable and scalable front-end architecture](https://vycke.dev/blog/scalable-front-end-architecture/) base on two architectural patterns [domain-driven development (DDD)](https://martinfowler.com/bliki/BoundedContext.html) and [separation of concerns (SoC)](https://en.wikipedia.org/wiki/Separation_of_concerns). This architecture provide a developer or a team to build a scalable front-end. By adopting the architecture (e.g. remove parts), you can adapt it to small and big projects.
+This app is using a [reliable, maintainable and scalable front-end architecture](https://vycke.dev/blog/scalable-front-end-architecture/) base on two architectural patterns [domain-driven development (DDD)](https://martinfowler.com/bliki/BoundedContext.html) and [separation of concerns (SoC)](https://en.wikipedia.org/wiki/Separation_of_concerns). This architecture provides a developer or a team to build a scalable front-end. By adopting the architecture (e.g. remove parts), you can adapt it to small and big projects.
 
 <p align="center"><img src="/images/architecture-detailed.png" /></p>
 
@@ -61,10 +61,10 @@ There are a few main parts in this layer:
     └── workers/
 ```
 
-- The `api` directory contains APIs to interact with server
-- The `config` directory holds configurations of the core layer, such as: firebase, history,...
-- The `store` directory is the application state. It contains store configuration, root reducer and root saga
-- The `worker` directory include web workers for the heavy lifting
+- The `api` directory contains APIs to interact with the server
+- The `config` directory holds configurations of the core layer, such as firebase, history,...
+- The `store` directory is the application state. It contains store configuration, root reducer ,and root saga
+- The `worker` directory includes web workers for the heavy lifting
 
 ### Modules, modules & more modules
 
@@ -88,7 +88,7 @@ The `modules` directory holds all the different modules based on the different i
 - The `components` directory contains reusable UI components of the module.
 - The `config` directory holds the configurations, such as routes configuration.
 - The `pages` directory holds the pages of the module (A page is what a user sees and comprises out of UI components and actions).
-- The `state` directory keeps state of the module. It contains reducer, actions, sagas and selectors.
+- The `state` directory keeps the state of the module. It contains reducer, actions, sagas ,and selectors.
 
 ### CSS architecture - More Transparent UI Code with Namespaces
 
@@ -109,7 +109,7 @@ The triangle also shows how styles represented by selectors are ordered in the r
 - Elements – styling for bare HTML elements (like H1, A, etc.). These come with default styling from the browser so we can redefine them here.
 - Objects – class-based selectors which define undecorated design patterns, for example media object known from OOCSS
 - Components – specific UI components. This is where the majority of our work takes place and our UI components are often composed of Objects and Components
-- Utilities – utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class
+- Utilities – utilities and helper classes with the ability to override anything which goes before in the triangle, eg. hide helper class
 
 <p align="center"><img src="/images/itcss-layers.png" /></p>
 
@@ -120,7 +120,7 @@ The triangle also shows how styles represented by selectors are ordered in the r
 
 ## Techniques
 
-- Splitting code by route using React lazy
+- Splitting code by route using React Lazy API to decrease the bundle size of each route
 - Web font: Use [Critical FOFT with Data URI](https://www.zachleat.com/web/comprehensive-webfonts/#critical-foft-with-data-uri) with sessionStorage trick for repeat view optimization
 - Persist and reselect data of Redux store to decrease request and rerender times
 - Use lazy loading image with [Dominant Color Placeholder](https://css-tricks.com/the-complete-guide-to-lazy-loading-images/) by scaling down the image to down to a 1×1 pixel and then scaling it up to the size of the placeholder
@@ -157,7 +157,7 @@ The triangle also shows how styles represented by selectors are ordered in the r
 - [ITCSS: Scalable and Maintainable CSS Architecture](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/)
 - [More Transparent UI Code with Namespaces](https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/)
 - [BEMIT: Taking the BEM Naming Convention a Step Further](https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/)
-- [A COMPREHENSIVE GUIDE TO FONT LOADING STRATEGIES](https://www.zachleat.com/web/comprehensive-webfonts/#font-face)
+- [A Comprehensive Guide To Font Loading Strategies](https://www.zachleat.com/web/comprehensive-webfonts/#font-face)
 - [The Complete Guide to Lazy Loading Images](https://css-tricks.com/the-complete-guide-to-lazy-loading-images/)
 
 ## Demo
