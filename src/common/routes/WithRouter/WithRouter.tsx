@@ -10,7 +10,7 @@ type Props = {
   routes: IRoute[];
 };
 
-function WithRouter(props: Props): React.ReactElement {
+const WithRouter: React.FC<Props> = (props: Props) => {
   return (
     <ConnectedRouter history={history}>
       <ScrollToTop />
@@ -18,6 +18,6 @@ function WithRouter(props: Props): React.ReactElement {
       <AppRoutes {...props} />
     </ConnectedRouter>
   );
-}
+};
 
 export default WithRouter;

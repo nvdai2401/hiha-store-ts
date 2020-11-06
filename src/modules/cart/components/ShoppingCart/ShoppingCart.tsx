@@ -12,7 +12,7 @@ type Props = {
   clearItems: (item: IProduct) => void;
 };
 
-function ShoppingCart(props: Props): React.ReactElement {
+const ShoppingCart: React.FC<Props> = (props: Props) => {
   const { items = [], total = 0, addItem, removeItem, clearItems } = props;
 
   return (
@@ -37,6 +37,6 @@ function ShoppingCart(props: Props): React.ReactElement {
       <div className="total m-t-18">Total: ${total}</div>
     </div>
   );
-}
+};
 
 export default ShoppingCart;

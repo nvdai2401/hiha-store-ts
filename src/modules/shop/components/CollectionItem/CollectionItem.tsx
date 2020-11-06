@@ -14,7 +14,7 @@ type Props = {
   addItem: () => void;
 };
 
-function CollectionItem(props: Props): React.ReactElement {
+const CollectionItem: React.FC<Props> = (props: Props) => {
   const { item, addItem } = props;
   const { name, price, imageUrl } = item;
   const placeHolder = `${imageUrl}?tr=bl-30,q-50`;
@@ -31,6 +31,6 @@ function CollectionItem(props: Props): React.ReactElement {
       </AddToCartButton>
     </div>
   );
-}
+};
 
 export default CollectionItem;

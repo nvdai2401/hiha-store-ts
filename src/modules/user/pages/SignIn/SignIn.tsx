@@ -16,7 +16,7 @@ import {
 } from 'components';
 import { TextField } from 'modules/user/components';
 
-function SignIn(): React.ReactElement {
+const SignIn: React.FC = () => {
   const [userCredentials, setUserCredentials] = useState({
     email: '',
     password: '',
@@ -93,6 +93,6 @@ function SignIn(): React.ReactElement {
       <div />
     </div>
   );
-}
+};
 
 export default SignIn;

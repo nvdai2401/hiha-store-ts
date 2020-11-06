@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { useSelectCartVisible, useHideCart } from 'hooks/state/cartState';
 
-function HideCart(): null {
+const HideCart = () => {
   const { pathname } = useLocation();
   const cartVisible = useSelectCartVisible();
   const hideCart = useHideCart();
@@ -16,6 +16,6 @@ function HideCart(): null {
   }, [pathname, hideCart]);
 
   return null;
-}
+};
 
 export default HideCart;

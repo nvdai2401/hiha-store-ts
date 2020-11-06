@@ -6,7 +6,7 @@ import { LazyImage } from 'components';
 
 type Props = IProduct;
 
-function CartItem(props: Props): React.ReactElement {
+const CartItem: React.FC<Props> = (props: Props) => {
   const { imageUrl, name, quantity = 1, price } = props;
   const placeHolder = `${imageUrl}?tr=bl-30,q-50`;
 
@@ -27,6 +27,6 @@ function CartItem(props: Props): React.ReactElement {
       </div>
     </div>
   );
-}
+};
 
 export default CartItem;

@@ -7,7 +7,7 @@ type Props = {
   isInverted?: boolean;
 };
 
-function Spinner(props: Props): React.ReactElement {
+const Spinner: React.FC<Props> = (props: Props) => {
   const {
     width = '50px',
     height = '50px',
@@ -23,6 +23,6 @@ function Spinner(props: Props): React.ReactElement {
       />
     </div>
   );
-}
+};
 
 export default Spinner;

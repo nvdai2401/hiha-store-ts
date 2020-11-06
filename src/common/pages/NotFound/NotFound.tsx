@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function NotFound(): React.ReactElement {
+const NotFound: React.FC = () => {
   return (
     <div className="c-not-found">
       <h1>Something's wrong here</h1>
@@ -10,6 +10,6 @@ function NotFound(): React.ReactElement {
       <Link to="/">Head back to home</Link>
     </div>
   );
-}
+};
 
 export default NotFound;

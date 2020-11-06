@@ -12,7 +12,7 @@ type Props = {
   items: IProduct[];
 };
 
-function CollectionList(props: Props): React.ReactElement {
+const CollectionList: React.FC<Props> = (props: Props) => {
   const { title, items } = props;
   const { pathname } = useLocation();
   const addItem = useAddItemToCart();
@@ -38,6 +38,6 @@ function CollectionList(props: Props): React.ReactElement {
       </div>
     </div>
   );
-}
+};
 
 export default CollectionList;

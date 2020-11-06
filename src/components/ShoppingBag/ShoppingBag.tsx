@@ -7,7 +7,7 @@ type Props = {
   toggleCart: () => void;
 };
 
-function ShoppingBag(props: Props): React.ReactElement {
+const ShoppingBag: React.FC<Props> = (props: Props) => {
   const { quantity, toggleCart } = props;
 
   return (
@@ -18,6 +18,6 @@ function ShoppingBag(props: Props): React.ReactElement {
       </span>
     </div>
   );
-}
+};
 
 export default ShoppingBag;

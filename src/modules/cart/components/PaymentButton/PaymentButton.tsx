@@ -5,7 +5,7 @@ type Props = {
   price: number;
 };
 
-function PaymentButton(props: Props): React.ReactElement {
+const PaymentButton: React.FC<Props> = (props: Props) => {
   const { price } = props;
   const apiKey = process.env.REACT_APP_STRIPE_API_KEY || '';
 
@@ -31,6 +31,6 @@ function PaymentButton(props: Props): React.ReactElement {
       />
     </div>
   );
-}
+};
 
 export default PaymentButton;

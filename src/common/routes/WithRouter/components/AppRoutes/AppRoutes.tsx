@@ -14,7 +14,7 @@ type AppRoutesProps = {
   routes: IRoute[];
 };
 
-function AppRoutes(props: AppRoutesProps): React.ReactElement {
+const AppRoutes: React.FC<AppRoutesProps> = (props: AppRoutesProps) => {
   const { routes } = props;
   const currentUser = useCurrentUser();
   const checkUserSession = useCheckUserSession();
@@ -66,6 +66,6 @@ function AppRoutes(props: AppRoutesProps): React.ReactElement {
       <Redirect to={NOT_FOUND_PAGE_PATH} />
     </Switch>
   );
-}
+};
 
 export default AppRoutes;

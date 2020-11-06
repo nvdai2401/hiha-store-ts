@@ -18,7 +18,7 @@ type Props = {
   hideCart: () => void;
 };
 
-function MiniCart(props: Props): React.ReactElement {
+const MiniCart: React.FC<Props> = (props: Props) => {
   const { open, isEmpty, hideCart } = props;
   const history = useHistory();
   const items = useSelector(selectCartItems);
@@ -50,6 +50,6 @@ function MiniCart(props: Props): React.ReactElement {
       )}
     </div>
   );
-}
+};
 
 export default MiniCart;

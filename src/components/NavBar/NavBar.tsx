@@ -17,7 +17,7 @@ import { HOME_PAGE_PATH } from 'modules/directory/config';
 import { SHOP_PAGE_PATH } from 'modules/shop/config';
 import { CONTACT_PAGE_PATH } from 'modules/user/config';
 
-function NavBar(): React.ReactElement {
+const NavBar: React.FC = () => {
   const [dropdownMenuVisible, setDropdownMenuVisible] = useState(false);
   const currentUser = useCurrentUser();
   const cartVisible = useSelectCartVisible();
@@ -94,6 +94,6 @@ function NavBar(): React.ReactElement {
       />
     </>
   );
-}
+};
 
 export default NavBar;

@@ -11,7 +11,7 @@ type Props = {
   onClose: () => void;
 };
 
-function UserOptionsMenu(props: Props): React.ReactElement {
+const UserOptionsMenu: React.FC<Props> = (props: Props) => {
   const { open, onClose } = props;
   const currentUser = useCurrentUser();
   const signOutStart = useSignOutStart();
@@ -52,6 +52,6 @@ function UserOptionsMenu(props: Props): React.ReactElement {
       </ul>
     </div>
   );
-}
+};
 
 export default UserOptionsMenu;

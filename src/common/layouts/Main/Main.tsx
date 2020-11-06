@@ -1,11 +1,9 @@
 import React from 'react';
 import { NavBar } from 'components';
 
-interface IProps {
-  children: React.Component | React.Component[];
-}
+import { ILayout } from 'common/definitions/routes';
 
-function Main(props: IProps): React.ReactElement {
+const Main: React.FC<ILayout> = (props: ILayout) => {
   const { children } = props;
 
   return (
@@ -14,6 +12,6 @@ function Main(props: IProps): React.ReactElement {
       <main>{children}</main>
     </div>
   );
-}
+};
 
 export default Main;

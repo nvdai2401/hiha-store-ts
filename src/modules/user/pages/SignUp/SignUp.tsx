@@ -7,7 +7,7 @@ import { useSignUpStart, useSignUpLoading } from 'hooks/state/userState';
 import { CustomButton as SignUpButton, Spinner } from 'components';
 import { TextField } from 'modules/user/components';
 
-function SignUp(): React.ReactElement {
+const SignUp: React.FC = () => {
   const [userCredentials, setUserCredentials] = useState({
     displayName: '',
     email: '',
@@ -97,6 +97,6 @@ function SignUp(): React.ReactElement {
       <div />
     </div>
   );
-}
+};
 
 export default SignUp;

@@ -11,7 +11,7 @@ import {
 
 import { ShoppingCart, PaymentInfo } from 'modules/cart/components';
 
-function UserInfo(): React.ReactElement {
+const UserInfo: React.FC = () => {
   const currentUser = useCurrentUser();
   const cartItems = useSelectCartItems();
   const total = useSelectCartItemTotalPrice();
@@ -45,6 +45,6 @@ function UserInfo(): React.ReactElement {
       <PaymentInfo total={total} />
     </div>
   );
-}
+};
 
 export default UserInfo;

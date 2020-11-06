@@ -9,7 +9,7 @@ import {
 import { Spinner } from 'components';
 import { CollectionList } from './components';
 
-function CollectionPreview(): React.ReactElement {
+const CollectionPreview: React.FC = () => {
   const collections = useSelectCollectionsForPreview();
   const loading = useSelectCollectionsFetching();
   const fetchCollectionsStart = useFetchCollectionsStart();

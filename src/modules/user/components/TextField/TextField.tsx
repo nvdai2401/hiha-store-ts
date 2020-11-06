@@ -13,7 +13,7 @@ interface IInputProps
   handleChange: (event: IEvent) => void;
 }
 
-function TextField(props: IInputProps): React.ReactElement {
+const TextField: React.FC<IInputProps> = (props: IInputProps) => {
   const {
     value = '',
     name = '',
@@ -47,6 +47,6 @@ function TextField(props: IInputProps): React.ReactElement {
       ) : null}
     </div>
   );
-}
+};
 
 export default TextField;

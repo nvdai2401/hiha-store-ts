@@ -6,7 +6,7 @@ type Props = {
   total: number;
 };
 
-function PaymentInfo(props: Props): React.ReactElement {
+const PaymentInfo: React.FC<Props> = (props: Props) => {
   const { total = 0 } = props;
 
   return (
@@ -19,6 +19,6 @@ function PaymentInfo(props: Props): React.ReactElement {
       </div>
     </div>
   );
-}
+};
 
 export default PaymentInfo;

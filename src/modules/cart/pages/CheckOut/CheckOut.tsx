@@ -10,7 +10,7 @@ import {
 
 import { ShoppingCart, PaymentInfo } from 'modules/cart/components';
 
-function CheckOut(): React.ReactElement {
+const CheckOut: React.FC = () => {
   const cartItems = useSelectCartItems();
   const total = useSelectCartItemTotalPrice();
   const addItem = useAddItemToCart();
@@ -30,6 +30,6 @@ function CheckOut(): React.ReactElement {
       <PaymentInfo total={total} />
     </div>
   );
-}
+};
 
 export default CheckOut;

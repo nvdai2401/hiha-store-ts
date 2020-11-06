@@ -9,7 +9,7 @@ import {
 import { Spinner } from 'components';
 import DirectoryItem from '../DirectoryItem';
 
-function Directory(): React.ReactElement {
+const Directory: React.FC = () => {
   const sections = useSelectDirectorySections();
   const loading = useSelectDirectorySectionsFetching();
   const fetchDirectorySectionsStart = useFetchDirectorySectionsStart();
@@ -27,6 +27,6 @@ function Directory(): React.ReactElement {
       ))}
     </div>
   );
-}
+};
 
 export default Directory;

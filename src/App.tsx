@@ -6,7 +6,7 @@ import { WithRouter, routes } from 'common/routes';
 
 import { store, persistor } from './core/store';
 
-function App(): React.ReactElement {
+const App: React.FC = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
@@ -14,6 +14,6 @@ function App(): React.ReactElement {
       </PersistGate>
     </Provider>
   );
-}
+};
 
 export default App;

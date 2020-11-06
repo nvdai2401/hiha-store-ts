@@ -8,7 +8,7 @@ type Props = {
   linkUrl: string;
 };
 
-function DirectoryItem(props: Props): React.ReactElement {
+const DirectoryItem: React.FC<Props> = (props: Props) => {
   const history = useHistory();
   const { title, imageUrl, size, linkUrl } = props;
 
@@ -29,6 +29,6 @@ function DirectoryItem(props: Props): React.ReactElement {
       </div>
     </div>
   );
-}
+};
 
 export default DirectoryItem;

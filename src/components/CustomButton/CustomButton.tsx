@@ -10,8 +10,7 @@ interface IButtonProps
   classes?: string;
   onClick?: () => void;
 }
-
-function CustomButton(props: IButtonProps): React.ReactElement {
+const CustomButton: React.FC<IButtonProps> = (props: IButtonProps) => {
   const {
     type = 'button',
     children,
@@ -31,6 +30,6 @@ function CustomButton(props: IButtonProps): React.ReactElement {
       {children}
     </button>
   );
-}
+};
 
 export default CustomButton;

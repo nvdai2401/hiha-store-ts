@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Directory } from './components';
 
-function HomePage(): React.ReactElement {
+const HomePage: React.FC = () => {
   return <Directory />;
-}
+};
 
 export default HomePage;

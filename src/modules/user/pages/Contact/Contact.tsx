@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Contact(): React.ReactElement {
+const Contact: React.FC = () => {
   return (
     <div className="c-contact">
       <h1 className="m-t-b-0 m-b-24">Contact information</h1>
@@ -39,6 +39,6 @@ function Contact(): React.ReactElement {
       </ul>
     </div>
   );
-}
+};
 
 export default Contact;

@@ -9,7 +9,7 @@ type Props = {
   placeHolder: string;
 };
 
-function LazyImage(props: Props): React.ReactElement {
+const LazyImage: React.FC<Props> = (props: Props) => {
   const { width, height, classes = '', alt = '', placeHolder = '' } = props;
   const [loaded, setLoaded] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
@@ -58,6 +58,6 @@ function LazyImage(props: Props): React.ReactElement {
       className={`c-lazy-image ${classes}`}
     />
   );
-}
+};
 
 export default LazyImage;

@@ -14,7 +14,7 @@ type ParamsTypes = {
   collectionName: string;
 };
 
-function CollectionPage(): React.ReactElement {
+const CollectionPage: React.FC = () => {
   const { collectionName } = useParams<ParamsTypes>();
   const collection = useSelectCollection(collectionName);
   const addItem = useAddItemToCart();
@@ -42,6 +42,6 @@ function CollectionPage(): React.ReactElement {
       </div>
     </div>
   );
-}
+};
 
 export default CollectionPage;
