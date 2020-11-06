@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ff56063243860eb357747e0a316a0ac0",
+    "revision": "b5d20f8c726f182c7db8b2b0311bd098",
     "url": "/hiha-store-ts/index.html"
   },
   {
