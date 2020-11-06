@@ -5,9 +5,9 @@
 Visit the store: <https://nvdai2401.github.io/hiha-store-ts>
 
 > HiHa Store is a reliable, scalable and maintainable front-end application. <br>
-> Read [the application architecture](/ARCHITECTURE) to explore awesome things that makes the application reliable, scalable and maintainable.
+> Read [the application architecture](/ARCHITECTURE.md) to explore awesome things that makes the application reliable, scalable and maintainable.
 
-HiHa Store TypeScript is a big upgrade version of [HiHa Store JavaScript](https://github.com/nvdai2401/hiha-store). I built this app to apply [a scalable architecture](/ARCHITECTURE) and experiment best practices that I've learnt for one year. You should read the [HiHa Store JavaScript](https://github.com/nvdai2401/hiha-store) firstly and then explore this application codebase to see the magic behind the scene.
+HiHa Store TypeScript is a big upgrade version of [HiHa Store JavaScript](https://github.com/nvdai2401/hiha-store). I built this app to apply [a scalable architecture](/ARCHITECTURE.md) and experiment best practices that I've learnt for one year. You should read the [HiHa Store JavaScript](https://github.com/nvdai2401/hiha-store) firstly and then explore this application codebase to see the magic behind the scene.
 
 ## Requirements
 
