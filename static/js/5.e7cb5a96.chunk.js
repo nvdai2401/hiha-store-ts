@@ -1,2 +1,0 @@
-(this["webpackJsonphiha-store-ts"]=this["webpackJsonphiha-store-ts"]||[]).push([[5],{137:function(e,t,n){"use strict";n.r(t),n.d(t,"default",(function(){return c}));var a=n(0),o=n.n(a),r=n(21);var c=function(){return o.a.createElement("div",{className:"c-not-found"},o.a.createElement("h1",null,"Something's wrong here"),o.a.createElement("p",null,"We can't find the page you are looking for!"),o.a.createElement(r.a,{to:"/"},"Head back to home"))}}}]);
-//# sourceMappingURL=5.e7cb5a96.chunk.js.map

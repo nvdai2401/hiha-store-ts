@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f06ab08a5a472f895b0bc386c929c792",
+    "revision": "ff56063243860eb357747e0a316a0ac0",
     "url": "/hiha-store-ts/index.html"
   },
   {
-    "revision": "00d13941130a8c80a0f8",
+    "revision": "8cd56caab7e51e5b625f",
     "url": "/hiha-store-ts/static/css/main.95b2f52a.chunk.css"
   },
   {
-    "revision": "66a6c736aea045fa5d4e",
-    "url": "/hiha-store-ts/static/js/0.54c23f50.chunk.js"
+    "revision": "bf37a91949db25fc6612",
+    "url": "/hiha-store-ts/static/js/0.fceb5f29.chunk.js"
   },
   {
-    "revision": "361381336226b7f0a9b1",
-    "url": "/hiha-store-ts/static/js/1.60dd2045.chunk.js"
+    "revision": "fc0e99279db67fe03843",
+    "url": "/hiha-store-ts/static/js/1.bcc6faf2.chunk.js"
   },
   {
     "revision": "5f18b5f25632d3feb07c",
@@ -24,24 +24,24 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hiha-store-ts/static/js/4.3257bc78.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3e3c9580d8b246660621",
-    "url": "/hiha-store-ts/static/js/5.e7cb5a96.chunk.js"
+    "revision": "045f89327be7c916d890",
+    "url": "/hiha-store-ts/static/js/5.f4891ae9.chunk.js"
   },
   {
-    "revision": "b5180f91445a3793d74a",
-    "url": "/hiha-store-ts/static/js/6.6c3c1977.chunk.js"
+    "revision": "aa79ad9b07e11def0c59",
+    "url": "/hiha-store-ts/static/js/6.08ad3d7b.chunk.js"
   },
   {
-    "revision": "f85c5cbeab2bda7132a9",
-    "url": "/hiha-store-ts/static/js/7.9d0ce9c9.chunk.js"
+    "revision": "c85fcd1a73954201e2df",
+    "url": "/hiha-store-ts/static/js/7.dcc340ae.chunk.js"
   },
   {
-    "revision": "00d13941130a8c80a0f8",
-    "url": "/hiha-store-ts/static/js/main.ff8b3630.chunk.js"
+    "revision": "8cd56caab7e51e5b625f",
+    "url": "/hiha-store-ts/static/js/main.5d5227b2.chunk.js"
   },
   {
-    "revision": "749b6206a3a6ae092b6e",
-    "url": "/hiha-store-ts/static/js/runtime-main.3a190098.js"
+    "revision": "17fef599aa7c5c21dc45",
+    "url": "/hiha-store-ts/static/js/runtime-main.610a6fb5.js"
   },
   {
     "revision": "2ad462a331b17b658f457f504bc6af04",
