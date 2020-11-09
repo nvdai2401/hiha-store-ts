@@ -16,6 +16,7 @@ export function* fetchDirectorySections() {
     yield put(fetchDirectorySectionsSuccess(sections));
   } catch (error) {
     yield put(fetchDirectorySectionsFailure(error.message));
+    alert(error.message);
   }
 }
 

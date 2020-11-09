@@ -38,7 +38,6 @@ HiHa Store TypeScript is a big upgrade version of [HiHa Store JavaScript](https:
 
 - [ ] Add safer type checking for saga, utilities, firebase helpers
 - [ ] Develop additional features
-  - [ ] Integrate cart module to user module
   - [ ] Improve product image quality and improve lazy loading image
   - [ ] Notify user when adding a product to cart successfully
   - [ ] Develop product detail page
