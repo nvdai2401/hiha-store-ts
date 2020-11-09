@@ -45,6 +45,7 @@ export function* checkCartFromFirebase(data) {
   const cartItems = joinCartItems(currentCartItems, userCartItems);
 
   yield put(setCartFromFirebase(cartItems));
+  yield updateCartInFirebase();
 }
 
 export function* onSignOutSuccess() {
