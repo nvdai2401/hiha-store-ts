@@ -1,47 +1,47 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "dc619ba184044d74ac86f4504d24addc",
+    "revision": "3e65a22e6f9734efabfb67ecbda03f14",
     "url": "/hiha-store-ts/index.html"
   },
   {
-    "revision": "2cbd6efca8537606bee4",
+    "revision": "cea4451323d3d8622084",
     "url": "/hiha-store-ts/static/css/main.95b2f52a.chunk.css"
   },
   {
-    "revision": "04c5e06654468c0ce843",
-    "url": "/hiha-store-ts/static/js/0.1ee44857.chunk.js"
+    "revision": "a4ef42ff468a2834792e",
+    "url": "/hiha-store-ts/static/js/0.ee0c4e69.chunk.js"
   },
   {
-    "revision": "86730aa2ec9c29f5466b",
-    "url": "/hiha-store-ts/static/js/1.b4ac2a17.chunk.js"
+    "revision": "c5d2aedaf9913fc0056f",
+    "url": "/hiha-store-ts/static/js/1.049648fe.chunk.js"
   },
   {
-    "revision": "2f664e79c90a649d7881",
-    "url": "/hiha-store-ts/static/js/4.730f8225.chunk.js"
+    "revision": "ee5faf5410622e8e0304",
+    "url": "/hiha-store-ts/static/js/4.0853fce1.chunk.js"
   },
   {
     "revision": "b01cf20ee08477db845d02c3b279da13",
-    "url": "/hiha-store-ts/static/js/4.730f8225.chunk.js.LICENSE.txt"
+    "url": "/hiha-store-ts/static/js/4.0853fce1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2b0b177684e78a6f48d3",
-    "url": "/hiha-store-ts/static/js/5.e23714ca.chunk.js"
+    "revision": "863975561ac70981f856",
+    "url": "/hiha-store-ts/static/js/5.2970baf7.chunk.js"
   },
   {
-    "revision": "b6a787f9b7464e8fab6c",
-    "url": "/hiha-store-ts/static/js/6.85a96b2b.chunk.js"
+    "revision": "6af68cb6e568f667ea93",
+    "url": "/hiha-store-ts/static/js/6.ac33e520.chunk.js"
   },
   {
-    "revision": "266e2775fa1c91344b27",
-    "url": "/hiha-store-ts/static/js/7.f3cb0dc2.chunk.js"
+    "revision": "e5ddd3dba295ce92d638",
+    "url": "/hiha-store-ts/static/js/7.fa4c1507.chunk.js"
   },
   {
-    "revision": "2cbd6efca8537606bee4",
-    "url": "/hiha-store-ts/static/js/main.15dcbf2f.chunk.js"
+    "revision": "cea4451323d3d8622084",
+    "url": "/hiha-store-ts/static/js/main.a68bc861.chunk.js"
   },
   {
-    "revision": "81919aef3cc18cc240a3",
-    "url": "/hiha-store-ts/static/js/runtime-main.e081c06a.js"
+    "revision": "5589e74db5bfe4bb487a",
+    "url": "/hiha-store-ts/static/js/runtime-main.3f10a979.js"
   },
   {
     "revision": "2ad462a331b17b658f457f504bc6af04",
