@@ -48,6 +48,7 @@ export function* getUserSnapshotFromUserAuth(userAuth, additionalData = {}) {
     );
   } catch (error) {
     yield put(signInFailure(error.message));
+    alert(error.message);
   }
 }
 

@@ -61,8 +61,10 @@ const userSlice = createSlice({
 
 export const GOOGLE_SIGN_IN_START = `${userSlice.name}/googleSigInStart`;
 export const EMAIL_SIGN_IN_START = `${userSlice.name}/emailSigInStart`;
+export const SIGN_IN_SUCCESS = `${userSlice.name}/sigInSuccess`;
 export const CHECK_USER_SESSION = `${userSlice.name}/checkUserSession`;
 export const SIGN_OUT_START = `${userSlice.name}/signOutStart`;
+export const SIGN_OUT_SUCCESS = `${userSlice.name}/signOutSuccess`;
 export const SIGN_UP_START = `${userSlice.name}/signUpStart`;
 export const SIGN_UP_SUCCESS = `${userSlice.name}/signUpSuccess`;
 

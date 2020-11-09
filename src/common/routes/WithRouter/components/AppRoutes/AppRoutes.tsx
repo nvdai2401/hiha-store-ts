@@ -25,7 +25,7 @@ const AppRoutes: React.FC<AppRoutesProps> = (props: AppRoutesProps) => {
     }
   }, [checkUserSession, currentUser.id]);
 
-  const beforeRender = ({ location, history }, page) => {
+  const checkUserAuth = (location, history) => {
     if (
       (location.pathname === SIGN_IN_PAGE_PATH ||
         location.pathname === SIGN_UP_PAGE_PATH) &&
@@ -33,9 +33,15 @@ const AppRoutes: React.FC<AppRoutesProps> = (props: AppRoutesProps) => {
     ) {
       history.push(HOME_PAGE_PATH);
     }
-    document.title = page.title
-      ? `${page.title} | HiHa Store`
-      : 'Unknown title';
+  };
+
+  const updatePageTitle = (title) => {
+    document.title = title ? `${title} | HiHa Store` : 'HiHa Store';
+  };
+
+  const beforeRender = ({ location, history }, page) => {
+    checkUserAuth(location, history);
+    updatePageTitle(page.title);
   };
 
   return (

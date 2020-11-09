@@ -40,8 +40,15 @@ const cartSlice = createSlice({
     clearCart(state) {
       state.items = [];
     },
+    setCartFromFirebase(state, action: PayloadAction<IProduct[]>) {
+      state.items = action.payload;
+    },
   },
 });
+
+export const ADD_ITEM = `${cartSlice.name}/addItem`;
+export const REMOVE_ITEM = `${cartSlice.name}/removeItem`;
+export const CLEAR_ITEM_FROM_CART = `${cartSlice.name}/clearItems`;
 
 export const {
   showCart,
@@ -50,5 +57,6 @@ export const {
   removeItem,
   clearItems,
   clearCart,
+  setCartFromFirebase,
 } = cartSlice.actions;
 export default cartSlice.reducer;
