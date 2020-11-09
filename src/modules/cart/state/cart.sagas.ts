@@ -16,6 +16,7 @@ import {
   setCartFromFirebase,
 } from 'modules/cart/state/cart.slice';
 import { selectCartItems } from 'modules/cart/state/cart.selectors';
+import { joinCartItems } from 'modules/cart/state/cart.utils';
 
 export function* clearCartOnSignOut() {
   yield put(clearCart());
@@ -24,7 +25,7 @@ export function* clearCartOnSignOut() {
 export function* updateCartInFirebase() {
   const currentUser = yield select(selectCurrentUser);
 
-  if (currentUser) {
+  if (currentUser.id) {
     try {
       const cartRef = yield getUserCartRef(currentUser.id);
       const cartItems = yield select(selectCartItems);
@@ -37,9 +38,13 @@ export function* updateCartInFirebase() {
 
 export function* checkCartFromFirebase(data) {
   const { payload: user } = data;
-  const cartRef = yield getUserCartRef(user.id);
+  const currentCartItems = yield select(selectCartItems);
+  const cartRef = yield getUserCartRef(user.id, currentCartItems);
   const cartSnapshot = yield cartRef.get();
-  yield put(setCartFromFirebase(cartSnapshot.data().cartItems));
+  const userCartItems = cartSnapshot.data().cartItems;
+  const cartItems = joinCartItems(currentCartItems, userCartItems);
+
+  yield put(setCartFromFirebase(cartItems));
 }
 
 export function* onSignOutSuccess() {
