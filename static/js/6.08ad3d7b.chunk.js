@@ -1,2 +1,0 @@
-(this["webpackJsonphiha-store-ts"]=this["webpackJsonphiha-store-ts"]||[]).push([[6],{136:function(e,t,a){"use strict";a.r(t),a.d(t,"CheckOut",(function(){return m}));var c=a(0),s=a.n(c),r=a(31),n=a(65),m=function(){var e=Object(r.g)(),t=Object(r.f)(),a=Object(r.a)(),c=Object(r.d)(),m=Object(r.b)();return s.a.createElement("div",{className:"c-checkout"},s.a.createElement("h1",{className:"m-t-b-0 m-b-24"},"Checkout"),s.a.createElement(n.f,{items:e,total:t,addItem:a,removeItem:c,clearItems:m}),s.a.createElement(n.e,{total:t}))}}}]);
-//# sourceMappingURL=6.08ad3d7b.chunk.js.map
