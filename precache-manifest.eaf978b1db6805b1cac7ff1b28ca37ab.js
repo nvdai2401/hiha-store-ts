@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "65e000e8d221ab8309c08f904bbbe87d",
+    "revision": "39ca717a963b6d6d401957a7e74b52d2",
     "url": "/hiha-store-ts/index.html"
   },
   {
-    "revision": "182ab16e7d54fd22d99f",
-    "url": "/hiha-store-ts/static/css/main.8cb33a51.chunk.css"
+    "revision": "cd191b11fafbc93b2744",
+    "url": "/hiha-store-ts/static/css/main.7fc0e3c4.chunk.css"
   },
   {
     "revision": "a4ef42ff468a2834792e",
@@ -16,12 +16,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hiha-store-ts/static/js/1.049648fe.chunk.js"
   },
   {
-    "revision": "ee5faf5410622e8e0304",
-    "url": "/hiha-store-ts/static/js/4.0853fce1.chunk.js"
+    "revision": "4c98b19b9ad38a9f51cb",
+    "url": "/hiha-store-ts/static/js/4.8785a2a5.chunk.js"
   },
   {
     "revision": "b01cf20ee08477db845d02c3b279da13",
-    "url": "/hiha-store-ts/static/js/4.0853fce1.chunk.js.LICENSE.txt"
+    "url": "/hiha-store-ts/static/js/4.8785a2a5.chunk.js.LICENSE.txt"
   },
   {
     "revision": "863975561ac70981f856",
@@ -36,7 +36,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hiha-store-ts/static/js/7.fa4c1507.chunk.js"
   },
   {
-    "revision": "182ab16e7d54fd22d99f",
+    "revision": "cd191b11fafbc93b2744",
     "url": "/hiha-store-ts/static/js/main.a68bc861.chunk.js"
   },
   {
