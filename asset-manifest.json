@@ -5,8 +5,8 @@
     "static/js/1.895bbb52.chunk.js": "/hiha-store-ts/static/js/1.895bbb52.chunk.js",
     "static/js/1.895bbb52.chunk.js.map": "/hiha-store-ts/static/js/1.895bbb52.chunk.js.map",
     "main.css": "/hiha-store-ts/static/css/main.7fc0e3c4.chunk.css",
-    "main.js": "/hiha-store-ts/static/js/main.c77bbdc1.chunk.js",
-    "main.js.map": "/hiha-store-ts/static/js/main.c77bbdc1.chunk.js.map",
+    "main.js": "/hiha-store-ts/static/js/main.69908791.chunk.js",
+    "main.js.map": "/hiha-store-ts/static/js/main.69908791.chunk.js.map",
     "runtime-main.js": "/hiha-store-ts/static/js/runtime-main.e81eaa3f.js",
     "runtime-main.js.map": "/hiha-store-ts/static/js/runtime-main.e81eaa3f.js.map",
     "static/js/4.96d92f95.chunk.js": "/hiha-store-ts/static/js/4.96d92f95.chunk.js",
@@ -18,7 +18,7 @@
     "static/js/7.a42a5d0f.chunk.js": "/hiha-store-ts/static/js/7.a42a5d0f.chunk.js",
     "static/js/7.a42a5d0f.chunk.js.map": "/hiha-store-ts/static/js/7.a42a5d0f.chunk.js.map",
     "index.html": "/hiha-store-ts/index.html",
-    "precache-manifest.2d7d5aba59f8e3f6974646abae8e66ff.js": "/hiha-store-ts/precache-manifest.2d7d5aba59f8e3f6974646abae8e66ff.js",
+    "precache-manifest.15b3af170ee5ad2ff1a8da11a0b177b3.js": "/hiha-store-ts/precache-manifest.15b3af170ee5ad2ff1a8da11a0b177b3.js",
     "service-worker.js": "/hiha-store-ts/service-worker.js",
     "static/css/main.7fc0e3c4.chunk.css.map": "/hiha-store-ts/static/css/main.7fc0e3c4.chunk.css.map",
     "static/js/4.96d92f95.chunk.js.LICENSE.txt": "/hiha-store-ts/static/js/4.96d92f95.chunk.js.LICENSE.txt",
@@ -31,6 +31,6 @@
     "static/js/runtime-main.e81eaa3f.js",
     "static/js/4.96d92f95.chunk.js",
     "static/css/main.7fc0e3c4.chunk.css",
-    "static/js/main.c77bbdc1.chunk.js"
+    "static/js/main.69908791.chunk.js"
   ]
 }
