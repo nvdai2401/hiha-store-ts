@@ -18,7 +18,7 @@ import { SHOP_PAGE_PATH } from 'modules/shop/config';
 import { CONTACT_PAGE_PATH } from 'modules/user/config';
 
 const NavBar: React.FC = () => {
-  const [dropdownMenuVisible, setDropdownMenuVisible] = useState(false);
+  const [userOptionsMenuVisible, setUserOptionsMenuVisible] = useState(false);
   const currentUser = useCurrentUser();
   const cartVisible = useSelectCartVisible();
   const itemCount = useSelectCartItemCount();
@@ -26,8 +26,8 @@ const NavBar: React.FC = () => {
   const hideCart = useHideCart();
 
   const handleToggleCart = () => {
-    if (dropdownMenuVisible) {
-      setDropdownMenuVisible(false);
+    if (userOptionsMenuVisible) {
+      setUserOptionsMenuVisible(false);
     }
 
     if (cartVisible) {
@@ -38,12 +38,12 @@ const NavBar: React.FC = () => {
     showCart();
   };
 
-  const handleOnToggleDropdownMenu = () => {
+  const handleOnToggleUserOptionsMenu = () => {
     if (cartVisible) {
       hideCart();
     }
 
-    setDropdownMenuVisible(!dropdownMenuVisible);
+    setUserOptionsMenuVisible((prevState) => !prevState);
   };
 
   return (
@@ -63,7 +63,7 @@ const NavBar: React.FC = () => {
             {currentUser.id ? (
               <UserIcon
                 className="c-nav-bar__logo pointer"
-                onClick={handleOnToggleDropdownMenu}
+                onClick={handleOnToggleUserOptionsMenu}
               />
             ) : (
               <Link to="/sign-in">Sign in</Link>
@@ -74,24 +74,31 @@ const NavBar: React.FC = () => {
           <ShoppingBag quantity={itemCount} toggleCart={handleToggleCart} />
         </div>
       </header>
-      <MiniCart
-        open={cartVisible}
-        isEmpty={itemCount === 0}
-        hideCart={hideCart}
-      />
 
-      <UserOptionsMenu
-        open={dropdownMenuVisible}
-        onClose={() => setDropdownMenuVisible(false)}
-      />
+      {cartVisible && (
+        <MiniCart
+          open={cartVisible}
+          isEmpty={itemCount === 0}
+          hideCart={hideCart}
+        />
+      )}
 
-      <Overlay
-        open={cartVisible || dropdownMenuVisible}
-        onClose={() => {
-          hideCart();
-          setDropdownMenuVisible(false);
-        }}
-      />
+      {userOptionsMenuVisible && (
+        <UserOptionsMenu
+          open={userOptionsMenuVisible}
+          onClose={() => setUserOptionsMenuVisible(false)}
+        />
+      )}
+
+      {(cartVisible || userOptionsMenuVisible) && (
+        <Overlay
+          open={cartVisible || userOptionsMenuVisible}
+          onClose={() => {
+            hideCart();
+            setUserOptionsMenuVisible(false);
+          }}
+        />
+      )}
     </>
   );
 };

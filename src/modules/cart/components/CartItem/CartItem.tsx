@@ -8,12 +8,11 @@ type Props = IProduct;
 
 const CartItem: React.FC<Props> = (props: Props) => {
   const { imageUrl, name, quantity = 1, price } = props;
-  const placeHolder = `${imageUrl}?tr=bl-30,q-50`;
 
   return (
     <div className="c-cart-item m-b-18">
       <LazyImage
-        placeHolder={placeHolder}
+        placeHolder={`${imageUrl}?tr=bl-30,q-50`}
         src={imageUrl}
         alt={name}
         classes="c-cart-item__image"
@@ -29,4 +28,4 @@ const CartItem: React.FC<Props> = (props: Props) => {
   );
 };
 
-export default CartItem;
+export default React.memo(CartItem);
