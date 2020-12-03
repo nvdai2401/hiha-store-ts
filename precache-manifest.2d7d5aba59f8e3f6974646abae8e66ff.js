@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "39ca717a963b6d6d401957a7e74b52d2",
+    "revision": "d611a762cf0d7cad962678adcc9cf2ed",
     "url": "/hiha-store-ts/index.html"
   },
   {
-    "revision": "cd191b11fafbc93b2744",
+    "revision": "64728136a2118497e424",
     "url": "/hiha-store-ts/static/css/main.7fc0e3c4.chunk.css"
   },
   {
-    "revision": "a4ef42ff468a2834792e",
-    "url": "/hiha-store-ts/static/js/0.ee0c4e69.chunk.js"
+    "revision": "5d92a8db5b2d8f601597",
+    "url": "/hiha-store-ts/static/js/0.6801505d.chunk.js"
   },
   {
-    "revision": "c5d2aedaf9913fc0056f",
-    "url": "/hiha-store-ts/static/js/1.049648fe.chunk.js"
+    "revision": "8a73fd88983ed97d2972",
+    "url": "/hiha-store-ts/static/js/1.895bbb52.chunk.js"
   },
   {
-    "revision": "4c98b19b9ad38a9f51cb",
-    "url": "/hiha-store-ts/static/js/4.8785a2a5.chunk.js"
+    "revision": "f800a9bf5137cb8162d8",
+    "url": "/hiha-store-ts/static/js/4.96d92f95.chunk.js"
   },
   {
     "revision": "b01cf20ee08477db845d02c3b279da13",
-    "url": "/hiha-store-ts/static/js/4.8785a2a5.chunk.js.LICENSE.txt"
+    "url": "/hiha-store-ts/static/js/4.96d92f95.chunk.js.LICENSE.txt"
   },
   {
     "revision": "863975561ac70981f856",
@@ -32,16 +32,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/hiha-store-ts/static/js/6.ac33e520.chunk.js"
   },
   {
-    "revision": "e5ddd3dba295ce92d638",
-    "url": "/hiha-store-ts/static/js/7.fa4c1507.chunk.js"
+    "revision": "15ccaddfca4d1db9b266",
+    "url": "/hiha-store-ts/static/js/7.a42a5d0f.chunk.js"
   },
   {
-    "revision": "cd191b11fafbc93b2744",
-    "url": "/hiha-store-ts/static/js/main.a68bc861.chunk.js"
+    "revision": "64728136a2118497e424",
+    "url": "/hiha-store-ts/static/js/main.c77bbdc1.chunk.js"
   },
   {
-    "revision": "5589e74db5bfe4bb487a",
-    "url": "/hiha-store-ts/static/js/runtime-main.3f10a979.js"
+    "revision": "716ae86ab382754ec037",
+    "url": "/hiha-store-ts/static/js/runtime-main.e81eaa3f.js"
   },
   {
     "revision": "2ad462a331b17b658f457f504bc6af04",
