@@ -13,6 +13,7 @@ const LazyImage: React.FC<Props> = (props: Props) => {
   const { width, height, classes = '', alt = '', placeHolder = '' } = props;
   const [loaded, setLoaded] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
+  const mountedRef = useRef(true);
 
   const elementInViewport = (el) => {
     const rect = el.getBoundingClientRect();
@@ -25,14 +26,22 @@ const LazyImage: React.FC<Props> = (props: Props) => {
   };
 
   useEffect(() => {
+    mountedRef.current = true;
+    return () => {
+      mountedRef.current = false;
+    };
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       const { current } = imgRef;
+
       if (!loaded && elementInViewport(current)) {
         const { src } = props;
         const imgLoader = new Image();
         imgLoader.src = src;
         imgLoader.onload = () => {
-          if (current) {
+          if (current && mountedRef.current) {
             current.setAttribute(`src`, `${src}`);
             setLoaded(true);
           }
@@ -42,6 +51,7 @@ const LazyImage: React.FC<Props> = (props: Props) => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
