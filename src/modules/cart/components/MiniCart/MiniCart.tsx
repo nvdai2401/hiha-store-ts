@@ -52,4 +52,4 @@ const MiniCart: React.FC<Props> = (props: Props) => {
   );
 };
 
-export default MiniCart;
+export default React.memo(MiniCart);

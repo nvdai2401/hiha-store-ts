@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { useSelectCartVisible, useHideCart } from 'hooks/state/cartState';
 
-const HideCart = () => {
+const HideCart = (): null => {
   const { pathname } = useLocation();
   const cartVisible = useSelectCartVisible();
   const hideCart = useHideCart();

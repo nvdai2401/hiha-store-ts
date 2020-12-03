@@ -54,4 +54,4 @@ const UserOptionsMenu: React.FC<Props> = (props: Props) => {
   );
 };
 
-export default UserOptionsMenu;
+export default React.memo(UserOptionsMenu);

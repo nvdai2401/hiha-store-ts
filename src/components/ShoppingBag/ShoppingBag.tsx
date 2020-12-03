@@ -20,4 +20,4 @@ const ShoppingBag: React.FC<Props> = (props: Props) => {
   );
 };
 
-export default ShoppingBag;
+export default React.memo(ShoppingBag);

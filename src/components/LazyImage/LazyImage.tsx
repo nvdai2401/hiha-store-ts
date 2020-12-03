@@ -45,7 +45,8 @@ const LazyImage: React.FC<Props> = (props: Props) => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [loaded, props]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loaded]);
 
   return (
     <img
