@@ -28,7 +28,7 @@
   },
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js' --html reports/result.html",
-    "start": "PORT=3009 react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

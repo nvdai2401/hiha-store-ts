@@ -75,30 +75,24 @@ const NavBar: React.FC = () => {
         </div>
       </header>
 
-      {cartVisible && (
-        <MiniCart
-          open={cartVisible}
-          isEmpty={itemCount === 0}
-          hideCart={hideCart}
-        />
-      )}
+      <MiniCart
+        open={cartVisible}
+        isEmpty={itemCount === 0}
+        hideCart={hideCart}
+      />
 
-      {userOptionsMenuVisible && (
-        <UserOptionsMenu
-          open={userOptionsMenuVisible}
-          onClose={() => setUserOptionsMenuVisible(false)}
-        />
-      )}
+      <UserOptionsMenu
+        open={userOptionsMenuVisible}
+        onClose={() => setUserOptionsMenuVisible(false)}
+      />
 
-      {(cartVisible || userOptionsMenuVisible) && (
-        <Overlay
-          open={cartVisible || userOptionsMenuVisible}
-          onClose={() => {
-            hideCart();
-            setUserOptionsMenuVisible(false);
-          }}
-        />
-      )}
+      <Overlay
+        open={cartVisible || userOptionsMenuVisible}
+        onClose={() => {
+          hideCart();
+          setUserOptionsMenuVisible(false);
+        }}
+      />
     </>
   );
 };
